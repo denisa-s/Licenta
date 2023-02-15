@@ -11,11 +11,11 @@ namespace Licenta.Models
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
-        public string name { get; set; }
-        public int quantity { get; set; }
-        public string measure_units { get; set; }
-        public decimal price { get; set; }
-        public string details { get; set; }
+        public string Name { get; set; }
+        public int Quantity { get; set; }
+        public string MeasureUnits { get; set; }
+        public decimal Price { get; set; }
+        public string Details { get; set; }
         public int ID_provider { get; set; }
     }
 }

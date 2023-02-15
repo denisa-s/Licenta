@@ -11,16 +11,14 @@ namespace Licenta.Models
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         public int CNP { get; set; }
-        public string fname { get; set; }
-        public string lname { get; set; }
-        public string phone_number { get; set; }
-        public DateTime birth_date { get; set; }
-        public string street { get; set; }
-        public int number { get; set; }
-        public string email { get; set; }
-        public int salary { get; set; }
-        public DateTime hire_date { get; set; }
-        public string marital_status { get; set; }
-        public string housing_type { get; set; }
+        public string Fname { get; set; }
+        public string Lname { get; set; }
+        public string PhoneNumber { get; set; }
+        public DateTime BirthDate { get; set; }
+        public string Street { get; set; }
+        public int Number { get; set; }
+        public string Email { get; set; }
+        public int Salary { get; set; }
+        public DateTime HireDate { get; set; }
     }
 }

@@ -11,7 +11,10 @@ namespace Licenta.Models
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
-        public string Description { get; set; }
-        public DateTime Date { get; set; }
+        public string Name { get; set; }
+        public string Street { get; set; }
+        public int Number { get; set; }
+        public string PostalCode { get; set; }
+        public string PhoneNumber { get; set; }
     }
 }

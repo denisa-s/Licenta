@@ -11,7 +11,9 @@ namespace Licenta.Models
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
-        public string Description { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime InspectionDate { get; set; }
+        public string Disease { get; set; }
+        public string Details { get; set; }
+        public int ID_dog { get; set; }
     }
 }

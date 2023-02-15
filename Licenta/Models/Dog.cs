@@ -11,15 +11,15 @@ namespace Licenta.Models
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
-        public string breed { get; set; }
-        public string size { get; set; }
-        public string name { get; set; }
-        public string life_stage { get; set; }
-        public string special_needs { get; set; }
-        public string moral_characteristics { get; set; }
+        public string Breed { get; set; }
+        public string Size { get; set; }
+        public string Name { get; set; }
+        public string LifeStage { get; set; }
+        public string SpecialNeeds { get; set; }
+        public string MoralCharacteristics { get; set; }
         public int ID_food { get; set; }
         public int ID_room { get; set; }
-        public int CNP_employee { get; set; }
-        public DateTime registration_date { get; set; }
+        public int ID_employee { get; set; }
+        public DateTime RegistrationDate { get; set; }
     }
 }

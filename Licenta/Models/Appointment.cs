@@ -13,7 +13,7 @@ namespace Licenta.Models
         public int ID { get; set; }
         public DateTime Date { get; set; }
         public int ID_dog { get; set; }
-        public int CNP_employee { get; set; }
-        public int CNP_guest { get; set; }
+        public int ID_employee { get; set; }
+        public int ID_guest { get; set; }
     }
 }
