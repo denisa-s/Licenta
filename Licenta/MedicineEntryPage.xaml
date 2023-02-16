@@ -3,10 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Licenta.MedicineEntryPage"
              Title="MedicineEntryPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add a employee" Clicked="OnEmployeeAddedClicked" />
+    </ContentPage.ToolbarItems>
+    <ListView x:Name="listView" Margin="30" ItemSelected="OnListViewItemSelected" HorizontalScrollBarVisibility="Always">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout>
+                        <StackLayout>
+                            <Label Text="{Binding CNP}"/>
+                            <Label Text="{Binding Fname}" />
+                            <Label Text="{Binding Lname}"/>
+                            <Label Text="{Binding PhoneNumber}" />
+                            <Label Text="{Binding BirthDate}" />
+                            <Label Text="{Binding Street}"/>
+                            <Label Text="{Binding Number}" />
+                            <Label Text="{Binding Email}"/>
+                            <Label Text="{Binding Salary}" />
+                            <Label Text="{Binding HireDate}" />
+                        </StackLayout>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>

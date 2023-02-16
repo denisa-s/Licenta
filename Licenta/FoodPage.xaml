@@ -3,10 +3,36 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Licenta.FoodPage"
              Title="FoodPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    <VerticalStackLayout Spacing="1" Margin="5">
+        <StackLayout Margin="10" >
+            <Editor Placeholder="Enter the CNP of the employee" Text="{Binding CNP}"
+                    HeightRequest="20"/>
+            <Editor Placeholder="Enter the first name of the employee" Text="{Binding Fname}"
+                    HeightRequest="20" />
+            <Editor Placeholder="Enter the last name of the employee" Text="{Binding Lname}"
+                    HeightRequest="20" />
+            <Editor Placeholder="Enter the phone number of the employee" Text="{Binding PhoneNumber}"
+                    HeightRequest="20" />
+            <Editor Placeholder="Enter the date of birth of the employee" Text="{Binding BirthDate}"
+                    HeightRequest="20" />
+            <Editor Placeholder="Enter the street of the employee" Text="{Binding Street}"
+                    HeightRequest="20"/>
+            <Editor Placeholder="Enter the number of the street" Text="{Binding Number}"
+                    HeightRequest="20" />
+            <Editor Placeholder="Enter the email of the employee" Text="{Binding Email}"
+                    HeightRequest="20" />
+            <Editor Placeholder="Enter the salary of the employee" Text="{Binding Salary}"
+                    HeightRequest="20" />
+            <Editor Placeholder="Enter the hire date" Text="{Binding HireDate}"
+                    HeightRequest="20" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Text="Save" Clicked="OnSaveButtonClicked" />
+                <Button Grid.Column="1" Text="Delete" Clicked="OnDeleteButtonClicked"/>
+            </Grid>
+        </StackLayout>
     </VerticalStackLayout>
 </ContentPage>
