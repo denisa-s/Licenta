@@ -1,12 +1,33 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Licenta.AdoptionRequestEntryPage"
-             Title="AdoptionRequestEntryPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             x:Class="Licenta.DogEntryPage"
+             Title="DogEntryPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add a dog" Clicked="OnDogAddedClicked" />
+    </ContentPage.ToolbarItems>
+    <ListView x:Name="listView" Margin="30" ItemSelected="OnListViewItemSelected" HorizontalScrollBarVisibility="Always">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout>
+                        <StackLayout>
+                            <Label Text="{Binding Breed}"/>
+                            <Label Text="{Binding Size}" />
+                            <Label Text="{Binding Name}"/>
+                            <Label Text="{Binding LifeStage}" />
+                            <Label Text="{Binding SpecialNeeds}" />
+                            <Label Text="{Binding MoralCharacteristics}"/>
+                            <Label Text="{Binding ID_food}" />
+                            <Label Text="{Binding ID_room}"/>
+                            <Label Text="{Binding ID_employee}" />
+                            <Label Text="{Binding RegistrationDate}" />
+                        </StackLayout>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+    </ListView>
+
 </ContentPage>

@@ -1,9 +1,21 @@
 namespace Licenta;
-
-public partial class AdoptionRequestPage : ContentPage
+using Licenta.Models;
+public partial class DogPage : ContentPage
 {
-	public AdoptionRequestPage()
+	public DogPage()
 	{
 		InitializeComponent();
 	}
+    async void OnSaveButtonClicked(object sender, EventArgs e)
+    {
+        var slist = (Dog)BindingContext;
+        await App.Database.SaveDogAsync(slist);
+        await Navigation.PopAsync();
+    }
+    async void OnDeleteButtonClicked(object sender, EventArgs e)
+    {
+        var slist = (Dog)BindingContext;
+        await App.Database.DeleteDogAsync(slist);
+        await Navigation.PopAsync();
+    }
 }
