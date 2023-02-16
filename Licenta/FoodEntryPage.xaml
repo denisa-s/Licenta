@@ -4,7 +4,7 @@
              x:Class="Licenta.FoodEntryPage"
              Title="FoodEntryPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add a employee" Clicked="OnEmployeeAddedClicked" />
+        <ToolbarItem Text="Add a food" Clicked="OnFoodAddedClicked" />
     </ContentPage.ToolbarItems>
     <ListView x:Name="listView" Margin="30" ItemSelected="OnListViewItemSelected" HorizontalScrollBarVisibility="Always">
         <ListView.ItemTemplate>
@@ -12,16 +12,12 @@
                 <ViewCell>
                     <StackLayout>
                         <StackLayout>
-                            <Label Text="{Binding CNP}"/>
-                            <Label Text="{Binding Fname}" />
-                            <Label Text="{Binding Lname}"/>
-                            <Label Text="{Binding PhoneNumber}" />
-                            <Label Text="{Binding BirthDate}" />
-                            <Label Text="{Binding Street}"/>
-                            <Label Text="{Binding Number}" />
-                            <Label Text="{Binding Email}"/>
-                            <Label Text="{Binding Salary}" />
-                            <Label Text="{Binding HireDate}" />
+                            <Label Text="{Binding Name}"/>
+                            <Label Text="{Binding Quantity}" />
+                            <Label Text="{Binding MeasureUnits}"/>
+                            <Label Text="{Binding Price}" />
+                            <Label Text="{Binding Details}" />
+                            <Label Text="{Binding ID_provider}"/>
                         </StackLayout>
                     </StackLayout>
                 </ViewCell>

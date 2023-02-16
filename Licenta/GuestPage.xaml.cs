@@ -1,3 +1,5 @@
+using Licenta.Models;
+
 namespace Licenta;
 
 public partial class GuestPage : ContentPage
@@ -8,14 +10,14 @@ public partial class GuestPage : ContentPage
 	}
     async void OnSaveButtonClicked(object sender, EventArgs e)
     {
-        var slist = (Employee)BindingContext;
-        await App.Database.SaveEmployeeAsync(slist);
+        var slist = (Guest)BindingContext;
+        await App.Database.SaveGuestAsync(slist);
         await Navigation.PopAsync();
     }
     async void OnDeleteButtonClicked(object sender, EventArgs e)
     {
-        var slist = (Employee)BindingContext;
-        await App.Database.DeleteEmployeeAsync(slist);
+        var slist = (Guest)BindingContext;
+        await App.Database.DeleteGuestAsync(slist);
         await Navigation.PopAsync();
     }
 }

@@ -4,7 +4,7 @@
              x:Class="Licenta.GuestEntryPage"
              Title="GuestEntryPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add a employee" Clicked="OnEmployeeAddedClicked" />
+        <ToolbarItem Text="Add a guest" Clicked="OnGuestAddedClicked" />
     </ContentPage.ToolbarItems>
     <ListView x:Name="listView" Margin="30" ItemSelected="OnListViewItemSelected" HorizontalScrollBarVisibility="Always">
         <ListView.ItemTemplate>
@@ -20,8 +20,8 @@
                             <Label Text="{Binding Street}"/>
                             <Label Text="{Binding Number}" />
                             <Label Text="{Binding Email}"/>
-                            <Label Text="{Binding Salary}" />
-                            <Label Text="{Binding HireDate}" />
+                            <Label Text="{Binding MaritalStatus}" />
+                            <Label Text="{Binding HousingType}" />
                         </StackLayout>
                     </StackLayout>
                 </ViewCell>

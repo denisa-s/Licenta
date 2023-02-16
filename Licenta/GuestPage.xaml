@@ -5,25 +5,25 @@
              Title="GuestPage">
     <VerticalStackLayout Spacing="1" Margin="5">
         <StackLayout Margin="10" >
-            <Editor Placeholder="Enter the CNP of the employee" Text="{Binding CNP}"
+            <Editor Placeholder="Enter the CNP of the guest" Text="{Binding CNP}"
                     HeightRequest="20"/>
-            <Editor Placeholder="Enter the first name of the employee" Text="{Binding Fname}"
+            <Editor Placeholder="Enter the first name of the guest" Text="{Binding Fname}"
                     HeightRequest="20" />
-            <Editor Placeholder="Enter the last name of the employee" Text="{Binding Lname}"
+            <Editor Placeholder="Enter the last name of the guest" Text="{Binding Lname}"
                     HeightRequest="20" />
-            <Editor Placeholder="Enter the phone number of the employee" Text="{Binding PhoneNumber}"
+            <Editor Placeholder="Enter the phone number of the guest" Text="{Binding PhoneNumber}"
                     HeightRequest="20" />
-            <Editor Placeholder="Enter the date of birth of the employee" Text="{Binding BirthDate}"
+            <Editor Placeholder="Enter the date of birth of the guest" Text="{Binding BirthDate}"
                     HeightRequest="20" />
-            <Editor Placeholder="Enter the street of the employee" Text="{Binding Street}"
+            <Editor Placeholder="Enter the street of the guest" Text="{Binding Street}"
                     HeightRequest="20"/>
-            <Editor Placeholder="Enter the number of the street" Text="{Binding Number}"
+            <Editor Placeholder="Enter the number of the guest" Text="{Binding Number}"
                     HeightRequest="20" />
-            <Editor Placeholder="Enter the email of the employee" Text="{Binding Email}"
+            <Editor Placeholder="Enter the email of the guest" Text="{Binding Email}"
                     HeightRequest="20" />
-            <Editor Placeholder="Enter the salary of the employee" Text="{Binding Salary}"
+            <Editor Placeholder="Enter the marital status of the guest" Text="{Binding MaritalStatus}"
                     HeightRequest="20" />
-            <Editor Placeholder="Enter the hire date" Text="{Binding HireDate}"
+            <Editor Placeholder="Enter the housing type of the guest" Text="{Binding HousingType}"
                     HeightRequest="20" />
             <Grid>
                 <Grid.ColumnDefinitions>

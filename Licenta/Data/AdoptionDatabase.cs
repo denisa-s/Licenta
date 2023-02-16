@@ -188,7 +188,7 @@ namespace Licenta.Data
         }
 
         //Pt fise medicale
-        public Task<List<MedicalRecord>> GetGuestMedicalRecordsAsync()
+        public Task<List<MedicalRecord>> GetMedicalRecordsAsync()
         {
             return _database.Table<MedicalRecord>().ToListAsync();
         }
