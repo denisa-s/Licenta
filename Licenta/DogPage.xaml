@@ -7,8 +7,8 @@
         <StackLayout Margin="10" >
             <Editor Placeholder="Enter the breed of the dog" Text="{Binding Breed}"
                     HeightRequest="20"/>
-            <Editor Placeholder="Enter the size of the dog" Text="{Binding Size}"
-                    HeightRequest="20" />
+           <!--- <Editor Placeholder="Enter the size of the dog" Text="{Binding Size}"
+                    HeightRequest="20" />-->
             <Editor Placeholder="Enter the name of the dog" Text="{Binding Name}"
                     HeightRequest="20" />
             <Editor Placeholder="Enter the life stage of the dog" Text="{Binding LifeStage}"
@@ -33,6 +33,14 @@
                 <Button Text="Save" Clicked="OnSaveButtonClicked" />
                 <Button Grid.Column="1" Text="Delete" Clicked="OnDeleteButtonClicked"/>
             </Grid>
+            <ListView x:Name="listView" Margin="20">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Detail="{Binding Description}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Add/Choose size" MaximumWidthRequest="300" Clicked="OnChooseButtonClicked"/>
         </StackLayout>
     </VerticalStackLayout>
 </ContentPage>

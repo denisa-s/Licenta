@@ -18,4 +18,17 @@ public partial class DogPage : ContentPage
         await App.Database.DeleteDogAsync(slist);
         await Navigation.PopAsync();
     }
+    async void OnChooseButtonClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new SizePage((Dog)this.BindingContext)
+        {
+            BindingContext = new Size()
+        });
+    }
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        var dog = (Dog)BindingContext;
+        listView.ItemsSource = await App.Database.GetListSizesAsync(dog.ID);
+    }
 }

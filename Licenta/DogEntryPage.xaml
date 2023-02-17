@@ -13,7 +13,7 @@
                     <StackLayout>
                         <StackLayout>
                             <Label Text="{Binding Breed}"/>
-                            <Label Text="{Binding Size}" />
+                            <!--<Label Text="{Binding Size}" />-->
                             <Label Text="{Binding Name}"/>
                             <Label Text="{Binding LifeStage}" />
                             <Label Text="{Binding SpecialNeeds}" />

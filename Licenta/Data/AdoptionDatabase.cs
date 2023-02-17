@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using SQLite;
 using Licenta.Models;
+using Size = Licenta.Models.Size;
+
 namespace Licenta.Data
 {
     public class AdoptionDatabase
@@ -24,6 +26,8 @@ namespace Licenta.Data
             _database.CreateTableAsync<Provider>().Wait();
             _database.CreateTableAsync<Room>().Wait();
             _database.CreateTableAsync<Treatment>().Wait();
+            _database.CreateTableAsync<Size>().Wait();
+            _database.CreateTableAsync<ListSize>().Wait();
         }
         //Pt angajati 
         public Task<List<Employee>> GetEmployeesAsync()
@@ -321,5 +325,48 @@ namespace Licenta.Data
         {
             return _database.DeleteAsync(treatment);
         }
+
+        //Pt size
+        public Task<int> SaveSizeAsync(Size sz)
+        {
+            if (sz.ID != 0)
+            {
+                return _database.UpdateAsync(sz);
+            }
+            else
+            {
+                return _database.InsertAsync(sz);
+            }
+        }
+        public Task<int> DeleteSizeAsync(Size sz)
+        {
+            return _database.DeleteAsync(sz);
+        }
+        public Task<List<Size>> GetSizesAsync()
+        {
+            return _database.Table<Size>().ToListAsync();
+        }
+
+
+        public Task<int> SaveListSizeAsync(ListSize lists)
+        {
+            if (lists.ID != 0)
+            {
+                return _database.UpdateAsync(lists);
+            }
+            else
+            {
+                return _database.InsertAsync(lists);
+            }
+        }
+        public Task<List<Size>> GetListSizesAsync(int dogid)
+        {
+            return _database.QueryAsync<Size>(
+            "select S.ID, S.Description from Size S"
+            + " inner join ListSize LS"
+            + " on S.ID = LS.SizeID where LS.DogID = ?",
+            dogid);
+        }
     }
 }
+   
