@@ -1,3 +1,5 @@
+using Licenta.Models;
+
 namespace Licenta;
 
 public partial class RoomEntryPage : ContentPage
@@ -9,22 +11,22 @@ public partial class RoomEntryPage : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        listView.ItemsSource = await App.Database.GetEmployeesAsync();
+        listView.ItemsSource = await App.Database.GetRoomsAsync();
     }
-    async void OnEmployeeAddedClicked(object sender, EventArgs e)
+    async void OnRoomAddedClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new EmployeePage
+        await Navigation.PushAsync(new RoomPage
         {
-            BindingContext = new Employee()
+            BindingContext = new Room()
         });
     }
     async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
         if (e.SelectedItem != null)
         {
-            await Navigation.PushAsync(new EmployeePage
+            await Navigation.PushAsync(new RoomPage
             {
-                BindingContext = e.SelectedItem as Employee
+                BindingContext = e.SelectedItem as Room
             });
         }
     }

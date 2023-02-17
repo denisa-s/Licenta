@@ -1,3 +1,5 @@
+using Licenta.Models;
+
 namespace Licenta;
 
 public partial class RoomPage : ContentPage
@@ -8,14 +10,14 @@ public partial class RoomPage : ContentPage
 	}
     async void OnSaveButtonClicked(object sender, EventArgs e)
     {
-        var slist = (Employee)BindingContext;
-        await App.Database.SaveEmployeeAsync(slist);
+        var slist = (Room)BindingContext;
+        await App.Database.SaveRoomAsync(slist);
         await Navigation.PopAsync();
     }
     async void OnDeleteButtonClicked(object sender, EventArgs e)
     {
-        var slist = (Employee)BindingContext;
-        await App.Database.DeleteEmployeeAsync(slist);
+        var slist = (Room)BindingContext;
+        await App.Database.DeleteRoomAsync(slist);
         await Navigation.PopAsync();
     }
 }

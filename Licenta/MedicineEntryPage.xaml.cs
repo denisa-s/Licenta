@@ -11,22 +11,22 @@ public partial class MedicineEntryPage : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        listView.ItemsSource = await App.Database.GetEmployeesAsync();
+        listView.ItemsSource = await App.Database.GetMedicinesAsync();
     }
-    async void OnEmployeeAddedClicked(object sender, EventArgs e)
+    async void OnMedicineAddedClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new EmployeePage
+        await Navigation.PushAsync(new MedicinePage
         {
-            BindingContext = new Employee()
+            BindingContext = new Medicine()
         });
     }
     async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
         if (e.SelectedItem != null)
         {
-            await Navigation.PushAsync(new EmployeePage
+            await Navigation.PushAsync(new MedicinePage
             {
-                BindingContext = e.SelectedItem as Employee
+                BindingContext = e.SelectedItem as Medicine
             });
         }
     }

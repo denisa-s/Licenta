@@ -4,7 +4,7 @@
              x:Class="Licenta.MedicineEntryPage"
              Title="MedicineEntryPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add a employee" Clicked="OnEmployeeAddedClicked" />
+        <ToolbarItem Text="Add a medicine" Clicked="OnMedicineAddedClicked" />
     </ContentPage.ToolbarItems>
     <ListView x:Name="listView" Margin="30" ItemSelected="OnListViewItemSelected" HorizontalScrollBarVisibility="Always">
         <ListView.ItemTemplate>
@@ -12,16 +12,12 @@
                 <ViewCell>
                     <StackLayout>
                         <StackLayout>
-                            <Label Text="{Binding CNP}"/>
-                            <Label Text="{Binding Fname}" />
-                            <Label Text="{Binding Lname}"/>
-                            <Label Text="{Binding PhoneNumber}" />
-                            <Label Text="{Binding BirthDate}" />
-                            <Label Text="{Binding Street}"/>
-                            <Label Text="{Binding Number}" />
-                            <Label Text="{Binding Email}"/>
-                            <Label Text="{Binding Salary}" />
-                            <Label Text="{Binding HireDate}" />
+                            <Label Text="{Binding Name}"/>
+                            <Label Text="{Binding Quantity}" />
+                            <Label Text="{Binding MeasureUnits}"/>
+                            <Label Text="{Binding PresentationType}" />
+                            <Label Text="{Binding AdministrationMode}" />
+                            <Label Text="{Binding Description}"/>
                         </StackLayout>
                     </StackLayout>
                 </ViewCell>

@@ -4,7 +4,7 @@
              x:Class="Licenta.RoomEntryPage"
              Title="RoomEntryPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add a employee" Clicked="OnEmployeeAddedClicked" />
+        <ToolbarItem Text="Add a room" Clicked="OnRoomAddedClicked" />
     </ContentPage.ToolbarItems>
     <ListView x:Name="listView" Margin="30" ItemSelected="OnListViewItemSelected" HorizontalScrollBarVisibility="Always">
         <ListView.ItemTemplate>
@@ -12,16 +12,9 @@
                 <ViewCell>
                     <StackLayout>
                         <StackLayout>
-                            <Label Text="{Binding CNP}"/>
-                            <Label Text="{Binding Fname}" />
-                            <Label Text="{Binding Lname}"/>
-                            <Label Text="{Binding PhoneNumber}" />
-                            <Label Text="{Binding BirthDate}" />
-                            <Label Text="{Binding Street}"/>
-                            <Label Text="{Binding Number}" />
-                            <Label Text="{Binding Email}"/>
-                            <Label Text="{Binding Salary}" />
-                            <Label Text="{Binding HireDate}" />
+                            <Label Text="{Binding Type}"/>
+                            <Label Text="{Binding NumberOfDogs}" />
+                            <Label Text="{Binding ID_employee}"/>
                         </StackLayout>
                     </StackLayout>
                 </ViewCell>

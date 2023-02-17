@@ -10,14 +10,14 @@ public partial class MedicinePage : ContentPage
 	}
     async void OnSaveButtonClicked(object sender, EventArgs e)
     {
-        var slist = (Employee)BindingContext;
-        await App.Database.SaveEmployeeAsync(slist);
+        var slist = (Medicine)BindingContext;
+        await App.Database.SaveMedicineAsync(slist);
         await Navigation.PopAsync();
     }
     async void OnDeleteButtonClicked(object sender, EventArgs e)
     {
-        var slist = (Employee)BindingContext;
-        await App.Database.DeleteEmployeeAsync(slist);
+        var slist = (Medicine)BindingContext;
+        await App.Database.DeleteMedicineAsync(slist);
         await Navigation.PopAsync();
     }
 }
