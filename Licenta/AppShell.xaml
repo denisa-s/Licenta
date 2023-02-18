@@ -18,6 +18,7 @@
         <ShellContent Title="Medicine Page" ContentTemplate="{DataTemplate local:MedicineEntryPage}"/>
         <ShellContent Title="Provider Page" ContentTemplate="{DataTemplate local:ProviderEntryPage}"/>
         <ShellContent Title="Room Page" ContentTemplate="{DataTemplate local:RoomEntryPage}"/>
+        <!--<ShellContent Title="Login Page" ContentTemplate="{DataTemplate local:LoginPage}"/>-->
     </TabBar>
 
 </Shell>

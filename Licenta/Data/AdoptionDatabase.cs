@@ -15,6 +15,7 @@ namespace Licenta.Data
         public AdoptionDatabase(string dbPath)
         {
             _database = new SQLiteAsyncConnection(dbPath);
+            _database.CreateTableAsync<LoginModel>().Wait();
             _database.CreateTableAsync<Employee>().Wait();
             _database.CreateTableAsync<AdoptionRequest>().Wait();
             _database.CreateTableAsync<Appointment>().Wait();
@@ -28,6 +29,19 @@ namespace Licenta.Data
             _database.CreateTableAsync<Treatment>().Wait();
             _database.CreateTableAsync<Size>().Wait();
             _database.CreateTableAsync<ListSize>().Wait();
+        }
+
+        //Pt logare
+        public Task<LoginModel> GetLoginDataAsync(string userName)
+        {
+            return _database.Table<LoginModel>()
+                            .Where(i => i.UserName == userName)
+                            .FirstOrDefaultAsync();
+        }
+
+        public Task<int> SaveLoginDataAsync(LoginModel loginData)
+        {
+            return _database.InsertAsync(loginData);
         }
         //Pt angajati 
         public Task<List<Employee>> GetEmployeesAsync()
