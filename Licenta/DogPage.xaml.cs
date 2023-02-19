@@ -1,5 +1,7 @@
 namespace Licenta;
 using Licenta.Models;
+using Microsoft.Maui.Controls;
+
 public partial class DogPage : ContentPage
 {
 	public DogPage()
@@ -31,4 +33,18 @@ public partial class DogPage : ContentPage
         var dog = (Dog)BindingContext;
         listView.ItemsSource = await App.Database.GetListSizesAsync(dog.ID);
     }
+    /*async void OnDeleteItemButtonClicked(object sender, EventArgs e)
+    {
+        Size product;
+        var shopList = (Dog)BindingContext;
+        if (listView.SelectedItem != null)
+        {
+            product = listView.SelectedItem as Size;
+            var listProductAll = await App.Database.GetSizesAsync();
+            var listProduct = listProductAll.FindAll(x => x.ID == product.ID);
+            await App.Database.DeleteListSizeAsync(listProduct.FirstOrDefault);
+            await Navigation.PopAsync();
+        }
+
+    }*/
 }
