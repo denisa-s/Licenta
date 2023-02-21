@@ -5,10 +5,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Licenta"
     xmlns:models="clr-namespace:Licenta.Models"
-    Shell.FlyoutBehavior="Disabled">
+    Shell.TabBarIsVisible="False">
 
-    <TabBar>
-        <ShellContent Title="Home Page" ContentTemplate="{DataTemplate local:MainPage}"/>
+    <ShellContent FlyoutItemIsVisible="False" Shell.FlyoutBehavior="Disabled"
+                  Title="Login Page" ContentTemplate="{DataTemplate local:LoginPage}"  Route="LoginPage"/>
+
+    <ShellContent Title="Home Page" ContentTemplate="{DataTemplate local:MainPage}"/>
         <ShellContent Title="About Page" ContentTemplate="{DataTemplate local:AboutPage}"/>
         <ShellContent Title="Dog Page" ContentTemplate="{DataTemplate local:DogEntryPage}"/>
         <ShellContent Title="Employee Page" ContentTemplate="{DataTemplate local:EmployeeEntryPage}"/>
@@ -18,7 +20,11 @@
         <ShellContent Title="Medicine Page" ContentTemplate="{DataTemplate local:MedicineEntryPage}"/>
         <ShellContent Title="Provider Page" ContentTemplate="{DataTemplate local:ProviderEntryPage}"/>
         <ShellContent Title="Room Page" ContentTemplate="{DataTemplate local:RoomEntryPage}"/>
-        <!--<ShellContent Title="Login Page" ContentTemplate="{DataTemplate local:LoginPage}"/>-->
-    </TabBar>
+
+    <Shell.FlyoutFooter>
+        <StackLayout Padding="20">
+            <Button Text="Sign Out" Command="{Binding SignOutCommand}" />
+        </StackLayout>
+    </Shell.FlyoutFooter>
 
 </Shell>
