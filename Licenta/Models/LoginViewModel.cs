@@ -35,17 +35,17 @@ namespace Licenta.Models
                 if (string.Equals(loginData.Password, Password))
                 {
                     //await Navigation.PushModalAsync(new AppShell());
-                    await App.Current.MainPage.DisplayAlert("succes", "Utilizator logat", "Ok");
-
+                    await App.Current.MainPage.DisplayAlert("Success", "Utilizator logat", "Ok");
                 }
                 else
                 {
-                    await App.Current.MainPage.DisplayAlert("failure", "Invalid Password", "Ok");
+                    //await Navigation.PushModalAsync(new LoginPage());
+                    await App.Current.MainPage.DisplayAlert("Failure", "Parola gresita. Incearca din nou", "Ok");
                 }
             }
             else
             {
-                await App.Current.MainPage.DisplayAlert("failure", "Invalid Username", "Ok");
+                await App.Current.MainPage.DisplayAlert("Failure", "Nume de utilizator invalid. Dacă nu ai un cont, înregistrează-te", "Ok");
             }
         }
 
