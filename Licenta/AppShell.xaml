@@ -5,25 +5,73 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Licenta"
     xmlns:models="clr-namespace:Licenta.Models"
-    Shell.TabBarIsVisible="False">
+    FlyoutBackgroundColor="Red"
+    Shell.TabBarIsVisible="False"
+    xmlns:views="clr-namespace:Licenta.Views">
 
-    <ShellContent FlyoutItemIsVisible="False" Shell.FlyoutBehavior="Disabled"
-                  Title="Login Page" ContentTemplate="{DataTemplate local:LoginPage}"  Route="LoginPage"/>
+    <ShellContent FlyoutItemIsVisible="False" 
+                  Shell.FlyoutBehavior="Disabled"
+                  Title="Login Page" 
+                  ContentTemplate="{DataTemplate local:LoginPage}"  
+                  Route="LoginPage" />
 
-    <ShellContent Title="Home Page" ContentTemplate="{DataTemplate local:MainPage}"/>
-        <ShellContent Title="About Page" ContentTemplate="{DataTemplate local:AboutPage}"/>
-        <ShellContent Title="Dog Page" ContentTemplate="{DataTemplate local:DogEntryPage}"/>
-        <ShellContent Title="Employee Page" ContentTemplate="{DataTemplate local:EmployeeEntryPage}"/>
-        <ShellContent Title="Food Page" ContentTemplate="{DataTemplate local:FoodEntryPage}"/>
-        <ShellContent Title="Guest Page" ContentTemplate="{DataTemplate local:GuestEntryPage}"/>
-        <ShellContent Title="Medical Record Page" ContentTemplate="{DataTemplate local:MedicalRecordEntryPage}"/>
-        <ShellContent Title="Medicine Page" ContentTemplate="{DataTemplate local:MedicineEntryPage}"/>
-        <ShellContent Title="Provider Page" ContentTemplate="{DataTemplate local:ProviderEntryPage}"/>
-        <ShellContent Title="Room Page" ContentTemplate="{DataTemplate local:RoomEntryPage}"/>
+    <ShellContent Title="Home Page" 
+                  ContentTemplate="{DataTemplate local:MainPage}" 
+                  Route="HomePage" 
+                  Icon="dashboard.png" />
 
+    <ShellContent Title="About Page" 
+                  ContentTemplate="{DataTemplate local:AboutPage}" 
+                  Route="AboutPage"
+                  Icon="about.png"/>
+    
+    <ShellContent Title="Dog Page" 
+                  ContentTemplate="{DataTemplate local:DogEntryPage}" 
+                  Route="DogPage"
+                  Icon="dog.png"/>
+    
+    <ShellContent Title="Employee Page" 
+                  ContentTemplate="{DataTemplate local:EmployeeEntryPage}" 
+                  Route="EmployeePage"
+                  Icon="employee.png"/>
+    
+    <ShellContent Title="Food Page" 
+                  ContentTemplate="{DataTemplate local:FoodEntryPage}" 
+                  Route="FoodPage"
+                  Icon="food.png"/>
+    
+    <ShellContent Title="Guest Page"
+                  ContentTemplate="{DataTemplate local:GuestEntryPage}" 
+                  Route="GuestPage"
+                  Icon="guest.png"/>
+    
+    <ShellContent Title="Medical Record Page" 
+                  ContentTemplate="{DataTemplate local:MedicalRecordEntryPage}" 
+                  Route="MedicalRecordPage"
+                  Icon="medical.png"/>
+    
+    <ShellContent Title="Medicine Page" 
+                  ContentTemplate="{DataTemplate local:MedicineEntryPage}" 
+                  Route="MedicinePage"
+                  Icon="medicine.png"/>
+    
+    <ShellContent Title="Provider Page" 
+                  ContentTemplate="{DataTemplate local:ProviderEntryPage}" 
+                  Route="ProviderPage"
+                  Icon="provider.png"/>
+    
+    <ShellContent Title="Room Page" 
+                  ContentTemplate="{DataTemplate local:RoomEntryPage}" 
+                  Route="RoomPage"
+                  Icon="room.png"/>
+
+    <ShellContent Title="Home Page" 
+                  ContentTemplate="{DataTemplate views:HomePage}" 
+                  Icon="room.png"/>
+    
     <Shell.FlyoutFooter>
         <StackLayout Padding="20">
-            <Button Text="Sign Out" Command="{Binding SignOutCommand}" />
+            <Button Text="Sign Out" Command="{Binding SignOutCommand}" BackgroundColor="Black" />
         </StackLayout>
     </Shell.FlyoutFooter>
 

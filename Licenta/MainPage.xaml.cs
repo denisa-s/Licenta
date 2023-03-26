@@ -1,24 +1,15 @@
 ﻿namespace Licenta;
+using Licenta.ViewModels;
+using Licenta.Views;
+using Licenta.Models;
+using Licenta.Services;
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
-
 	public MainPage()
 	{
 		InitializeComponent();
-	}
-
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		count++;
-
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
-
-		SemanticScreenReader.Announce(CounterBtn.Text);
-	}
+        Routing.RegisterRoute(nameof(PetDetailsView), typeof(PetDetailsView));
+    }   
 }
 

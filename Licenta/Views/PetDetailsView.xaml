@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Licenta.Views.PetDetailsView"
+             xmlns:viewmodels="clr-namespace:Licenta.ViewModels"
+             Shell.NavBarIsVisible="False"
+             x:DataType="viewmodels:PetDetailsViewModel"
+             Shell.TabBarIsVisible="False">
+    
+    <ScrollView>
+        <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto,Auto,Auto">
+            <!--  1. Image  -->
+            <Image
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Aspect="AspectFit"
+                HeightRequest="400"
+                Source="{Binding Pet.Image}" />
+            <!--  2. Pet Name  -->
+            <Frame
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Margin="20,-50,20,10"
+                BackgroundColor="White"
+                CornerRadius="40"
+                HasShadow="True"
+                HeightRequest="100">
+                <Grid
+                    Padding="20,5"
+                    HorizontalOptions="FillAndExpand"
+                    RowDefinitions="Auto,Auto"
+                    RowSpacing="5"
+                    VerticalOptions="Center">
+
+                    <Label
+                        Grid.Row="0"
+                        FontFamily="Bold"
+                        FontSize="30"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="{Binding Pet.Name}"
+                        VerticalOptions="CenterAndExpand" />
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Margin="5,-10,5,5"
+                        HorizontalTextAlignment="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    
+                                    <Span
+                                        FontAttributes="Bold"
+                                        FontSize="20"
+                                        Text=" Location: "
+                                        TextColor="Black" />
+                                    <Span
+                                        FontSize="Small"
+                                        Text="{Binding Pet.Location}"
+                                        TextColor="Black" />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </Grid>
+            </Frame>
+            <!--  3. General information  -->
+            <Frame
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                BackgroundColor="Red"
+                TranslationX="0"
+                TranslationY="0" />
+            <Frame
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                BackgroundColor="MediumVioletRed"
+                TranslationX="4"
+                TranslationY="4" />
+            <Frame
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                BackgroundColor="MediumVioletRed"
+                TranslationX="8"
+                TranslationY="8" />
+            <Frame
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                BackgroundColor="DarkRed"
+                TranslationX="12"
+                TranslationY="12" />
+            <Frame
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                BackgroundColor="DarkRed"
+                TranslationX="16"
+                TranslationY="16" />
+            <Grid
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Margin="30,30,10,15"
+                ColumnDefinitions="*,*,*"
+                ColumnSpacing="10"
+                RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto">
+
+                <Label Grid.Row="0" Grid.Column="0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                
+                                <Span
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    Text=" Pet"
+                                    TextColor="Black" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    FontSize="Large"
+                    LineBreakMode="NoWrap"
+                    Text="{Binding Pet.Type}"
+                    TextColor="White"
+                    TranslationX="10" />
+                <Label Grid.Row="0" Grid.Column="1">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                               
+                                <Span
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    Text=" Breed"
+                                    TextColor="Black" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    FontSize="Large"
+                    LineBreakMode="WordWrap"
+                    Text="{Binding Pet.Breed}"
+                    TextColor="White"
+                    TranslationX="20" />
+                <Label Grid.Row="0" Grid.Column="2">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                
+                                <Span
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    Text=" Gender"
+                                    TextColor="Black" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    FontSize="Large"
+                    LineBreakMode="WordWrap"
+                    Text="{Binding Pet.Gender}"
+                    TextColor="White"
+                    TranslationX="20" />
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    Margin="10"
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    VerticalOptions="CenterAndExpand">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                
+                                <Span
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    Text=" Social: "
+                                    TextColor="Black" />
+                                <Span
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    Text="{Binding Pet.Social}"
+                                    TextColor="White" />
+
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    Margin="10"
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    VerticalOptions="CenterAndExpand">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                
+                                <Span
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    Text=" Health: "
+                                    TextColor="Black" />
+                                <Span
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    Text="{Binding Pet.Health}"
+                                    TextColor="White" />
+
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+
+                </Label>
+                <Label
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    Margin="10"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                
+                                <Span
+                                    FontAttributes="Bold"
+                                    FontSize="16"
+                                    Text=" Meet: "
+                                    TextColor="Black" />
+                                <Span
+                                    FontAttributes="Italic"
+                                    FontSize="16"
+                                    Text="{Binding Pet.Meet}"
+                                    TextColor="White" />
+
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+
+
+                </Label>
+            </Grid>
+
+        </Grid>
+    </ScrollView>
+</ContentPage>
