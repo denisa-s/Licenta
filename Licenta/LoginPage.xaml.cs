@@ -1,10 +1,10 @@
-using Licenta.Models;
+﻿using Licenta.Models;
 
 namespace Licenta;
 
 public partial class LoginPage : ContentPage
 {
-	public LoginPage()
+    public LoginPage()
 	{
 		InitializeComponent();
         this.BindingContext = new LoginViewModel(this.Navigation);

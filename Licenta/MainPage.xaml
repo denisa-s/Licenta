@@ -3,35 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Licenta.MainPage"
              xmlns:models="clr-namespace:Licenta.Models"
-             xmlns:views="clr-namespace:Licenta.Views">
+             xmlns:views="clr-namespace:Licenta.Views"
+             Shell.NavBarIsVisible="False"
+             Shell.FlyoutItemIsVisible="False">
 
-    <Grid BackgroundColor="{StaticResource Secondary}" >
+    <Grid BackgroundColor="Crimson" >
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid Margin="0,32,0,0" Grid.Row="0">
+        <Grid Margin="0,44,0,0" Grid.Row="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             <Image
                 Grid.Row="0"
-            Source="bengaleza.jpg"
-            SemanticProperties.Description="Bengaleza"
-            HeightRequest="300"
-            HorizontalOptions="Center" />
+                Source="catndog.jpg"
+                SemanticProperties.Description="Cat and dog"
+                HeightRequest="300"
+                HorizontalOptions="Center" />
         </Grid>
 
-        <Ellipse HeightRequest="900" WidthRequest="700" Margin="0,0,0,-450" Fill="white" Grid.Row="1" HorizontalOptions="FillAndExpand" />
-
-        <HorizontalStackLayout Grid.Row="1" VerticalOptions="Start" TranslationY="40" HorizontalOptions="Center" >
-            <Ellipse HeightRequest="10" Margin="2" WidthRequest="10" Fill="orange"/>
-            <Ellipse HeightRequest="10" Margin="2" WidthRequest="10" Fill="{StaticResource Tertiary}"/>
-            <Ellipse HeightRequest="10" Margin="2" WidthRequest="10" Fill="{StaticResource Tertiary}"/>
-        </HorizontalStackLayout>
-        <Ellipse/>
-
+        <Ellipse HeightRequest="900" WidthRequest="800" Margin="0,0,0,-450" Fill="white" Grid.Row="1" HorizontalOptions="FillAndExpand" />
+     
         <Grid Margin="0,110,0,0" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
@@ -39,15 +34,14 @@
             </Grid.RowDefinitions>
 
             <VerticalStackLayout Background="White" Grid.Row="0">
-                <Label HorizontalOptions="Center" Margin="0,16,0,0" FontFamily="PoetsenOne" FontSize="26" Grid.Row="1" Text="Adopt a Friend" />
-                <Label HorizontalOptions="Center" Margin="0,8,0,0" FontFamily="RobotoRegular" FontSize="Default" TextColor="{StaticResource FontSecondary}" Text="Adopt the cutest pet as" />
-                <Label HorizontalOptions="Center" Margin="0" FontFamily="RobotoRegular" FontSize="Default" TextColor="{StaticResource FontSecondary}" Text="your playmate" />
+                <Label HorizontalOptions="Center" Margin="0,15,0,0" FontFamily="PoetsenOne" FontSize="26" Grid.Row="1" Text="Your next bestfriend is waiting for you!" />
             </VerticalStackLayout>
 
             <Button Grid.Row="1"
                 x:Name="GetStartedBtn"
                 Text="Get Started"
                 FontSize="26"
+                BackgroundColor="Black"
                 Margin="32,16,32,32"
                 HeightRequest="70"
                 Command="{Binding GetStartedCommand}"
@@ -57,7 +51,7 @@
                 SemanticProperties.Hint="Loads into the app"
                 HorizontalOptions="FillAndExpand" >
                 <Button.Shadow>
-                    <Shadow Brush="Gray"
+                    <Shadow Brush="black"
                     Offset="00,20"
                     Radius="20"
                     Opacity="0.7" />

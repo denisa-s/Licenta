@@ -6,22 +6,19 @@
              Title="LoginPage">
 
     <VerticalStackLayout 
-            Spacing="25" 
+            Spacing="20" 
             Padding="30,0" 
             VerticalOptions="Center">
 
-        <Image Source="icon.jpg" HeightRequest="150" WidthRequest="150" />
-
-        <VerticalStackLayout Spacing="5">
-            <Label Text="Welcome!" FontSize="28" TextColor="Gray" HorizontalTextAlignment="Center" />
-            <Label Text="Log in to your account" FontSize="18" TextColor="Gray" HorizontalTextAlignment="Center" />
-        </VerticalStackLayout>
-
+        <Image Source="icon.jpg" HeightRequest="180" WidthRequest="180" />
+        <Label Text="Welcome!" FontSize="28" TextColor="Black" HorizontalTextAlignment="Center" />
+        <Label Text="Log in to continue" FontSize="18" TextColor="Black" HorizontalTextAlignment="Center" />
+         
         <StackLayout Orientation="Horizontal">
             <Frame ZIndex="1" HasShadow="True" BorderColor="White" HeightRequest="56" WidthRequest="56" CornerRadius="28">
-                <Image Source="loginicon.png" HeightRequest="20" WidthRequest="20" />
+                <Image Source="user.png" HeightRequest="20" WidthRequest="20" />
             </Frame>
-            <Frame HeightRequest="45" Margin="-17,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
+            <Frame HeightRequest="45" Margin="-15,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
                 <Entry Text="{Binding UserName}" Margin="20,0,0,0" VerticalOptions="Center" Placeholder="Email" Keyboard="Email" />
             </Frame>
         </StackLayout>
@@ -30,15 +27,17 @@
             <Frame ZIndex="1" HasShadow="True" BorderColor="White" HeightRequest="56" WidthRequest="56" CornerRadius="28">
                 <Image Source="lock.png" HeightRequest="20" WidthRequest="20" />
             </Frame>
-            <Frame HeightRequest="45" Margin="-20,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
+            <Frame HeightRequest="45" Margin="-15,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
                 <Entry Text="{Binding Password}" Margin="20,0,0,0" VerticalOptions="Center" Placeholder="Password" IsPassword="True" />
             </Frame>
         </StackLayout>
 
-        <StackLayout Spacing="20">
-            <Button Text="Sign in" Command="{Binding LoginCommand}" Clicked="OnLoginButtonClicked" TextColor="White" BackgroundColor="DarkRed" HeightRequest="40" WidthRequest="100"/>
-  
-            <Button Text="Sign up" Command="{Binding RegisterCommand}" TextColor="White" BackgroundColor="DarkRed" HeightRequest="40" WidthRequest="100" />
+        <StackLayout Spacing="30">
+            <Button Text="Log in" Command="{Binding LoginCommand}" Clicked="OnLoginButtonClicked" TextColor="White" BackgroundColor="DarkRed" HeightRequest="40" WidthRequest="100"/>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10">
+                <Label Text="Don't have an account?" Padding="30" FontSize="18" TextColor="Black" HorizontalTextAlignment="Center" />
+                <Button Text="Register here" Command="{Binding RegisterCommand}" TextColor="White" BackgroundColor="DarkRed" HeightRequest="40" WidthRequest="120" />
+            </StackLayout>
         </StackLayout>
 
     </VerticalStackLayout>

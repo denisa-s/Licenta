@@ -15,7 +15,7 @@ namespace Licenta.Models
         public string Password { get => _password; set => _password = value; }
 
         public ICommand RegisterCommand { private set; get; }
-
+        
         public ICommand LoginCommand { private set; get; }
 
         private INavigation Navigation;
@@ -26,7 +26,7 @@ namespace Licenta.Models
             LoginCommand = new Command(OnLoginCommand);
             Navigation = navigation;
         }
-
+       
         private async void OnLoginCommand(object obj)
         {
             var loginData = await App.Database.GetLoginDataAsync(UserName);
@@ -36,16 +36,34 @@ namespace Licenta.Models
                 {
                     //await Navigation.PushModalAsync(new AppShell());
                     await App.Current.MainPage.DisplayAlert("Success", "Utilizator logat", "Ok");
+                    await Shell.Current.GoToAsync($"//{nameof(MainPage)}");
                 }
                 else
                 {
                     //await Navigation.PushModalAsync(new LoginPage());
-                    await App.Current.MainPage.DisplayAlert("Failure", "Parola gresita. Incearca din nou", "Ok");
+                    bool answer = await App.Current.MainPage.DisplayAlert("Failure", "Parola gresita. Incearca din nou", "Ok", "Resetare Parola");
+                    if (answer)
+                    {
+                        await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
+                    }
+                    else
+                    {
+                        await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
+                    }
+                   // await App.Current.MainPage.DisplayAlert("Failure", "Parola gresita. Incearca din nou", "Ok");
                 }
             }
             else
             {
-                await App.Current.MainPage.DisplayAlert("Failure", "Nume de utilizator invalid. Dacă nu ai un cont, înregistrează-te", "Ok");
+                bool answer = await App.Current.MainPage.DisplayAlert("Failure", "Nume de utilizator invalid. Dacă nu ai un cont, înregistrează-te", "Ok", "Incearca din nou");
+                if (answer)
+                {
+                    await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
+                }
+                else
+                {
+                    await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
+                }
             }
         }
 
