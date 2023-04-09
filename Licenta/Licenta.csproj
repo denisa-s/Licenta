@@ -112,6 +112,12 @@
 	  <MauiXaml Update="MedicinePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="PersonalInfo.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="PetProfile.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="ProviderEntryPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

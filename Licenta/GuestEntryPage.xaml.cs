@@ -4,15 +4,19 @@ namespace Licenta;
 
 public partial class GuestEntryPage : ContentPage
 {
-	public GuestEntryPage()
+    /*private string _userName, _password;
+
+    public string UserName { get => _userName; set => _userName = value; }
+    public string Password { get => _password; set => _password = value; }*/
+    public GuestEntryPage()
 	{
 		InitializeComponent();
 	}
-    protected override async void OnAppearing()
+    /*protected override async void OnAppearing()
     {
         base.OnAppearing();
         listView.ItemsSource = await App.Database.GetGuestsAsync();
-    }
+    }*/
     async void OnGuestAddedClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new GuestPage
@@ -30,4 +34,32 @@ public partial class GuestEntryPage : ContentPage
             });
         }
     }
+    async void OnPetProfileClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new PetProfile
+        {
+            BindingContext = new Dog()
+        });
+    }
+    async void OnPersonalInfoClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new PersonalInfo
+        {
+            BindingContext = new Guest()
+        });
+
+    }
+    /*async void OnEditEmailClicked(object sender, EventArgs e)
+    {
+
+        var loginData = await App.Database.GetLoginDataAsync(UserName);
+        if (loginData != null)
+        {
+            if (string.Equals(loginData.UserName, UserName))
+            {
+                
+            }
+            
+        }
+    }*/
 }

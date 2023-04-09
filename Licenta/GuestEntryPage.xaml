@@ -2,8 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Licenta.GuestEntryPage"
-             Title="GuestEntryPage">
-    <ContentPage.ToolbarItems>
+             Title="Profile"
+             Shell.NavBarIsVisible="False"
+             Shell.FlyoutItemIsVisible="False">
+    <!---<ContentPage.ToolbarItems>
         <ToolbarItem Text="Add a guest" Clicked="OnGuestAddedClicked" />
     </ContentPage.ToolbarItems>
     <ListView x:Name="listView" Margin="30" ItemSelected="OnListViewItemSelected" HorizontalScrollBarVisibility="Always">
@@ -27,5 +29,159 @@
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
-    </ListView>
+    </ListView>-->
+    <ScrollView VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
+
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+
+            <!--Profile BG-->
+
+            <Label Grid.Row="0" HeightRequest="100"
+                    HorizontalOptions="Center"  Padding="20" FontAttributes="Bold" />
+
+            <!--Profile Circle-->
+
+            <Border Grid.Row="1" 
+                        Stroke="white"
+                        StrokeThickness="2"
+                        Margin="17,-50,0,0"
+                        HorizontalOptions="Center"
+                        StrokeShape="Ellipse"
+                        BackgroundColor="White">
+                <Image 
+                    Source="profil.jpg" 
+                    HeightRequest="100"
+                    WidthRequest="100"/>
+            </Border>
+
+            <!--Profile name & description
+
+            <Label Grid.Row="2"  
+                       Text="Deni" 
+                       FontAttributes="Bold" 
+                       TextColor="Black" 
+                       HorizontalTextAlignment="Start"  
+                       FontSize="17"
+                       Padding="17,0"/>
+            <Grid Grid.Row="3" ColumnDefinitions="Auto,Auto,Auto" VerticalOptions="Center" HorizontalOptions="Start" Padding="17,0"
+                      Margin="0,4,0,0">
+                <Label Grid.Column="0" Text="Student" FontSize="13" TextColor="Black"/>
+                <Label Grid.Column="1" Text="•" FontSize="13" TextColor="Black"/>
+                <Label Grid.Column="2" Text="UBB" FontSize="13" TextColor="Black"/>
+
+            </Grid>-->
+
+            <!--Navigation Menu-->
+
+            <Border Grid.Row="5"
+                        StrokeThickness="0"
+                        Padding="8,0"
+                        HeightRequest="89"
+                        Margin="17,20,17,0"
+                        HorizontalOptions="Fill">
+
+                <Grid RowDefinitions="*,*">
+
+                    <Grid Grid.Row="0" ColumnDefinitions="*,*,*">
+
+                        <Button Grid.Column="0" Clicked="OnPersonalInfoClicked" Text="Personal Info" FontSize="13" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center"
+                                    Opacity="0.85"
+                                    Background="Transparent"
+                                    BorderWidth="0"
+                                    Padding="0,0"/>
+
+                        <Button Grid.Column="1" Text="Login and Security" FontSize="13" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"
+                                    Opacity="0.85"
+                                    Background="Transparent"
+                                    BorderWidth="0"
+                                    Padding="0,0"/>
+
+                        <Button Grid.Column="2" Clicked="OnPetProfileClicked" Text="Pet Info" FontSize="13" TextColor="Black" HorizontalOptions="End" VerticalOptions="Center"
+                                    Opacity="0.85"
+                                    Background="Transparent"
+                                    BorderWidth="0"
+                                    Padding="0,0"/>
+
+                    </Grid>
+
+                    
+
+                    <Border Grid.Row="1"
+                                Margin="0,0,0,42"
+                                BackgroundColor="DarkRed"
+                                StrokeThickness="0"
+                                HeightRequest="1.5"
+                                HorizontalOptions="Fill"
+                                />
+
+                </Grid>
+
+
+            </Border>
+
+
+
+            <!--Login Form-->
+
+            <Border Grid.Row="6"
+                        StrokeThickness="0"
+                        Padding="8,0"
+                        HeightRequest="89"
+                        Margin="17,0,17,0"
+                        HorizontalOptions="Fill">
+
+                <Grid Grid.Row="0" RowDefinitions="*,*">
+
+                    <Grid Grid.Row="0" ColumnDefinitions="*,*">
+
+                        <Label Grid.Column="0" Text="Email" FontSize="13" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start"
+                                   Opacity="0.85" FontAttributes="Bold"/>
+
+                        <Button Grid.Column="1" BackgroundColor="Crimson" Text="Edit" FontSize="13" TextColor="Black" HorizontalOptions="End" 
+                                    VerticalOptions="Start"
+                                    Padding="12,2,12,2"/>
+
+                    </Grid>
+                    <Entry Grid.Row="1" x:Name="Email"
+                            Placeholder="exemplu@yahoo.com"
+                            HeightRequest="0" 
+                            Margin="-10,-55,0,0" 
+                            Keyboard="Email"/>
+
+                </Grid>
+
+
+            </Border>
+
+            <Border Grid.Row="7"
+                        StrokeThickness="0"
+                        Padding="8,0"
+                        HeightRequest="89"
+                        HorizontalOptions="Fill"
+                        Margin="17,-10,17,0">
+
+                <Grid Grid.Row="0" RowDefinitions="*,*">
+
+                    <Grid Grid.Row="0" ColumnDefinitions="*,*">
+
+                        <Label Grid.Column="0" Text="Password" FontSize="13" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start"
+                                       Opacity="0.85" FontAttributes="Bold"/>
+
+                        <Button Grid.Column="1" BackgroundColor="Crimson" Text="Edit" FontSize="13" TextColor="Black" HorizontalOptions="End" 
+                                        VerticalOptions="Start"
+                                        Padding="12,2,12,2"/>
+
+                    </Grid>
+                    <Entry Grid.Row="1" x:Name="Password"
+                               Placeholder="********"
+                               HeightRequest="0" 
+                               Margin="-10,-55,0,0" 
+                               Keyboard="Text"
+                               IsPassword="True"
+                    />
+                </Grid>
+            </Border>
+        </Grid>
+    </ScrollView>
+
 </ContentPage>

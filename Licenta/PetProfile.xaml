@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Licenta.PetProfile"
+             Title="PetProfile"
+             Shell.NavBarIsVisible="False"
+             Shell.FlyoutItemIsVisible="False">
+    <ScrollView VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">
+
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+
+            <!--Profile BG-->
+
+            <Label Grid.Row="0" Text="Account"  HeightRequest="100"
+                    HorizontalOptions="Center"  Padding="20" FontAttributes="Bold" />
+
+            <!--Profile Circle-->
+
+            <Border Grid.Row="1" 
+                        Stroke="crimson"
+                        StrokeThickness="2"
+                        Margin="17,-50,0,0"
+                        HorizontalOptions="Center"
+                        StrokeShape="Ellipse"
+                        BackgroundColor="White">
+                <Image 
+                    Source="profil.jpg" 
+                    HeightRequest="100"
+                    WidthRequest="100"/>
+            </Border>
+
+            <!--Profile name & description-->
+
+            <Label Grid.Row="2"  
+                       Text="Deni" 
+                       FontAttributes="Bold" 
+                       TextColor="Black" 
+                       HorizontalTextAlignment="Start"  
+                       FontSize="17"
+                       Padding="17,0"/>
+            <Grid Grid.Row="3" ColumnDefinitions="Auto,Auto,Auto" VerticalOptions="Center" HorizontalOptions="Start" Padding="17,0"
+                      Margin="0,4,0,0">
+                <Label Grid.Column="0" Text="Student" FontSize="13" TextColor="Black"/>
+                <Label Grid.Column="1" Text="•" FontSize="13" TextColor="Black"/>
+                <Label Grid.Column="2" Text="UBB" FontSize="13" TextColor="Black"/>
+
+            </Grid>
+
+            <!--Navigation Menu-->
+
+            <Border Grid.Row="4"
+                        StrokeThickness="0"
+                        Padding="8,0"
+                        HeightRequest="89"
+                        Margin="17,20,17,0"
+                        HorizontalOptions="Fill">
+
+                <Grid RowDefinitions="*,*">
+
+                    <Grid Grid.Row="0" ColumnDefinitions="*,*,*">
+
+                        <Button Grid.Column="0" Clicked="OnPersonalInfoClicked" Text="Personal Info" FontSize="13" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Center"
+                                    Opacity="0.85"
+                                    Background="Transparent"
+                                    BorderWidth="0"
+                                    Padding="0,0"/>
+
+                        <Button Grid.Column="1" Clicked="OnLoginnSecurityClicked" Text="Login and Security" FontSize="13" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"
+                                    Opacity="0.85"
+                                    Background="Transparent"
+                                    BorderWidth="0"
+                                    Padding="0,0"/>
+
+                        <Button Grid.Column="2" Text="Pet profile Info" FontSize="13" TextColor="Black" HorizontalOptions="End" VerticalOptions="Center"
+                                    Opacity="0.85"
+                                    Background="Transparent"
+                                    BorderWidth="0"
+                                    Padding="0,0"/>
+
+                    </Grid>
+
+                    <Line Grid.Row="1"
+                              Stroke="#6BB16B"
+                              X2="115"
+                              StrokeThickness="3"
+                              Margin="0,-2,0,0"
+                              HorizontalOptions="Center"
+                              StrokeLineCap="Flat"/>
+
+                    <Border Grid.Row="1"
+                                Margin="0,0,0,42"
+                                BackgroundColor="DarkRed"
+                                StrokeThickness="0"
+                                HeightRequest="1.5"
+                                HorizontalOptions="Fill"
+                                />
+
+                </Grid>
+
+
+            </Border>
+
+
+
+            <!--Login Form-->
+
+            <Border Grid.Row="5"
+                        StrokeThickness="0"
+                        Padding="8,0"
+                        HeightRequest="89"
+                        Margin="17,0,17,0"
+                        HorizontalOptions="Fill">
+
+                <Grid Grid.Row="0" RowDefinitions="*,*">
+
+                    <Grid Grid.Row="0" ColumnDefinitions="*,*">
+
+                        <Label Grid.Column="0" Text="ID" FontSize="13" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start"
+                                   Opacity="0.85" FontAttributes="Bold"/>
+
+                        <Button Grid.Column="1" BackgroundColor="#CBDFE8" Text="Edit" FontSize="13" TextColor="#67C6F2" HorizontalOptions="End" 
+                                    VerticalOptions="Start"
+                                    Padding="12,2,12,2"/>
+
+                    </Grid>
+                    <Entry Grid.Row="1" x:Name="CNP"
+                            HeightRequest="0" 
+                            Margin="-10,-55,0,0" 
+                            Keyboard="Text"/>
+                </Grid>
+
+            </Border>
+
+            <Border Grid.Row="6"
+                        StrokeThickness="0"
+                        Padding="8,0"
+                        HeightRequest="89"
+                        HorizontalOptions="Fill"
+                        Margin="17,-10,17,0">
+
+                <Grid Grid.Row="0" RowDefinitions="*,*">
+
+                    <Grid Grid.Row="0" ColumnDefinitions="*,*">
+
+                        <Label Grid.Column="0" Text="First Name" FontSize="13" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start"
+                                       Opacity="0.85" FontAttributes="Bold"/>
+
+                        <Button Grid.Column="1" BackgroundColor="#CBDFE8" Text="Edit" FontSize="13" TextColor="#67C6F2" HorizontalOptions="End" 
+                                        VerticalOptions="Start"
+                                        Padding="12,2,12,2"/>
+
+                    </Grid>
+                    <Entry Grid.Row="1" x:Name="Fname"
+                               HeightRequest="0" 
+                               Margin="-10,-55,0,0" 
+                               Keyboard="Text"
+                    />
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="7"
+                        StrokeThickness="0"
+                        Padding="8,0"
+                        HeightRequest="89"
+                        HorizontalOptions="Fill"
+                        Margin="17,-10,17,0">
+
+                <Grid Grid.Row="0" RowDefinitions="*,*">
+
+                    <Grid Grid.Row="0" ColumnDefinitions="*,*">
+
+                        <Label Grid.Column="0" Text="Last Name" FontSize="13" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start"
+                                       Opacity="0.85" FontAttributes="Bold"/>
+
+                        <Button Grid.Column="1" BackgroundColor="#CBDFE8" Text="Edit" FontSize="13" TextColor="#67C6F2" HorizontalOptions="End" 
+                                        VerticalOptions="Start"
+                                        Padding="12,2,12,2"/>
+
+                    </Grid>
+                    <Entry Grid.Row="1" x:Name="Lname"
+                               HeightRequest="0" 
+                               Margin="-10,-55,0,0" 
+                               Keyboard="Text"
+                    />
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="8"
+                        StrokeThickness="0"
+                        Padding="8,0"
+                        HeightRequest="89"
+                        HorizontalOptions="Fill"
+                        Margin="17,-10,17,0">
+
+                <Grid Grid.Row="0" RowDefinitions="*,*">
+
+                    <Grid Grid.Row="0" ColumnDefinitions="*,*">
+
+                        <Label Grid.Column="0" Text="Phone number" FontSize="13" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start"
+                                       Opacity="0.85" FontAttributes="Bold"/>
+
+                        <Button Grid.Column="1" BackgroundColor="#CBDFE8" Text="Edit" FontSize="13" TextColor="#67C6F2" HorizontalOptions="End" 
+                                        VerticalOptions="Start"
+                                        Padding="12,2,12,2"/>
+
+                    </Grid>
+                    <Entry Grid.Row="1" x:Name="PhoneNumber"
+                               HeightRequest="0" 
+                               Margin="-10,-55,0,0" 
+                               Keyboard="Text"
+                    />
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="9"
+                        StrokeThickness="0"
+                        Padding="8,0"
+                        HeightRequest="89"
+                        HorizontalOptions="Fill"
+                        Margin="17,-10,17,0">
+
+                <Grid Grid.Row="0" RowDefinitions="*,*">
+
+                    <Grid Grid.Row="0" ColumnDefinitions="*,*">
+
+                        <Label Grid.Column="0" Text="Date of birth" FontSize="13" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start"
+                                       Opacity="0.85" FontAttributes="Bold"/>
+
+                        <Button Grid.Column="1" BackgroundColor="#CBDFE8" Text="Edit" FontSize="13" TextColor="#67C6F2" HorizontalOptions="End" 
+                                        VerticalOptions="Start"
+                                        Padding="12,2,12,2"/>
+
+                    </Grid>
+                    <Entry Grid.Row="1" x:Name="BirthDate"
+                               HeightRequest="0" 
+                               Margin="-10,-55,0,0" 
+                               Keyboard="Default"
+                    />
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="10"
+                        StrokeThickness="0"
+                        Padding="8,0"
+                        HeightRequest="89"
+                        HorizontalOptions="Fill"
+                        Margin="17,-10,17,0">
+
+                <Grid Grid.Row="0" RowDefinitions="*,*">
+
+                    <Grid Grid.Row="0" ColumnDefinitions="*,*">
+
+                        <Label Grid.Column="0" Text="Street" FontSize="13" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start"
+                                       Opacity="0.85" FontAttributes="Bold"/>
+
+                        <Button Grid.Column="1" BackgroundColor="#CBDFE8" Text="Edit" FontSize="13" TextColor="#67C6F2" HorizontalOptions="End" 
+                                        VerticalOptions="Start"
+                                        Padding="12,2,12,2"/>
+
+                    </Grid>
+                    <Entry Grid.Row="1" x:Name="Street"
+                               HeightRequest="0" 
+                               Margin="-10,-55,0,0" 
+                               Keyboard="Text"
+                    />
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="11"
+                        StrokeThickness="0"
+                        Padding="8,0"
+                        HeightRequest="89"
+                        HorizontalOptions="Fill"
+                        Margin="17,-10,17,0">
+
+                <Grid Grid.Row="0" RowDefinitions="*,*">
+
+                    <Grid Grid.Row="0" ColumnDefinitions="*,*">
+
+                        <Label Grid.Column="0" Text="Number" FontSize="13" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start"
+                                       Opacity="0.85" FontAttributes="Bold"/>
+
+                        <Button Grid.Column="1" BackgroundColor="#CBDFE8" Text="Edit" FontSize="13" TextColor="#67C6F2" HorizontalOptions="End" 
+                                        VerticalOptions="Start"
+                                        Padding="12,2,12,2"/>
+
+                    </Grid>
+                    <Entry Grid.Row="1" x:Name="Number"
+                               HeightRequest="0" 
+                               Margin="-10,-55,0,0" 
+                               Keyboard="Default"
+                    />
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="12"
+                        StrokeThickness="0"
+                        Padding="8,0"
+                        HeightRequest="89"
+                        HorizontalOptions="Fill"
+                        Margin="17,-10,17,0">
+
+                <Grid Grid.Row="0" RowDefinitions="*,*">
+
+                    <Grid Grid.Row="0" ColumnDefinitions="*,*">
+
+                        <Label Grid.Column="0" Text="Marital status" FontSize="13" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start"
+                                       Opacity="0.85" FontAttributes="Bold"/>
+
+                        <Button Grid.Column="1" BackgroundColor="#CBDFE8" Text="Edit" FontSize="13" TextColor="#67C6F2" HorizontalOptions="End" 
+                                        VerticalOptions="Start"
+                                        Padding="12,2,12,2"/>
+
+                    </Grid>
+                    <Entry Grid.Row="1" x:Name="MaritalStatus"
+                               HeightRequest="0" 
+                               Margin="-10,-55,0,0" 
+                               Keyboard="Default"
+                    />
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="13"
+                        StrokeThickness="0"
+                        Padding="8,0"
+                        HeightRequest="89"
+                        HorizontalOptions="Fill"
+                        Margin="17,-10,17,0">
+
+                <Grid Grid.Row="0" RowDefinitions="*,*">
+
+                    <Grid Grid.Row="0" ColumnDefinitions="*,*">
+
+                        <Label Grid.Column="0" Text="Housing type" FontSize="13" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start"
+                                       Opacity="0.85" FontAttributes="Bold"/>
+
+                        <Button Grid.Column="1" BackgroundColor="#CBDFE8" Text="Edit" FontSize="13" TextColor="#67C6F2" HorizontalOptions="End" 
+                                        VerticalOptions="Start"
+                                        Padding="12,2,12,2"/>
+
+                    </Grid>
+                    <Entry Grid.Row="1" x:Name="HousingType"
+                               HeightRequest="0" 
+                               Margin="-10,-55,0,0" 
+                               Keyboard="Default"
+                    />
+                </Grid>
+            </Border>
+
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

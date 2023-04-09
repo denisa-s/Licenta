@@ -40,7 +40,7 @@
                   Route="FoodPage"
                   Icon="food.png"/>
     
-    <ShellContent Title="Guest Page"
+    <ShellContent Title="Profile"
                   ContentTemplate="{DataTemplate local:GuestEntryPage}" 
                   Route="GuestPage"
                   Icon="guest.png"/>
