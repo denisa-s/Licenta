@@ -11,7 +11,7 @@
             VerticalOptions="Center">
 
         <Image Source="icon.jpg" HeightRequest="180" WidthRequest="180" />
-        <Label Text="Welcome!" FontSize="28" TextColor="Black" HorizontalTextAlignment="Center" />
+        <Label Text="Welcome back!" FontSize="28" TextColor="Black" HorizontalTextAlignment="Center" />
         <Label Text="Log in to continue" FontSize="18" TextColor="Black" HorizontalTextAlignment="Center" />
          
         <StackLayout Orientation="Horizontal">
@@ -19,7 +19,7 @@
                 <Image Source="user.png" HeightRequest="20" WidthRequest="20" />
             </Frame>
             <Frame HeightRequest="45" Margin="-15,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
-                <Entry Text="{Binding UserName}" Margin="20,0,0,0" VerticalOptions="Center" Placeholder="Email" Keyboard="Email" />
+                <Entry x:Name="emailEntry" Text="{Binding UserName}" Margin="20,0,0,0" VerticalOptions="Center" Placeholder="Email" Keyboard="Email" />
             </Frame>
         </StackLayout>
 
@@ -28,7 +28,7 @@
                 <Image Source="lock.png" HeightRequest="20" WidthRequest="20" />
             </Frame>
             <Frame HeightRequest="45" Margin="-15,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
-                <Entry Text="{Binding Password}" Margin="20,0,0,0" VerticalOptions="Center" Placeholder="Password" IsPassword="True" />
+                <Entry x:Name="passEntry" Text="{Binding Password}" Margin="20,0,0,0" VerticalOptions="Center" Placeholder="Password" IsPassword="True" />
             </Frame>
         </StackLayout>
 
@@ -36,7 +36,7 @@
             <Button Text="Log in" Command="{Binding LoginCommand}" Clicked="OnLoginButtonClicked" TextColor="White" BackgroundColor="DarkRed" HeightRequest="40" WidthRequest="100"/>
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10">
                 <Label Text="Don't have an account?" Padding="30" FontSize="18" TextColor="Black" HorizontalTextAlignment="Center" />
-                <Button Text="Register here" Command="{Binding RegisterCommand}" TextColor="White" BackgroundColor="DarkRed" HeightRequest="40" WidthRequest="120" />
+                <Button Text="Register here" Clicked="OnRegisterButtonClicked" TextColor="White" BackgroundColor="DarkRed" HeightRequest="40" WidthRequest="120" />
             </StackLayout>
         </StackLayout>
 
