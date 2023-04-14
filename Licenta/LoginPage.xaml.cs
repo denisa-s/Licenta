@@ -5,8 +5,8 @@ namespace Licenta;
 public partial class LoginPage : ContentPage
 {
     public LoginPage()
-	{
-		InitializeComponent();
+    {
+        InitializeComponent();
         this.BindingContext = new LoginViewModel(this.Navigation);
     }
     private void OnLoginButtonClicked(object sender, EventArgs e)

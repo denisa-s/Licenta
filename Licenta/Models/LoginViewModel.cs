@@ -11,7 +11,7 @@ namespace Licenta.Models
     public class LoginViewModel
     {
         private string _userName, _password;
-
+      
         public string UserName { get => _userName; set => _userName = value; }
         public string Password { get => _password; set => _password = value; }
 
@@ -53,13 +53,13 @@ namespace Licenta.Models
                 if (VerifyPassword(Password, loginData.Password))
                 {
                     //await Navigation.PushModalAsync(new AppShell());
-                    await App.Current.MainPage.DisplayAlert("Success", "Utilizator logat", "Ok");
+                    await App.Current.MainPage.DisplayAlert("Success", "You are logged in", "Ok");
                     await Shell.Current.GoToAsync($"//{nameof(MainPage)}");
                 }
                 else
                 {
                     //await Navigation.PushModalAsync(new LoginPage());
-                    bool answer = await App.Current.MainPage.DisplayAlert("Failure", "Parola gresita. Incearca din nou", "Ok", "Resetare Parola");
+                    bool answer = await App.Current.MainPage.DisplayAlert("Failure", "Wrong password. Try again", "Try again", "Forgot Password");
                     if (answer)
                     {
                         await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
@@ -73,7 +73,7 @@ namespace Licenta.Models
             }
             else
             {
-                bool answer = await App.Current.MainPage.DisplayAlert("Failure", "Nume de utilizator invalid. Dacă nu ai un cont, înregistrează-te", "Ok", "Incearca din nou");
+                bool answer = await App.Current.MainPage.DisplayAlert("Failure", "Invalid username. If you don't have an account, register", "Try again", "Register");
                 if (answer)
                 {
                     await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");

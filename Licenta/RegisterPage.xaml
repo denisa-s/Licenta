@@ -13,11 +13,11 @@
 
         <Image Source="icon.jpg" HeightRequest="100" WidthRequest="100" />
         <Label Text="Welcome!" FontSize="20" TextColor="Black" HorizontalTextAlignment="Center" />
-        <Label Text="Create an account" FontSize="18" TextColor="Black" HorizontalTextAlignment="Center" />
+        <Label Text="Create an account" FontSize="17" TextColor="Black" HorizontalTextAlignment="Center" />
 
         <StackLayout Orientation="Horizontal">
             <Frame ZIndex="1" HasShadow="True" BorderColor="White" HeightRequest="56" WidthRequest="56" CornerRadius="28">
-                <Image Source="user.png" HeightRequest="20" WidthRequest="20" />
+                <Image Source="name.png" HeightRequest="20" WidthRequest="20" />
             </Frame>
             <Frame HeightRequest="45" Margin="-15,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
                 <Entry x:Name="fnameEntry" Text="{Binding FirstName}" Margin="20,0,0,0" VerticalOptions="Center" Placeholder=" First Name" Keyboard="Text" />
@@ -26,7 +26,7 @@
 
         <StackLayout Orientation="Horizontal">
             <Frame ZIndex="1" HasShadow="True" BorderColor="White" HeightRequest="56" WidthRequest="56" CornerRadius="28">
-                <Image Source="user.png" HeightRequest="20" WidthRequest="20" />
+                <Image Source="name.png" HeightRequest="20" WidthRequest="20" />
             </Frame>
             <Frame HeightRequest="45" Margin="-15,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
                 <Entry x:Name="lnameEntry" Text="{Binding LastName}" Margin="20,0,0,0" VerticalOptions="Center" Placeholder="Last Name" Keyboard="Text" />
@@ -35,7 +35,7 @@
 
         <StackLayout Orientation="Horizontal">
             <Frame ZIndex="1" HasShadow="True" BorderColor="White" HeightRequest="56" WidthRequest="56" CornerRadius="28">
-                <Image Source="user.png" HeightRequest="20" WidthRequest="20" />
+                <Image Source="phone.png" HeightRequest="20" WidthRequest="20" />
             </Frame>
             <Frame HeightRequest="45" Margin="-15,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
                 <Entry x:Name="phoneEntry" Text="{Binding PhoneNumber}" Margin="20,0,0,0" VerticalOptions="Center" Placeholder="Phone number" Keyboard="Telephone" />
@@ -44,7 +44,7 @@
 
         <StackLayout Orientation="Horizontal">
             <Frame ZIndex="1" HasShadow="True" BorderColor="White" HeightRequest="56" WidthRequest="56" CornerRadius="28">
-                <Image Source="user.png" HeightRequest="20" WidthRequest="20" />
+                <Image Source="at.png" HeightRequest="20" WidthRequest="20" />
             </Frame>
             <Frame HeightRequest="45" Margin="-15,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
                 <Entry x:Name="emailEntry" Text="{Binding UserName}" Margin="20,0,0,0" VerticalOptions="Center" Placeholder="Email" Keyboard="Email" />
