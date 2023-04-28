@@ -11,6 +11,8 @@ public partial class LoginPage : ContentPage
     }
     private void OnLoginButtonClicked(object sender, EventArgs e)
     {
+        LoginModel globalObject = App.GlobalObject;
+        globalObject.UserName = emailEntry.Text;
         Navigation.PushAsync(new MainPage());
     }
     private void OnRegisterButtonClicked(object sender, EventArgs e)

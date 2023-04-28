@@ -31,6 +31,22 @@ namespace Licenta.Data
             _database.CreateTableAsync<ListSize>().Wait();
         }
 
+        public Task<int> SaveUserDataAsync(LoginModel loginData)
+        {
+            return _database.UpdateAsync(loginData);
+        }
+
+        // pt pagina de profil
+        public Task<LoginModel> RetrieveDataFromDatabase(string identifier)
+        {
+            var result = _database.Table<LoginModel>().Where(x => x.UserName == identifier).FirstOrDefaultAsync();
+            if (result != null)
+            {
+                return result;
+            }
+            return null;
+        }
+    
         //Pt logare
         public Task<LoginModel> GetLoginDataAsync(string userName)
         {

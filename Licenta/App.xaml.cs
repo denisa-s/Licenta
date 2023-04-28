@@ -2,8 +2,10 @@
 using System;
 using Licenta.Data;
 using System.IO;
+using Licenta.Models;
 public partial class App : Application
 {
+    public static LoginModel GlobalObject { get; set; }
     static AdoptionDatabase database;
     public static AdoptionDatabase Database
     {
@@ -24,4 +26,12 @@ public partial class App : Application
         
 		MainPage = new AppShell();
 	}
+    protected override void OnStart()
+    {
+        // Initialize the global object
+        LoginModel globalObject = new LoginModel();
+
+        // Store the global object in the static property
+        GlobalObject = globalObject;
+    }
 }

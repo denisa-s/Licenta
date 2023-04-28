@@ -24,17 +24,12 @@
                   ContentTemplate="{DataTemplate local:AboutPage}" 
                   Route="AboutPage"
                   Icon="about.png"/>
-    
+
     <ShellContent Title="Dog Page" 
                   ContentTemplate="{DataTemplate local:DogEntryPage}" 
                   Route="DogPage"
                   Icon="dog.png"/>
-    
-    <ShellContent Title="Employee Page" 
-                  ContentTemplate="{DataTemplate local:EmployeeEntryPage}" 
-                  Route="EmployeePage"
-                  Icon="employee.png"/>
-    
+
     <ShellContent Title="Food Page" 
                   ContentTemplate="{DataTemplate local:FoodEntryPage}" 
                   Route="FoodPage"

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Licenta.PersonalInfo"
-             Title="PersonalInfo"
+             x:Class="Licenta.EditProfilePage"
+             Title="EditProfilePage"
              Shell.NavBarIsVisible="False"
              Shell.FlyoutItemIsVisible="False">
     
@@ -94,22 +94,21 @@
                 Grid.Row="2"
                 StrokeThickness="0"
                 Padding="8,0"
-                HeightRequest="70"
+                HeightRequest="89"
                 HorizontalOptions="Fill"
                 Margin="17,-10,17,0">
 
                 <Grid Grid.Row="0" RowDefinitions="*,*">
 
                     <Grid Grid.Row="0" ColumnDefinitions="*,*">
-
-                        <Label Grid.Column="0" Text="First Name" FontSize="13" TextColor="DarkRed" HorizontalOptions="Start" VerticalOptions="Start"
+                        <Label Grid.Column="0" Text="First Name" FontSize="13" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start"
                                        Opacity="0.85" FontAttributes="Bold"
                         />
-                        <Button Grid.Column="1" Clicked="OnEditProfileClicked" BackgroundColor="DarkRed" Text="Edit" FontSize="13" TextColor="White" HorizontalOptions="End" 
+                        <Button Grid.Column="1" Clicked="OnSaveProfileClicked" BackgroundColor="DarkRed" Text="Save Profile" FontSize="13" TextColor="White" HorizontalOptions="End" 
                                     VerticalOptions="Start" Padding="12,2,12,2"
                         />
                     </Grid>
-                    <Label Grid.Row="1" FontSize="15"  x:Name="firstNameLabel" Text="{Binding FirstName}"/>
+                    <Entry Grid.Row="1" x:Name="firstNameEntry" HeightRequest="0" Margin="-10,-55,0,0" Keyboard="Text"/>
                 </Grid>
             </Border>
 
@@ -117,7 +116,7 @@
                 Grid.Row="3"
                 StrokeThickness="0"
                 Padding="8,0"
-                HeightRequest="70"
+                HeightRequest="89"
                 HorizontalOptions="Fill"
                 Margin="17,-10,17,0">
 
@@ -125,11 +124,11 @@
 
                     <Grid Grid.Row="0" ColumnDefinitions="*,*">
 
-                        <Label Grid.Column="0" Text="Last Name" FontSize="13" TextColor="DarkRed" HorizontalOptions="Start" VerticalOptions="Start"
+                        <Label Grid.Column="0" Text="Last Name" FontSize="13" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start"
                                        Opacity="0.85" FontAttributes="Bold"
                         />
                     </Grid>
-                    <Label Grid.Row="1" FontSize="15"  x:Name="lastNameLabel" Text="{Binding LastName}"/>
+                    <Entry Grid.Row="1" x:Name="lastNameEntry" HeightRequest="0" Margin="-10,-55,0,0" Keyboard="Text"/>
                 </Grid>
             </Border>
 
@@ -137,7 +136,7 @@
                 Grid.Row="4"
                 StrokeThickness="0"
                 Padding="8,0"
-                HeightRequest="70"
+                HeightRequest="89"
                 HorizontalOptions="Fill"
                 Margin="17,-10,17,0">
 
@@ -145,11 +144,11 @@
 
                     <Grid Grid.Row="0" ColumnDefinitions="*,*">
 
-                        <Label Grid.Column="0" Text="Phone number" FontSize="13" TextColor="DarkRed" HorizontalOptions="Start" VerticalOptions="Start"
+                        <Label Grid.Column="0" Text="Phone number" FontSize="13" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start"
                                        Opacity="0.85" FontAttributes="Bold"
                         />
                     </Grid>
-                    <Label Grid.Row="1" FontSize="15"  x:Name="phoneNumberLabel" Text="{Binding PhoneNumber}"/>
+                    <Entry Grid.Row="1" x:Name="phoneNumberEntry" HeightRequest="0" Margin="-10,-55,0,0" Keyboard="Telephone"/>
                 </Grid>
             </Border>
 
@@ -157,19 +156,18 @@
                 Grid.Row="5"
                 StrokeThickness="0"
                 Padding="8,0"
-                HeightRequest="70"
+                HeightRequest="89"
                 HorizontalOptions="Fill"
                 Margin="17,-10,17,0">
 
                 <Grid Grid.Row="0" RowDefinitions="*,*">
 
                     <Grid Grid.Row="0" ColumnDefinitions="*,*">
-
-                        <Label Grid.Column="0" Text="Birthdate" FontSize="13" TextColor="DarkRed" HorizontalOptions="Start" VerticalOptions="Start"
+                        <Label Grid.Column="0" Text="Birthdate" FontSize="13" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start"
                                        Opacity="0.85" FontAttributes="Bold"
                         />
                     </Grid>
-                    <Label Grid.Row="1" FontSize="15"  x:Name="birthdateLabel" Text="{Binding BirthDate}"/>
+                    <Entry Grid.Row="1" x:Name="birthDateEntry" HeightRequest="0" Margin="-10,-55,0,0" Keyboard="Default"/>
                 </Grid>
             </Border>
 
@@ -177,19 +175,18 @@
                 Grid.Row="6"
                 StrokeThickness="0"
                 Padding="8,0"
-                HeightRequest="70"
+                HeightRequest="89"
                 HorizontalOptions="Fill"
                 Margin="17,-10,17,0">
 
                 <Grid Grid.Row="0" RowDefinitions="*,*">
 
                     <Grid Grid.Row="0" ColumnDefinitions="*,*">
-
-                        <Label Grid.Column="0" Text="Address" FontSize="13" TextColor="DarkRed" HorizontalOptions="Start" VerticalOptions="Start"
+                        <Label Grid.Column="0" Text="Address" FontSize="13" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start"
                                        Opacity="0.85" FontAttributes="Bold"
                         />
                     </Grid>
-                    <Label Grid.Row="1" FontSize="15"  x:Name="addressLabel" Text="{Binding Address}"/>
+                    <Entry Grid.Row="1" x:Name="addressEntry" HeightRequest="0" Margin="-10,-55,0,0" Keyboard="Text"/>
                 </Grid>
             </Border>
 
@@ -197,19 +194,18 @@
                 Grid.Row="7"
                 StrokeThickness="0"
                 Padding="8,0"
-                HeightRequest="70"
+                HeightRequest="89"
                 HorizontalOptions="Fill"
                 Margin="17,-10,17,0">
 
                 <Grid Grid.Row="0" RowDefinitions="*,*">
 
                     <Grid Grid.Row="0" ColumnDefinitions="*,*">
-
-                        <Label Grid.Column="0" Text="Address details (optional)" FontSize="13" TextColor="DarkRed" HorizontalOptions="Start" VerticalOptions="Start"
+                        <Label Grid.Column="0" Text="Address details (optional)" FontSize="13" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start"
                                        Opacity="0.85" FontAttributes="Bold"
                         />
                     </Grid>
-                    <Label Grid.Row="1" FontSize="15"  x:Name="detailsLabel" Text="{Binding AddressDetails}"/>
+                    <Entry Grid.Row="1" x:Name="detailsEntry" HeightRequest="0" Margin="-10,-55,0,0" Keyboard="Text"/>
                 </Grid>
             </Border>
 
@@ -217,19 +213,18 @@
                 Grid.Row="8"
                 StrokeThickness="0"
                 Padding="8,0"
-                HeightRequest="70"
+                HeightRequest="89"
                 HorizontalOptions="Fill"
                 Margin="17,-10,17,0">
 
                 <Grid Grid.Row="0" RowDefinitions="*,*">
 
                     <Grid Grid.Row="0" ColumnDefinitions="*,*">
-
-                        <Label Grid.Column="0" Text="Marital status" FontSize="13" TextColor="DarkRed" HorizontalOptions="Start" VerticalOptions="Start"
+                        <Label Grid.Column="0" Text="Marital status" FontSize="13" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start"
                                        Opacity="0.85" FontAttributes="Bold"
                         />
                     </Grid>
-                    <Label Grid.Row="1" FontSize="15"  x:Name="maritalStatusLabel" Text="{Binding MaritalStatus}"/>
+                    <Entry Grid.Row="1" x:Name="maritalStatusEntry" HeightRequest="0" Margin="-10,-55,0,0" Keyboard="Text"/>
                 </Grid>
             </Border>
 
@@ -237,19 +232,18 @@
                 Grid.Row="9"
                 StrokeThickness="0"
                 Padding="8,0"
-                HeightRequest="70"
+                HeightRequest="89"
                 HorizontalOptions="Fill"
                 Margin="17,-10,17,0">
 
                 <Grid Grid.Row="0" RowDefinitions="*,*">
 
                     <Grid Grid.Row="0" ColumnDefinitions="*,*">
-
-                        <Label Grid.Column="0" Text="Housing type" FontSize="13" TextColor="DarkRed" HorizontalOptions="Start" VerticalOptions="Start"
+                        <Label Grid.Column="0" Text="Housing type" FontSize="13" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start"
                                        Opacity="0.85" FontAttributes="Bold"
                         />
                     </Grid>
-                    <Label Grid.Row="1" FontSize="15"  x:Name="housingTypeLabel" Text="{Binding HousingType}"/>
+                    <Entry Grid.Row="1" x:Name="housingTypeEntry" HeightRequest="0" Margin="-10,-55,0,0" Keyboard="Text"/>
                 </Grid>
             </Border>
         </Grid>

@@ -16,7 +16,6 @@ public static class MauiProgram
 			});
         builder.Services.AddSingleton<LoginPage>();
         builder.Services.AddSingleton<DogEntryPage>();
-        builder.Services.AddSingleton<EmployeeEntryPage>();
         builder.Services.AddSingleton<PetService>();
         builder.Services.AddTransient<HomePageViewModel>();
         builder.Services.AddTransient<HomePage>();
