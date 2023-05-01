@@ -5,7 +5,8 @@
              xmlns:viewmodels="clr-namespace:Licenta.ViewModels"
              Shell.NavBarIsVisible="False"
              x:DataType="viewmodels:PetDetailsViewModel"
-             Shell.TabBarIsVisible="False">
+             Shell.TabBarIsVisible="False"
+             BackgroundColor="DarkRed">
     
     <ScrollView>
         <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto,Auto,Auto">
@@ -37,6 +38,7 @@
                     <Label
                         Grid.Row="0"
                         FontFamily="Bold"
+                        TextColor="Black"
                         FontSize="30"
                         HorizontalOptions="CenterAndExpand"
                         Text="{Binding Pet.Name}"
@@ -66,7 +68,7 @@
                 </Grid>
             </Frame>
             <!--  3. General information  -->
-            <Frame
+            <!--<Frame
                 Grid.Row="2"
                 Grid.Column="0"
                 Grid.ColumnSpan="3"
@@ -93,12 +95,12 @@
                 Grid.ColumnSpan="3"
                 BackgroundColor="DarkRed"
                 TranslationX="12"
-                TranslationY="12" />
+                TranslationY="12" />-->
             <Frame
                 Grid.Row="2"
                 Grid.Column="0"
                 Grid.ColumnSpan="3"
-                BackgroundColor="DarkRed"
+                BackgroundColor="White"
                 TranslationX="16"
                 TranslationY="16" />
             <Grid
@@ -130,7 +132,7 @@
                     FontSize="Large"
                     LineBreakMode="NoWrap"
                     Text="{Binding Pet.Type}"
-                    TextColor="White"
+                    TextColor="Black"
                     TranslationX="10" />
                 <Label Grid.Row="0" Grid.Column="1">
                     <Label.FormattedText>
@@ -152,7 +154,7 @@
                     FontSize="Large"
                     LineBreakMode="WordWrap"
                     Text="{Binding Pet.Breed}"
-                    TextColor="White"
+                    TextColor="Black"
                     TranslationX="20" />
                 <Label Grid.Row="0" Grid.Column="2">
                     <Label.FormattedText>
@@ -174,7 +176,7 @@
                     FontSize="Large"
                     LineBreakMode="WordWrap"
                     Text="{Binding Pet.Gender}"
-                    TextColor="White"
+                    TextColor="Black"
                     TranslationX="20" />
                 <Label
                     Grid.Row="2"
@@ -197,7 +199,7 @@
                                     FontAttributes="Bold"
                                     FontSize="16"
                                     Text="{Binding Pet.Social}"
-                                    TextColor="White" />
+                                    TextColor="Black" />
 
                             </FormattedString.Spans>
                         </FormattedString>
@@ -224,7 +226,7 @@
                                     FontAttributes="Bold"
                                     FontSize="16"
                                     Text="{Binding Pet.Health}"
-                                    TextColor="White" />
+                                    TextColor="Black" />
 
                             </FormattedString.Spans>
                         </FormattedString>
@@ -248,10 +250,10 @@
                                     Text=" Meet: "
                                     TextColor="Black" />
                                 <Span
-                                    FontAttributes="Italic"
+                                    FontAttributes="Bold"
                                     FontSize="16"
                                     Text="{Binding Pet.Meet}"
-                                    TextColor="White" />
+                                    TextColor="Black" />
 
                             </FormattedString.Spans>
                         </FormattedString>

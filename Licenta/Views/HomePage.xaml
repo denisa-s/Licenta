@@ -6,7 +6,8 @@
              xmlns:viewmodel="clr-namespace:Licenta.ViewModels"
              Shell.NavBarIsVisible="False"
              FlyoutItem.IsVisible="False"
-             x:DataType="viewmodel:HomePageViewModel">
+             x:DataType="viewmodel:HomePageViewModel"
+             BackgroundColor="DarkRed">
     
     <RefreshView Command="{Binding GetPetsCommand}" IsRefreshing="{Binding IsRefreshing}">
         <ScrollView>
@@ -17,7 +18,7 @@
                     Grid.Row="2"
                     Grid.Column="0"
                     Grid.ColumnSpan="3"
-                    BackgroundColor="White"
+                    BackgroundColor="DarkRed"
                     ItemsSource="{Binding Pets}"
                     SelectedItem="{Binding SelectedPet}"
                     SelectionChangedCommand="{Binding GoToDetailsCommand}"
@@ -56,7 +57,7 @@
                                             HorizontalOptions="Center"
                                             Source="{Binding Image}"
                                             WidthRequest="200" />
-                                        <Label HorizontalOptions="Center" Text="{Binding Gender}" />
+                                        
                                         <Label
                                             FontAttributes="Italic"
                                             HorizontalOptions="Center"
@@ -64,6 +65,7 @@
                                             LineBreakMode="WordWrap"
                                             MaxLines="5"
                                             Text="{Binding Breed}" />
+                                        <Label HorizontalOptions="Center" Text="{Binding Gender}" />
                                     </StackLayout>
                                 </Frame>
                             </StackLayout>

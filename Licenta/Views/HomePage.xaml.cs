@@ -18,7 +18,7 @@ public partial class HomePage : ContentPage
 
     private async void Donate_Clicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new FoodPage());
+        await Navigation.PushAsync(new TestPage());
     }
 
 
