@@ -11,7 +11,7 @@ public partial class FoodEntryPage : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        listView.ItemsSource = await App.Database.GetFoodsAsync();
+        //listView.ItemsSource = await App.Database.GetFoodsAsync();
     }
     async void OnFoodAddedClicked(object sender, EventArgs e)
     {

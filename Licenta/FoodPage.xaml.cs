@@ -11,13 +11,13 @@ public partial class FoodPage : ContentPage
     async void OnSaveButtonClicked(object sender, EventArgs e)
     {
         var slist = (Food)BindingContext;
-        await App.Database.SaveFoodAsync(slist);
+       // await App.Database.SaveFoodAsync(slist);
         await Navigation.PopAsync();
     }
     async void OnDeleteButtonClicked(object sender, EventArgs e)
     {
         var slist = (Food)BindingContext;
-        await App.Database.DeleteFoodAsync(slist);
+       // await App.Database.DeleteFoodAsync(slist);
         await Navigation.PopAsync();
     }
 }

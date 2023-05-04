@@ -168,7 +168,7 @@ namespace Licenta.Data
         }
 
         //Pt hrana
-        public Task<List<Food>> GetFoodsAsync()
+        /*public Task<List<Food>> GetFoodsAsync()
         {
             return _database.Table<Food>().ToListAsync();
         }
@@ -192,7 +192,7 @@ namespace Licenta.Data
         public Task<int> DeleteFoodAsync(Food food)
         {
             return _database.DeleteAsync(food);
-        }
+        }*/
 
         //Pt vizitatori
         public Task<List<Guest>> GetGuestsAsync()

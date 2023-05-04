@@ -17,10 +17,16 @@ public static class MauiProgram
         builder.Services.AddSingleton<LoginPage>();
         builder.Services.AddSingleton<DogEntryPage>();
         builder.Services.AddSingleton<PetService>();
+        builder.Services.AddSingleton<FoodService>();
         builder.Services.AddTransient<HomePageViewModel>();
         builder.Services.AddTransient<HomePage>();
         builder.Services.AddTransient<PetDetailsViewModel>();
         builder.Services.AddTransient<PetDetailsView>();
+
+        builder.Services.AddTransient<ProductPageViewModel>();
+        builder.Services.AddTransient<ProductPage>();
+        builder.Services.AddTransient<FoodDetailsViewModel>();
+        builder.Services.AddTransient<FoodDetailsView>();
         return builder.Build();
 	}
 }

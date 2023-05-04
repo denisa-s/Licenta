@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Licenta.Views.ProductPage"
+             xmlns:model="clr-namespace:Licenta.Models"
+             xmlns:viewmodel="clr-namespace:Licenta.ViewModels"
+             Shell.NavBarIsVisible="False"
+             FlyoutItem.IsVisible="False"
+             x:DataType="viewmodel:ProductPageViewModel"
+             BackgroundColor="DarkRed">
+
+    <RefreshView Command="{Binding GetFoodsCommand}" IsRefreshing="{Binding IsRefreshing}">
+        <ScrollView>
+            <Grid ColumnDefinitions="0.5*,Auto,0.5*" RowDefinitions="10,50,550,90,Auto,50">
+
+                <CollectionView
+                    x:Name="FoodsList"
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    BackgroundColor="DarkRed"
+                    ItemsSource="{Binding Foods}"
+                    SelectedItem="{Binding SelectedFood}"
+                    SelectionChangedCommand="{Binding GoToDetailsCommand}"
+                    SelectionMode="Single">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="2" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+
+                        <DataTemplate x:DataType="model:Food">
+                            <StackLayout>
+                                <Frame
+                                    Margin="10"
+                                    BorderColor="DarkRed"
+                                    CornerRadius="50"
+                                    HasShadow="True"
+                                    HeightRequest="320"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="CenterAndExpand">
+                                    <Frame.Shadow>
+                                        <Shadow
+                                            Brush="Black"
+                                            Opacity="0.8    "
+                                            Offset="6,10" />
+                                    </Frame.Shadow>
+                                    <StackLayout>
+                                        <Label
+                                            FontAttributes="Bold"
+                                            FontSize="Large"
+                                            HorizontalOptions="Center"
+                                            Text="{Binding Name}"
+                                            VerticalOptions="Center" />
+                                        <Image
+                                            Aspect="AspectFit"
+                                            HeightRequest="200"
+                                            HorizontalOptions="Center"
+                                            Source="{Binding Image}"
+                                            WidthRequest="200" />
+
+                                        <Label
+                                            FontAttributes="Italic"
+                                            HorizontalOptions="Center"
+                                            HorizontalTextAlignment="Center"
+                                            LineBreakMode="WordWrap"
+                                            MaxLines="5"
+                                            Text="{Binding Details}" />
+                                    </StackLayout>
+                                </Frame>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+            </Grid>
+        </ScrollView>
+    </RefreshView>
+</ContentPage>

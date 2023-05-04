@@ -63,7 +63,11 @@
     <ShellContent Title="Home Page" 
                   ContentTemplate="{DataTemplate views:HomePage}" 
                   Icon="room.png"/>
-    
+
+    <ShellContent Title="Food Page" 
+                  ContentTemplate="{DataTemplate views:ProductPage}" 
+                  Icon="room.png"/>
+
     <Shell.FlyoutFooter>
         <StackLayout Padding="20">
             <Button Text="Sign Out" Command="{Binding SignOutCommand}" BackgroundColor="Black" />
