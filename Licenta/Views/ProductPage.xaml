@@ -7,71 +7,76 @@
              Shell.NavBarIsVisible="False"
              FlyoutItem.IsVisible="False"
              x:DataType="viewmodel:ProductPageViewModel"
-             BackgroundColor="DarkRed">
+             BackgroundImageSource="wallpaper.jpg">
 
     <RefreshView Command="{Binding GetFoodsCommand}" IsRefreshing="{Binding IsRefreshing}">
         <ScrollView>
             <Grid ColumnDefinitions="0.5*,Auto,0.5*" RowDefinitions="10,50,550,90,Auto,50">
 
-                <CollectionView
+               <CollectionView
                     x:Name="FoodsList"
                     Grid.Row="2"
                     Grid.Column="0"
                     Grid.ColumnSpan="3"
-                    BackgroundColor="DarkRed"
                     ItemsSource="{Binding Foods}"
                     SelectedItem="{Binding SelectedFood}"
                     SelectionChangedCommand="{Binding GoToDetailsCommand}"
                     SelectionMode="Single">
                     <CollectionView.ItemsLayout>
-                        <GridItemsLayout Orientation="Vertical" Span="2" />
+                        <GridItemsLayout Orientation="Vertical" Span="3" />
                     </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
-
                         <DataTemplate x:DataType="model:Food">
-                            <StackLayout>
-                                <Frame
-                                    Margin="10"
-                                    BorderColor="DarkRed"
-                                    CornerRadius="50"
-                                    HasShadow="True"
-                                    HeightRequest="320"
-                                    HorizontalOptions="Center"
-                                    VerticalOptions="CenterAndExpand">
-                                    <Frame.Shadow>
-                                        <Shadow
-                                            Brush="Black"
-                                            Opacity="0.8    "
-                                            Offset="6,10" />
-                                    </Frame.Shadow>
-                                    <StackLayout>
-                                        <Label
-                                            FontAttributes="Bold"
-                                            FontSize="Large"
-                                            HorizontalOptions="Center"
-                                            Text="{Binding Name}"
-                                            VerticalOptions="Center" />
+                            <Border Padding="0"
+                                    Margin="15,10,5,5"
+                                    WidthRequest="240"
+                                    BackgroundColor="White"
+                                    Stroke="gray"
+                                    StrokeThickness="0"
+                                    StrokeShape="RoundRectangle 15">
+                                <Border.Shadow>
+                                    <OnPlatform x:TypeArguments="Shadow">
+                                        <On Platform="Android, WinUI">
+                                            <Shadow Radius="25" Opacity="0.2"></Shadow>
+                                        </On>
+                                    </OnPlatform>
+                                </Border.Shadow>
+                                <Grid RowDefinitions="Auto,Auto,Auto">
+                                    <Border Grid.Row="0" StrokeThickness="0"
+                                            Padding="0,40"
+                                            Margin="-1">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="15"/>
+                                        </Border.StrokeShape>
                                         <Image
                                             Aspect="AspectFit"
                                             HeightRequest="200"
                                             HorizontalOptions="Center"
                                             Source="{Binding Image}"
                                             WidthRequest="200" />
-
-                                        <Label
-                                            FontAttributes="Italic"
-                                            HorizontalOptions="Center"
-                                            HorizontalTextAlignment="Center"
-                                            LineBreakMode="WordWrap"
-                                            MaxLines="5"
-                                            Text="{Binding Details}" />
+                                    </Border>
+                                    <Label Grid.Row="1" 
+                                           HorizontalOptions="FillAndExpand"
+                                           Text="{Binding Name}"
+                                           FontFamily="RalewayMedium"
+                                           FontSize="19"
+                                           TextColor="Black"
+                                           LineBreakMode="NoWrap"
+                                           Margin="10,10,10,10"/>
+                                    <StackLayout Grid.Row="2" Orientation="Horizontal"
+                                                 Margin="10,0,10,15">
+                                        <Label 
+                                            Text="{Binding Price, StringFormat='${0}'}"
+                                               FontSize="25"
+                                               FontFamily="PoppinsRegular"
+                                               TextColor="DarkGreen"
+                                               HorizontalOptions="StartAndExpand"/>
                                     </StackLayout>
-                                </Frame>
-                            </StackLayout>
+                                </Grid>
+                            </Border>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
-
-                </CollectionView>
+               </CollectionView>
             </Grid>
         </ScrollView>
     </RefreshView>
