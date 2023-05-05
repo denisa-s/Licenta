@@ -3,6 +3,8 @@ using System;
 using Licenta.Data;
 using System.IO;
 using Licenta.Models;
+using Licenta.Services;
+
 public partial class App : Application
 {
     public static LoginModel GlobalObject { get; set; }
@@ -22,10 +24,11 @@ public partial class App : Application
     }
     public App()
 	{
-		InitializeComponent();
+        DependencyService.Register<IShoppingCartService, ShoppingCartService>();
+        InitializeComponent();
         
 		MainPage = new AppShell();
-	}
+    }
     protected override void OnStart()
     {
         // Initialize the global object

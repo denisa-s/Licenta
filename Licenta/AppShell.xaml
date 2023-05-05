@@ -68,6 +68,10 @@
                   ContentTemplate="{DataTemplate views:ProductPage}" 
                   Icon="room.png"/>
 
+    <ShellContent Title="cart" 
+                  ContentTemplate="{DataTemplate views:CartPage}" 
+                  Icon="room.png"/>
+
     <Shell.FlyoutFooter>
         <StackLayout Padding="20">
             <Button Text="Sign Out" Command="{Binding SignOutCommand}" BackgroundColor="Black" />
