@@ -1,4 +1,5 @@
-﻿using Licenta.Models;
+﻿using CommunityToolkit.Mvvm.Input;
+using Licenta.Models;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using System;
 using System.Collections.Generic;
@@ -17,5 +18,10 @@ namespace Licenta.ViewModels
 
         [ObservableProperty]
         Food food;
+        [RelayCommand]
+        async Task Back()
+        {
+            await Shell.Current.GoToAsync("..", true);
+        }
     }
 }

@@ -6,159 +6,130 @@
              Shell.NavBarIsVisible="False"
              x:DataType="viewmodels:FoodDetailsViewModel"
              Shell.TabBarIsVisible="False"
-             BackgroundColor="DarkRed">
-
+             BackgroundColor="White"
+             xmlns:control="clr-namespace:Licenta.Control">
+   
     <ScrollView>
-        <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto,Auto,Auto">
-            <!--  1. Image  -->
-            <Image
-                Grid.Row="0"
-                Grid.Column="0"
-                Grid.ColumnSpan="3"
-                Aspect="AspectFit"
-                HeightRequest="400"
-                Source="{Binding Food.Image}" />
-            <!--  2. Pet Name  -->
-            <Frame
-                Grid.Row="1"
-                Grid.Column="0"
-                Grid.ColumnSpan="3"
-                Margin="20,-50,20,10"
-                BackgroundColor="White"
-                CornerRadius="40"
-                HasShadow="True"
-                HeightRequest="100">
-                <Grid
-                    Padding="20,5"
-                    HorizontalOptions="FillAndExpand"
-                    RowDefinitions="Auto,Auto"
-                    RowSpacing="5"
-                    VerticalOptions="Center">
+        <Grid Margin="15,5,15,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <!---Header-->
 
-                    <Label
-                        Grid.Row="0"
-                        FontFamily="Bold"
-                        TextColor="Black"
-                        FontSize="30"
-                        HorizontalOptions="CenterAndExpand"
-                        Text="{Binding Food.Name}"
-                        VerticalOptions="CenterAndExpand" />
-                    
-                </Grid>
-            </Frame>
-            
-            <Frame
-                Grid.Row="2"
-                Grid.Column="0"
-                Grid.ColumnSpan="3"
-                BackgroundColor="White"
-                TranslationX="16"
-                TranslationY="16" />
-            <Grid
-                Grid.Row="2"
-                Grid.Column="0"
-                Grid.ColumnSpan="3"
-                Margin="30,30,10,15"
-                ColumnDefinitions="*,*,*"
-                ColumnSpacing="10"
-                RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto">
-
-                <Label Grid.Row="0" Grid.Column="0">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-
-                                <Span
-                                    FontAttributes="Bold"
-                                    FontSize="16"
-                                    Text=" Pet"
-                                    TextColor="Black" />
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Label
-                    Grid.Row="1"
-                    Grid.Column="0"
-                    FontSize="Large"
-                    LineBreakMode="NoWrap"
-                    Text="{Binding Food.Details}"
-                    TextColor="Black"
-                    TranslationX="10" />
-                <Label Grid.Row="0" Grid.Column="1">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-
-                                <Span
-                                    FontAttributes="Bold"
-                                    FontSize="16"
-                                    Text=" Breed"
-                                    TextColor="Black" />
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Label
-                    Grid.Row="1"
-                    Grid.Column="1"
-                    FontSize="Large"
-                    LineBreakMode="WordWrap"
-                    Text="{Binding Food.Ingredients}"
-                    TextColor="Black"
-                    TranslationX="20" />
-                <Label Grid.Row="0" Grid.Column="2">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-
-                                <Span
-                                    FontAttributes="Bold"
-                                    FontSize="16"
-                                    Text=" Gender"
-                                    TextColor="Black" />
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Label
-                    Grid.Row="1"
-                    Grid.Column="2"
-                    FontSize="Large"
-                    LineBreakMode="WordWrap"
-                    Text="{Binding Food.FeedingRecommendation}"
-                    TextColor="Black"
-                    TranslationX="20" />
-                <Label
-                    Grid.Row="2"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="3"
-                    Margin="10"
-                    HorizontalOptions="CenterAndExpand"
-                    HorizontalTextAlignment="Center"
-                    VerticalOptions="CenterAndExpand">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-
-                                <Span
-                                    FontAttributes="Bold"
-                                    FontSize="16"
-                                    Text=" Social: "
-                                    TextColor="Black" />
-                                <Span
-                                    FontAttributes="Bold"
-                                    FontSize="16"
-                                    Text="{Binding Food.Price}"
-                                    TextColor="Black" />
-
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-           
+            <Grid Grid.Row="0" >
+                <Border Grid.Column="0"
+                        HorizontalOptions="Start"
+                        StrokeThickness="0"
+                        Style="{StaticResource EllipseBorderStyle}">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BackCommand}"/>
+                    </Border.GestureRecognizers>
+                    <Image Source="back_arrow.png"
+                           Margin="0,0,10,0"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                </Border>
             </Grid>
-
+            <Grid Grid.Row="1"
+                  Margin="0,30,0,0">
+                <Border 
+                    Padding="0"
+                    Margin="15,10,5,5"
+                    WidthRequest="350"
+                    BackgroundColor="White"
+                    Stroke="gray"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 15">
+                    <Image
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="3"
+                            Aspect="AspectFit"
+                            HeightRequest="250"
+                            Source="{Binding Food.Image}" 
+                    />
+                </Border>
+            </Grid>
+            <Grid Grid.Row="2">
+                <control:CustomStepperView WidthRequest="110"
+                                           HeightRequest="35"
+                                           Margin="0,0,0,20"
+                                           HorizontalOptions="CenterAndExpand"
+                                           VerticalOptions="End"
+                />
+            </Grid>
+            <StackLayout Grid.Row="3"
+                         Margin="0,10">
+                <Grid ColumnDefinitions="Auto,*" HorizontalOptions="FillAndExpand">
+                    <Label Grid.Column="0" Text="{Binding Food.Name}"
+                           TextColor="Black"
+                           FontFamily="RalewayMedium"
+                           FontSize="22"
+                           HorizontalOptions="StartAndExpand"
+                    />
+                    <HorizontalStackLayout 
+                        Grid.Column="1"
+                        HorizontalOptions="End">
+                        <Image
+                            Source="star.png"
+                            Margin="0,0,10,0"
+                            Aspect="Center"
+                        />
+                        <Label 
+                            Text="4.5"
+                            FontSize="22"
+                            TextColor="Black"
+                            HorizontalOptions="End"
+                        />
+                    </HorizontalStackLayout>
+                </Grid>
+                <Border 
+                    Padding="5"
+                    Margin="30"
+                    Stroke="gray"
+                    StrokeThickness="0"
+                    StrokeShape="roundrectangle"
+                    BackgroundColor="White">
+                    <Label Text="{Binding Food.Details}"
+                           LineBreakMode="WordWrap"
+                           FontFamily="ProximaNovaRegular"
+                           FontSize="18"
+                           TextColor="Black"
+                    />
+                </Border>
+                <Grid ColumnDefinitions="*,Auto,Auto">
+                    
+                    <BoxView Grid.Column="1" 
+                             WidthRequest="1"
+                             Background="black"
+                             HorizontalOptions="Start"
+                             Margin="-10,15,0,35"
+                    />
+                    <Label Grid.Column="2"
+                           x:Name="PriceLabel"
+                           HorizontalOptions="StartAndExpand"
+                           VerticalOptions="Center"
+                           Margin="0,0,0,20"
+                           Text="{Binding Food.Price, StringFormat='${0}'}"
+                           TextColor="Black"
+                           FontFamily="PoppinsRegular"
+                           FontSize="25">
+                    </Label>
+                </Grid>
+            </StackLayout>
+            <Button Grid.Row="4" Text="Add to bag"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="End"
+                    FontFamily="RalewayMedium"
+                    FontSize="20"
+                    Background="darkred"
+                    TextColor="White"
+                    CornerRadius="30"
+                    HeightRequest="55"/>
         </Grid>
     </ScrollView>
 </ContentPage>
