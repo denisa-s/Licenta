@@ -5,6 +5,7 @@ using Licenta.Models;
 using Licenta.Services;
 public partial class FoodDetailsView : ContentPage
 {
+    int quantity = 1;
     public FoodDetailsView(FoodDetailsViewModel viewModel)
 	{
 		InitializeComponent();
@@ -14,14 +15,15 @@ public partial class FoodDetailsView : ContentPage
     {
         var productName = nameLabel.Text; // Replace with the actual product name
         var productPrice = PriceLabel.Text; // Replace with the actual product price
-        int quantity = +1; // Replace with the actual quantity selected by the user
-
+        quantity = quantity+1; // Replace with the actual quantity selected by the user
+        var productImage = imageLabel.Text;
         // Create a new item to add to the shopping cart
         CartItem newItem = new CartItem
         {
             Name = productName.ToString(),
             Price = productPrice.ToString(),
-            Quantity = quantity.ToString()
+            Quantity = quantity.ToString(),
+            Image = productImage.ToString()
         };
 
         // Get the shopping cart service from the dependency service

@@ -2,8 +2,57 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Licenta.Views.CartPage"
-             Title="CartPage">
-    <ListView x:Name="cartListView">
+             Title="Your cart"
+             Shell.TabBarIsVisible="False"
+             Shell.NavBarIsVisible="False">
+    
+    <CollectionView Margin="0,12" x:Name="cartListView">
+        <CollectionView.ItemTemplate>
+        <DataTemplate>
+                <Frame BorderColor="Gray" CornerRadius="5" HasShadow="True" Margin="5" Padding="5">
+                    <StackLayout Orientation="Horizontal"
+                                 Spacing="16">
+
+                <Image Aspect="AspectFit"
+                               HeightRequest="120"
+                               Source="{Binding Image}"
+                               WidthRequest="120" />
+
+                <StackLayout Spacing="6">
+
+                    <Label FontSize="16"
+                                   HorizontalOptions="StartAndExpand"
+                                   Text="{Binding Name}"
+                                   TextColor="Black">
+                    </Label>
+
+                    <StackLayout Orientation="Horizontal">
+
+                        <Label FontSize="16"
+                                       HorizontalOptions="StartAndExpand"
+                                       Text="{Binding Source={x:Reference _stepper}, Path=Value, StringFormat='QTY: {0}'}"
+                                       TextColor="Black"
+                                       FontAttributes="Bold" />
+                        <Label FontSize="16"
+                                       HorizontalOptions="StartAndExpand"
+                                       Text="{Binding Price}"
+                                       TextColor="#00C569">
+                        </Label>
+                    </StackLayout>
+                        <Stepper Maximum="10"
+                                     x:Name="_stepper"
+                                     Increment="1"
+                                     Minimum="{Binding Qty}"
+                                     HorizontalOptions="Center"
+                                     ValueChanged="Stepper_ValueChanged">
+                        </Stepper>
+                    </StackLayout>
+            </StackLayout>
+                </Frame>
+            </DataTemplate>
+    </CollectionView.ItemTemplate>
+    </CollectionView>
+    <!--<ListView x:Name="cartListView">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
@@ -15,5 +64,5 @@
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
-    </ListView>
+    </ListView>-->
 </ContentPage>

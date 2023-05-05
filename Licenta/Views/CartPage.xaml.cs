@@ -41,4 +41,8 @@ public partial class CartPage : ContentPage
             CartItems.Add(item);
         }
     }
+    private void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)
+    {
+        double value = e.NewValue;
+    }
 }
