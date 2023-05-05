@@ -15,5 +15,6 @@ namespace Licenta.Models
         public string Ingredients { get; set; }
         public string FeedingRecommendation { get; set; }
         public string Price { get; set; }
+        public string Rating { get; set; }
     }
 }
