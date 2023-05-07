@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Licenta"
     xmlns:models="clr-namespace:Licenta.Models"
-    FlyoutBackgroundColor="Crimson"
+    FlyoutBackgroundColor="DarkRed"
     Shell.TabBarIsVisible="False"
     xmlns:views="clr-namespace:Licenta.Views">
 
@@ -20,57 +20,22 @@
                   Route="MainPage" 
                   Icon="dashboard.png" />
 
-    <ShellContent Title="About Page" 
-                  ContentTemplate="{DataTemplate local:AboutPage}" 
-                  Route="AboutPage"
-                  Icon="about.png"/>
-
-    <ShellContent Title="Dog Page" 
-                  ContentTemplate="{DataTemplate local:DogEntryPage}" 
-                  Route="DogPage"
-                  Icon="dog.png"/>
-
-    <ShellContent Title="Food Page" 
-                  ContentTemplate="{DataTemplate local:FoodEntryPage}" 
-                  Route="FoodPage"
-                  Icon="food.png"/>
-    
     <ShellContent Title="Profile"
                   ContentTemplate="{DataTemplate local:GuestEntryPage}" 
                   Route="GuestPage"
                   Icon="guest.png"/>
-    
-    <ShellContent Title="Medical Record Page" 
-                  ContentTemplate="{DataTemplate local:MedicalRecordEntryPage}" 
-                  Route="MedicalRecordPage"
-                  Icon="medical.png"/>
-    
-    <ShellContent Title="Medicine Page" 
-                  ContentTemplate="{DataTemplate local:MedicineEntryPage}" 
-                  Route="MedicinePage"
-                  Icon="medicine.png"/>
-    
-    <ShellContent Title="Provider Page" 
-                  ContentTemplate="{DataTemplate local:ProviderEntryPage}" 
-                  Route="ProviderPage"
-                  Icon="provider.png"/>
-    
-    <ShellContent Title="Room Page" 
-                  ContentTemplate="{DataTemplate local:RoomEntryPage}" 
-                  Route="RoomPage"
-                  Icon="room.png"/>
-
-    <ShellContent Title="Home Page" 
+   
+    <ShellContent Title="Pets" 
                   ContentTemplate="{DataTemplate views:HomePage}" 
-                  Icon="room.png"/>
+                  Icon="dog.png"/>
 
-    <ShellContent Title="Food Page" 
+    <ShellContent Title="Food Shop" 
                   ContentTemplate="{DataTemplate views:ProductPage}" 
-                  Icon="room.png"/>
+                  Icon="food.png"/>
 
-    <ShellContent Title="cart" 
+    <ShellContent Title="Cart" 
                   ContentTemplate="{DataTemplate views:CartPage}" 
-                  Icon="room.png"
+                  Icon="cart.png"
                   Route="cart"/>
 
     <Shell.FlyoutFooter>

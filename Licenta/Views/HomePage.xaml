@@ -7,7 +7,7 @@
              Shell.NavBarIsVisible="False"
              FlyoutItem.IsVisible="False"
              x:DataType="viewmodel:HomePageViewModel"
-             BackgroundColor="DarkRed">
+             BackgroundImageSource="wallpaper.jpg">
     
     <RefreshView Command="{Binding GetPetsCommand}" IsRefreshing="{Binding IsRefreshing}">
         <ScrollView>
@@ -18,7 +18,7 @@
                     Grid.Row="2"
                     Grid.Column="0"
                     Grid.ColumnSpan="3"
-                    BackgroundColor="DarkRed"
+                    Background="wallpaper.jpg"
                     ItemsSource="{Binding Pets}"
                     SelectedItem="{Binding SelectedPet}"
                     SelectionChangedCommand="{Binding GoToDetailsCommand}"
@@ -77,7 +77,7 @@
                 <Button
                     Grid.Row="3"
                     Grid.Column="1"
-                    BackgroundColor="Black"
+                    BackgroundColor="DarkRed"
                     Clicked="Donate_Clicked"
                     CornerRadius="15"
                     FontSize="Small"

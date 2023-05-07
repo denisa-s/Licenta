@@ -6,7 +6,7 @@
              Shell.NavBarIsVisible="False"
              x:DataType="viewmodels:PetDetailsViewModel"
              Shell.TabBarIsVisible="False"
-             BackgroundColor="DarkRed">
+             BackgroundImageSource="wallpaper.jpg">
     
     <ScrollView>
         <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto,Auto,Auto">

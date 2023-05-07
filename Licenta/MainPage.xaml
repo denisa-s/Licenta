@@ -7,7 +7,7 @@
              Shell.NavBarIsVisible="False"
              Shell.FlyoutItemIsVisible="False">
 
-    <Grid BackgroundColor="Crimson" >
+    <Grid BackgroundColor="DarkRed" >
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
