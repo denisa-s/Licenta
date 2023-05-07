@@ -70,7 +70,8 @@
 
     <ShellContent Title="cart" 
                   ContentTemplate="{DataTemplate views:CartPage}" 
-                  Icon="room.png"/>
+                  Icon="room.png"
+                  Route="cart"/>
 
     <Shell.FlyoutFooter>
         <StackLayout Padding="20">

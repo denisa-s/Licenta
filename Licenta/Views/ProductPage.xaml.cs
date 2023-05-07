@@ -1,4 +1,5 @@
 namespace Licenta.Views;
+using CommunityToolkit.Mvvm.Input;
 using Licenta.Models;
 using Licenta.ViewModels;
 using Licenta.Views;

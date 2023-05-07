@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Licenta.Models;
@@ -75,6 +76,11 @@ namespace Licenta.ViewModels
             };
 
             await Shell.Current.GoToAsync(nameof(FoodDetailsView), true, data);
+        }
+        [RelayCommand]
+        async Task CartCommand()
+        {
+            await Shell.Current.GoToAsync("//cart");
         }
     }
 }
