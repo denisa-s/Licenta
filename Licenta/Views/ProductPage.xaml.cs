@@ -27,4 +27,9 @@ public partial class ProductPage : ContentPage
             {"Food", food }
         });
     }
+    private async void OnImageTapped(object sender, EventArgs e)
+    {
+        // Navigate to the desired page
+        await Navigation.PushAsync(new CartPage());
+    }
 }

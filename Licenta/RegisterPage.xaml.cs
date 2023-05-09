@@ -10,7 +10,7 @@ public partial class RegisterPage : ContentPage
     }
     private void OnRegisterButtonClicked(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new MainPage());
+        Navigation.PushAsync(new LoginPage());
     }
     private void OnSignButtonClicked(object sender, EventArgs e)
     {

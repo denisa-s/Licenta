@@ -58,7 +58,11 @@
                              Source="bin.png"
                              WidthRequest="22" 
                              HorizontalOptions="End"
-                            VerticalOptions="Start"/>
+                            VerticalOptions="Start">
+                            <!--<Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnImageTapped" />
+                            </Image.GestureRecognizers>-->
+                        </Image>
                         <Label 
                                 FontSize="23"
                                 HorizontalOptions="End"

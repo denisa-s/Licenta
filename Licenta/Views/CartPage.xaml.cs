@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 
 namespace Licenta.Views;
 
-public partial class CartPage : ContentPage
+public partial class CartPage : ContentPage 
 {
     public ObservableCollection<CartItem> CartItems { get; set; }
 
