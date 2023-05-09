@@ -45,4 +45,34 @@ public partial class CartPage : ContentPage
     {
         double value = e.NewValue;
     }
+    /*private void OnImageTapped(object sender, EventArgs e)
+    {
+        // Get the tapped item
+        var image = (Image)sender;
+        var item = image.BindingContext as CartItem;
+
+        // Remove the item from the collection
+        CartItems.Remove(item);
+    }*/
+    private async Task DeleteItem(CartItem item)
+    {
+        // Get the shopping cart service from the dependency service
+        IShoppingCartService shoppingCartService = DependencyService.Get<IShoppingCartService>();
+
+        // Remove the item from the cart
+        await shoppingCartService.RemoveItemFromCartAsync(item);
+
+        // Remove the item from the CartItems collection
+        CartItems.Remove(item);
+    }
+    private async void OnDeleteItemTapped(object sender, EventArgs e)
+    {
+        // Get the selected item from the command parameter
+        var item = (sender as Image).BindingContext as CartItem;
+
+        // Call the DeleteItem method with the selected item
+        await DeleteItem(item);
+    }
+
+
 }
