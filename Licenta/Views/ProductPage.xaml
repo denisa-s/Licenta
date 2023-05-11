@@ -85,7 +85,7 @@
                                     <StackLayout Grid.Row="2" Orientation="Horizontal"
                                                  Margin="10,0,10,15">
                                         <Label 
-                                            Text="{Binding Price, StringFormat='${0}'}"
+                                            Text="{Binding Price, StringFormat='{0} RON'}"
                                                FontSize="25"
                                                FontFamily="PoppinsRegular"
                                                TextColor="DarkGreen"

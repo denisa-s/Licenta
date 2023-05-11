@@ -1,13 +1,15 @@
 using Licenta.Models;
 using Licenta.Services;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
 
 namespace Licenta.Views;
 
 public partial class CartPage : ContentPage 
 {
     public ObservableCollection<CartItem> CartItems { get; set; }
-
+    public decimal GrandTotal { get; set; }
     // Constructor of the content page
     public CartPage()
     {
@@ -21,6 +23,42 @@ public partial class CartPage : ContentPage
 
         // Bind the ListView to the CartItems collection
         cartListView.ItemsSource = CartItems;
+        CartItems.CollectionChanged += CartItems_CollectionChanged;
+        
+    }
+    private void CartItems_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+    {
+        CalculateGrandTotal(); 
+    }
+
+    private void UpdateGrandTotal()
+    {
+        GrandTotal = CartItems.Sum(item => item.TotalPrice);
+        OnPropertyChanged(nameof(GrandTotal));
+    }
+    private void CalculateGrandTotal()
+    {
+        // Calculate the GrandTotal by summing the TotalPrice of each CartItem in the CartItems collection
+        GrandTotal = CartItems.Sum(item => item.TotalPrice);
+
+        // Notify the UI that the GrandTotal property has changed
+        OnPropertyChanged(nameof(GrandTotal));
+    }
+    private void OnCartItemPropertyChanged(object sender, PropertyChangedEventArgs e)
+    {
+        if (e.PropertyName == nameof(CartItem.TotalPrice))
+        {
+            CalculateGrandTotal();
+        }
+    }
+
+    private void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)
+    {
+        var item = ((Stepper)sender).BindingContext as CartItem;
+        item.Quantity = (int)e.NewValue;
+
+        // Call the CalculateGrandTotal method to recalculate the GrandTotal
+        CalculateGrandTotal();
     }
 
     // Implement the OnAppearing method to retrieve the CartItems from the IShoppingCartService
@@ -40,13 +78,19 @@ public partial class CartPage : ContentPage
         {
             CartItems.Add(item);
         }
+        CalculateGrandTotal();
+
     }
-    private void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)
+    private async void OnCheckoutClicked(object sender, EventArgs e)
     {
-        var stepper = (Stepper)sender;
-        var cartItem = (CartItem)stepper.BindingContext;
-        cartItem.Quantity = (int)e.NewValue;
+        await Navigation.PushAsync(new FoodPage());
     }
+    /*private void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)
+    {
+        var item = ((Stepper)sender).BindingContext as CartItem;
+        item.Quantity = (int)e.NewValue;
+        CalculateGrandTotal();
+    }*/
     /*private void OnImageTapped(object sender, EventArgs e)
     {
         // Get the tapped item

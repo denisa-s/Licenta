@@ -5,7 +5,8 @@
              Title="Your cart"
              Shell.TabBarIsVisible="False"
              Shell.NavBarIsVisible="False">
-    
+    <ScrollView>
+        <StackLayout>
     <CollectionView Margin="0,12" x:Name="cartListView">
         <CollectionView.ItemTemplate>
         <DataTemplate>
@@ -70,7 +71,7 @@
                                 FontSize="23"
                                 HorizontalOptions="End"
                                 VerticalOptions="End"
-                                Text="{Binding TotalPrice, StringFormat='${0}'}" 
+                                Text="{Binding TotalPrice, StringFormat='{0} RON'}" 
                                 TextColor="Black"/>
                         <Label x:Name="albl"/>
                     </StackLayout>
@@ -82,6 +83,13 @@
     </CollectionView.ItemTemplate>
         
     </CollectionView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
+            <Label Text="Grand Total:" FontSize="16" TextColor="Black" Padding="18" />
+            <Label Text="{Binding GrandTotal, StringFormat='{0} RON'}" FontSize="16" TextColor="Black" Padding="20"/>
+                <Button Text="Checkout" TextColor="White" BackgroundColor="DarkRed" Clicked="OnCheckoutClicked" />
+            </StackLayout>
+    </StackLayout>
+    </ScrollView>
     <!--<ListView x:Name="cartListView">
         <ListView.ItemTemplate>
             <DataTemplate>
