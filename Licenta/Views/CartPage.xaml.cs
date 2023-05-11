@@ -43,7 +43,9 @@ public partial class CartPage : ContentPage
     }
     private void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)
     {
-        double value = e.NewValue;
+        var stepper = (Stepper)sender;
+        var cartItem = (CartItem)stepper.BindingContext;
+        cartItem.Quantity = (int)e.NewValue;
     }
     /*private void OnImageTapped(object sender, EventArgs e)
     {

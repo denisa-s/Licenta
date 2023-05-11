@@ -31,14 +31,16 @@
                                        Text="{Binding Price}"
                                        TextColor="Black">
                             </Label>
-                            <Label x:Name="cantitateLabel"
-                                    FontSize="13"
-                                       HorizontalOptions="StartAndExpand"
-                                       Text="{Binding Source={x:Reference _stepper}, Path=Value, StringFormat='Cantitate: {0}'}"
-                                       TextColor="Black"
-                                       FontAttributes="Bold" />
+                            <Label 
+                                x:Name="cantitateLabel"
+                                FontSize="13"
+                                HorizontalOptions="StartAndExpand"
+                                Text="{Binding Quantity, StringFormat='Cantitate: {0}'}"                                     
+                                TextColor="Black"
+                                FontAttributes="Bold" />
                             <Stepper Maximum="10"
                                      x:Name="_stepper"
+                                     Value="{Binding Quantity}"                                 
                                      Increment="1"
                                      Minimum="{Binding Qty}"
                                      HorizontalOptions="Start"
@@ -68,7 +70,7 @@
                                 FontSize="23"
                                 HorizontalOptions="End"
                                 VerticalOptions="End"
-                                Text="{Binding TotalPrice, StringFormat='Total: {0:C}'}"
+                                Text="{Binding TotalPrice, StringFormat='${0}'}" 
                                 TextColor="Black"/>
                         <Label x:Name="albl"/>
                     </StackLayout>
