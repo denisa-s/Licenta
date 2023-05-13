@@ -20,20 +20,20 @@
                     <Label Text="Billing Information" FontSize="Medium" Padding="10"/>
                     <StackLayout Orientation="Horizontal" Spacing="50">
                         <Label Text="First Name" Padding="5"/>
-                        <Entry Placeholder="First Name" />
+                        <Entry Placeholder="First Name" x:Name="FirstNameEntry"/>
                         <Label Text="Last Name" Padding="5"/>
-                        <Entry Placeholder="Last Name" />
+                        <Entry Placeholder="Last Name" x:Name="LastNameEntry"/>
                     </StackLayout>
                     <Label Text="Zip Code" Padding="5"/>
-                    <Entry Placeholder="Zip Code" />
+                    <Entry Placeholder="Zip Code" x:Name="ZipCodeEntry"/>
                     <Label Text="City" Padding="5"/>
-                    <Entry Placeholder="City" />
+                    <Entry Placeholder="City" x:Name="CityEntry"/>
                     <Label Text="Address" Padding="5"/>
-                    <Entry Placeholder="Address" />
+                    <Entry Placeholder="Address" x:Name="AddressEntry"/>
                     <Label Text="Address details" Padding="5"/>
-                    <Entry Placeholder="Address details" />
+                    <Entry Placeholder="Address details" x:Name="AddressDetailsEntry"/>
                     <Label Text="Phone number" Padding="5"/>
-                    <Entry Placeholder="Phone number" />
+                    <Entry Placeholder="Phone number" x:Name="PhoneNumberEntry"/>
                 </StackLayout>
                 <StackLayout>
                     <Label Text="Payment Information" FontSize="Medium" Grid.Row="2" Padding="10"/>

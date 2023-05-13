@@ -12,12 +12,9 @@
                 <ViewCell>
                     <StackLayout>
                         <StackLayout>
-                            <Label Text="{Binding Name}"/>
-                            <Label Text="{Binding Quantity}" />
-                            <Label Text="{Binding MeasureUnits}"/>
-                            <Label Text="{Binding Price}" />
-                            <Label Text="{Binding Details}" />
-                            <Label Text="{Binding ID_provider}"/>
+                            <Label Text="{Binding FirstName}"/>
+                            <Label Text="{Binding LastName}" />
+                            <Label Text="{Binding PaymentMethod}"/>
                         </StackLayout>
                     </StackLayout>
                 </ViewCell>

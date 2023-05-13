@@ -11,8 +11,9 @@ public partial class FoodEntryPage : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        //listView.ItemsSource = await App.Database.GetFoodsAsync();
+        listView.ItemsSource = await App.Database.GetOrdersAsync();
     }
+
     async void OnFoodAddedClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new FoodPage
@@ -26,7 +27,7 @@ public partial class FoodEntryPage : ContentPage
         {
             await Navigation.PushAsync(new FoodPage
             {
-                BindingContext = e.SelectedItem as Food
+                BindingContext = e.SelectedItem as Order
             });
         }
     }

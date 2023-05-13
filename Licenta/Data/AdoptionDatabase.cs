@@ -29,8 +29,29 @@ namespace Licenta.Data
             _database.CreateTableAsync<Treatment>().Wait();
             _database.CreateTableAsync<Size>().Wait();
             _database.CreateTableAsync<ListSize>().Wait();
+            _database.CreateTableAsync<Order>().Wait();
         }
-
+        public Task<int> SaveOrder(Order order)
+        {
+            if (order.ID != 0)
+            {
+                return _database.UpdateAsync(order);
+            }
+            else
+            {
+                return _database.InsertAsync(order);
+            }
+        }
+        public Task<List<Order>> GetOrdersAsync()
+        {
+            return _database.Table<Order>().ToListAsync();
+        }
+        public Task<Order> GetOrderAsync(int id)
+        {
+            return _database.Table<Order>()
+            .Where(i => i.ID == id)
+            .FirstOrDefaultAsync();
+        }
         public Task<int> SaveUserDataAsync(LoginModel loginData)
         {
             return _database.UpdateAsync(loginData);
