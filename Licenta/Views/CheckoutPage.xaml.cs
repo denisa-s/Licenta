@@ -7,9 +7,11 @@ namespace Licenta.Views;
 
 public partial class CheckoutPage : ContentPage
 {
-    public CheckoutPage()
+    public decimal GrandTotal { get; set; }
+    public CheckoutPage(decimal grandTotal)
     {
         InitializeComponent();
+        GrandTotal = grandTotal;
     }
    
     private async void OnSubmit(object sender, EventArgs e)
@@ -22,7 +24,8 @@ public partial class CheckoutPage : ContentPage
             City = CityEntry.Text,
             Address = AddressEntry.Text,
             AddressDetails = AddressDetailsEntry.Text,
-            PhoneNumber = PhoneNumberEntry.Text
+            PhoneNumber = PhoneNumberEntry.Text,
+            Total = GrandTotal
         };
         if (CashButton.IsChecked)
         {

@@ -15,6 +15,7 @@
                             <Label Text="{Binding FirstName}"/>
                             <Label Text="{Binding LastName}" />
                             <Label Text="{Binding PaymentMethod}"/>
+                            <Label Text="{Binding Total}"/>
                         </StackLayout>
                     </StackLayout>
                 </ViewCell>

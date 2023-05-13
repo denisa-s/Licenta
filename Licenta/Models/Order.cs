@@ -20,5 +20,6 @@ namespace Licenta.Models
         public string AddressDetails { get; set; }
         public string PhoneNumber { get; set; }
         public string PaymentMethod { get; set; }
+        public decimal Total { get; set; }
     }
 }
