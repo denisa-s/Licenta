@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Licenta.Views.PaymentPage"
+             Title="PaymentPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Text="Checkout Page" FontSize="Large" Grid.Row="0" HorizontalOptions="Center"/>
+
+        <StackLayout Grid.Row="1">
+            <Label Text="Billing Information" FontSize="Medium"/>
+            <Entry Placeholder="First Name" />
+            <Entry Placeholder="Last Name" />
+            <Entry Placeholder="Zip Code" />
+            <Entry Placeholder="City" />
+            <Entry Placeholder="Address" />
+            <Entry Placeholder="Address details" />
+            <Entry Placeholder="Phone number" />
+        </StackLayout>
+
+        <StackLayout Grid.Row="2">
+            <Label Text="Payment Information" FontSize="Medium"/>
+            <Entry Placeholder="Card Number" />
+            <Entry Placeholder="Expiration Date" />
+            <Entry Placeholder="CVV" />
+        </StackLayout>
+        <Button Text="Payment method" Grid.Row="4" Command="{Binding PlaceOrderCommand}" />
+
+        <ActivityIndicator IsRunning="{Binding IsBusy}" Grid.Row="5" />
+    </Grid>
+</ContentPage>

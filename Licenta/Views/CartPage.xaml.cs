@@ -83,7 +83,7 @@ public partial class CartPage : ContentPage
     }
     private async void OnCheckoutClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new FoodPage());
+        await Navigation.PushAsync(new CheckoutPage());
     }
     /*private void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)
     {
