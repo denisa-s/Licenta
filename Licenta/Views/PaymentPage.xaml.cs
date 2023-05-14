@@ -19,6 +19,8 @@ public partial class PaymentPage : ContentPage
             Email = App.GlobalObject.UserName
     };
         await App.Database.SaveCardDetail(card);
-        await Navigation.PushAsync(new MedicalRecordEntryPage());
+        await DisplayAlert("Confirmation", $"Transaction completed!", "OK"); ;
+        await Navigation.PushAsync(new GuestEntryPage());
+        await Navigation.PopToRootAsync();
     }
 }

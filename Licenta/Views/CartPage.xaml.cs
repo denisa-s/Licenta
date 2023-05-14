@@ -31,11 +31,6 @@ public partial class CartPage : ContentPage
         CalculateGrandTotal(); 
     }
 
-    private void UpdateGrandTotal()
-    {
-        GrandTotal = CartItems.Sum(item => item.TotalPrice);
-        OnPropertyChanged(nameof(GrandTotal));
-    }
     private void CalculateGrandTotal()
     {
         // Calculate the GrandTotal by summing the TotalPrice of each CartItem in the CartItems collection
@@ -83,23 +78,11 @@ public partial class CartPage : ContentPage
     }
     private async void OnCheckoutClicked(object sender, EventArgs e)
     {
+        
         await Navigation.PushAsync(new CheckoutPage(GrandTotal));
+        await ClearCart();
     }
-    /*private void Stepper_ValueChanged(object sender, ValueChangedEventArgs e)
-    {
-        var item = ((Stepper)sender).BindingContext as CartItem;
-        item.Quantity = (int)e.NewValue;
-        CalculateGrandTotal();
-    }*/
-    /*private void OnImageTapped(object sender, EventArgs e)
-    {
-        // Get the tapped item
-        var image = (Image)sender;
-        var item = image.BindingContext as CartItem;
-
-        // Remove the item from the collection
-        CartItems.Remove(item);
-    }*/
+   
     private async Task DeleteItem(CartItem item)
     {
         // Get the shopping cart service from the dependency service
@@ -119,6 +102,21 @@ public partial class CartPage : ContentPage
         // Call the DeleteItem method with the selected item
         await DeleteItem(item);
     }
+    public async Task ClearCart()
+    {
+        // Get the shopping cart service from the dependency service
+        IShoppingCartService shoppingCartService = DependencyService.Get<IShoppingCartService>();
+
+        // Remove all items from the cart
+        await shoppingCartService.ClearCartAsync();
+
+        // Remove all items from the CartItems collection
+        CartItems.Clear();
+
+        // Recalculate the grand total
+        CalculateGrandTotal();
+    }
+
 
 
 }

@@ -1,8 +1,9 @@
+
 using Licenta.Models;
 using Licenta.Services;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
-
+using Licenta.ViewModels;
 namespace Licenta.Views;
 
 public partial class CheckoutPage : ContentPage
@@ -32,7 +33,9 @@ public partial class CheckoutPage : ContentPage
         {
             order.PaymentMethod = "Cash on delivery";
             await App.Database.SaveOrder(order);
-            await Navigation.PushAsync(new FoodEntryPage());
+            await DisplayAlert("Confirmation", $"Transaction completed!", "OK"); ;
+            await Navigation.PushAsync(new GuestEntryPage());
+            await Navigation.PopToRootAsync();
         }
         else if (CardButton.IsChecked)
         {
@@ -44,8 +47,11 @@ public partial class CheckoutPage : ContentPage
         {
             order.PaymentMethod = "Bank transfer";
             await App.Database.SaveOrder(order);
-            await Navigation.PushAsync(new FoodEntryPage());
+            await DisplayAlert("Confirmation", $"Transaction completed!", "OK"); ;
+            await Navigation.PushAsync(new GuestEntryPage());
+            await Navigation.PopToRootAsync();
         }
+
     }
-    
+
 }

@@ -37,6 +37,14 @@
                   ContentTemplate="{DataTemplate views:CartPage}" 
                   Icon="cart.png"
                   Route="cart"/>
+    <ShellContent Title="Cart" 
+                  ContentTemplate="{DataTemplate local:MedicalRecordEntryPage}" 
+                  Icon="cart.png"
+                  />
+    <ShellContent Title="Cart" 
+                  ContentTemplate="{DataTemplate local:FoodEntryPage}" 
+                  Icon="cart.png"
+                  />
 
     <Shell.FlyoutFooter>
         <StackLayout Padding="20">
