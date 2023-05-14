@@ -30,6 +30,28 @@ namespace Licenta.Data
             _database.CreateTableAsync<Size>().Wait();
             _database.CreateTableAsync<ListSize>().Wait();
             _database.CreateTableAsync<Order>().Wait();
+            _database.CreateTableAsync<CardDetail>().Wait();
+        }
+        public Task<int> SaveCardDetail(CardDetail card)
+        {
+            if (card.ID != 0)
+            {
+                return _database.UpdateAsync(card);
+            }
+            else
+            {
+                return _database.InsertAsync(card);
+            }
+        }
+        public Task<List<CardDetail>> GetCardDetailsAsync()
+        {
+            return _database.Table<CardDetail>().ToListAsync();
+        }
+        public Task<CardDetail> GetCardDetailAsync(int id)
+        {
+            return _database.Table<CardDetail>()
+            .Where(i => i.ID == id)
+            .FirstOrDefaultAsync();
         }
         public Task<int> SaveOrder(Order order)
         {

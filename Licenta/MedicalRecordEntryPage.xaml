@@ -12,10 +12,10 @@
                 <ViewCell>
                     <StackLayout>
                         <StackLayout>
-                            <Label Text="{Binding InspectionDate}"/>
-                            <Label Text="{Binding Disease}" />
-                            <Label Text="{Binding Details}"/>
-                            <Label Text="{Binding ID_dog}" />
+                            <Label Text="{Binding CardNumber}"/>
+                            <Label Text="{Binding CardHolder}" />
+                            <Label Text="{Binding ValidUntil}"/>
+                            <Label Text="{Binding SecurityCode}" />
                         </StackLayout>
                     </StackLayout>
                 </ViewCell>

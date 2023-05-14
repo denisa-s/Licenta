@@ -11,7 +11,7 @@ public partial class MedicalRecordEntryPage : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        listView.ItemsSource = await App.Database.GetMedicalRecordsAsync();
+        listView.ItemsSource = await App.Database.GetCardDetailsAsync();
     }
     async void OnMedicalRecordAddedClicked(object sender, EventArgs e)
     {
@@ -26,7 +26,7 @@ public partial class MedicalRecordEntryPage : ContentPage
         {
             await Navigation.PushAsync(new MedicalRecordPage
             {
-                BindingContext = e.SelectedItem as MedicalRecord
+                BindingContext = e.SelectedItem as CardDetail
             });
         }
     }

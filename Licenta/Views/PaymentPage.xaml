@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Licenta.Views.PaymentPage"
-             Title="PaymentPage">
+             Title="PaymentPage"
+             Shell.NavBarIsVisible="False">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -12,27 +13,24 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
-        <Label Text="Checkout Page" FontSize="Large" Grid.Row="0" HorizontalOptions="Center"/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+            <Label Text="We accept" FontSize="Medium" Grid.Row="0" HorizontalOptions="End" Padding="20"/>
+        <Image Source="mastercard.png" Grid.Column="1" HorizontalOptions="End" HeightRequest="60" WidthRequest="60"/>
+        <Image Source="visa.png" Grid.Column="2" HorizontalOptions="End" HeightRequest="60" WidthRequest="60"/>
+        </StackLayout>
 
         <StackLayout Grid.Row="1">
-            <Label Text="Billing Information" FontSize="Medium"/>
-            <Entry Placeholder="First Name" />
-            <Entry Placeholder="Last Name" />
-            <Entry Placeholder="Zip Code" />
-            <Entry Placeholder="City" />
-            <Entry Placeholder="Address" />
-            <Entry Placeholder="Address details" />
-            <Entry Placeholder="Phone number" />
+            <Label Text="Card number" Padding="10"/>
+            <Entry Placeholder="Card number" x:Name="CardNumberEntry"/>
+            <Label Text="Card holder name" Padding="10"/>
+            <Entry Placeholder="Card holder name" x:Name="CardHolderEntry"/>
+            <Label Text="Valid until" Padding="10"/>
+            <Entry Placeholder="Valid until" x:Name="ValidUntilEntry"/>
+            <Label Text="Security code CVC/CVV" Padding="10"/>
+            <Entry Placeholder="Security code CVC/CVV" x:Name="SecurityCodeEntry"/>
         </StackLayout>
 
-        <StackLayout Grid.Row="2">
-            <Label Text="Payment Information" FontSize="Medium"/>
-            <Entry Placeholder="Card Number" />
-            <Entry Placeholder="Expiration Date" />
-            <Entry Placeholder="CVV" />
-        </StackLayout>
-        <Button Text="Payment method" Grid.Row="4" Command="{Binding PlaceOrderCommand}" />
+        <Button Text="Finish shopping" Grid.Row="4" Clicked="OnFinishedClicked" Margin="100" TextColor="White" BackgroundColor="DarkRed"/>
 
         <ActivityIndicator IsRunning="{Binding IsBusy}" Grid.Row="5" />
     </Grid>
