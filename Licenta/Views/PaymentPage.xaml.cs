@@ -15,8 +15,9 @@ public partial class PaymentPage : ContentPage
             CardNumber = CardNumberEntry.Text,
             CardHolder = CardHolderEntry.Text,
             ValidUntil = ValidUntilEntry.Text,
-            SecurityCode = SecurityCodeEntry.Text
-        };
+            SecurityCode = SecurityCodeEntry.Text,
+            Email = App.GlobalObject.UserName
+    };
         await App.Database.SaveCardDetail(card);
         await Navigation.PushAsync(new MedicalRecordEntryPage());
     }

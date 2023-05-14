@@ -25,7 +25,8 @@ public partial class CheckoutPage : ContentPage
             Address = AddressEntry.Text,
             AddressDetails = AddressDetailsEntry.Text,
             PhoneNumber = PhoneNumberEntry.Text,
-            Total = GrandTotal
+            Total = GrandTotal,
+            Email = App.GlobalObject.UserName
         };
         if (CashButton.IsChecked)
         {

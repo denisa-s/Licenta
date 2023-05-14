@@ -16,6 +16,7 @@
                             <Label Text="{Binding CardHolder}" />
                             <Label Text="{Binding ValidUntil}"/>
                             <Label Text="{Binding SecurityCode}" />
+                            <Label Text="{Binding Email}" />
                         </StackLayout>
                     </StackLayout>
                 </ViewCell>
