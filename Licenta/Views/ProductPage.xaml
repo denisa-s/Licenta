@@ -80,7 +80,7 @@
                                            FontFamily="RalewayMedium"
                                            FontSize="19"
                                            TextColor="Black"
-                                           LineBreakMode="NoWrap"
+                                           LineBreakMode="HeadTruncation"
                                            Margin="10,10,10,10"/>
                                     <StackLayout Grid.Row="2" Orientation="Horizontal"
                                                  Margin="10,0,10,15">

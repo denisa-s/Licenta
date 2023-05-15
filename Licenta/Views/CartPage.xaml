@@ -20,23 +20,27 @@
                             WidthRequest="120" />
 
                         <StackLayout Spacing="6">
+                                    
                             <Label 
                                 FontSize="23"
                                 HorizontalOptions="StartAndExpand"
                                 Text="{Binding Name}"
                                 TextColor="Black">
                             </Label>
-                            <Label  x:Name="priceLabel"
-                                FontSize="16"
-                                       HorizontalOptions="StartAndExpand"
-                                       Text="{Binding Price}"
-                                       TextColor="Black">
-                            </Label>
+                            <StackLayout Orientation="Horizontal" Spacing="0">
+                                <Label  x:Name="priceLabel"
+                                        FontSize="16"
+                                        HorizontalOptions="Start"
+                                        Text="{Binding Price}"
+                                        TextColor="Black">
+                                </Label>
+                                <Label Text=" RON" FontSize="16"></Label>
+                            </StackLayout>
                             <Label 
                                 x:Name="cantitateLabel"
                                 FontSize="13"
                                 HorizontalOptions="StartAndExpand"
-                                Text="{Binding Quantity, StringFormat='Cantitate: {0}'}"                                     
+                                Text="{Binding Quantity, StringFormat='Quantity: {0}'}"                                     
                                 TextColor="Black"
                                 FontAttributes="Bold" />
                             <Stepper Maximum="10"

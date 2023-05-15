@@ -120,8 +120,8 @@
                                 <Span
                                     FontAttributes="Bold"
                                     FontSize="16"
-                                    Text=" Pet"
-                                    TextColor="Black" />
+                                    Text="Type"
+                                    TextColor="DarkRed" />
                             </FormattedString.Spans>
                         </FormattedString>
                     </Label.FormattedText>
@@ -143,7 +143,7 @@
                                     FontAttributes="Bold"
                                     FontSize="16"
                                     Text=" Breed"
-                                    TextColor="Black" />
+                                    TextColor="DarkRed" />
                             </FormattedString.Spans>
                         </FormattedString>
                     </Label.FormattedText>
@@ -165,7 +165,7 @@
                                     FontAttributes="Bold"
                                     FontSize="16"
                                     Text=" Gender"
-                                    TextColor="Black" />
+                                    TextColor="DarkRed" />
                             </FormattedString.Spans>
                         </FormattedString>
                     </Label.FormattedText>
@@ -194,7 +194,7 @@
                                     FontAttributes="Bold"
                                     FontSize="16"
                                     Text=" Social: "
-                                    TextColor="Black" />
+                                    TextColor="DarkRed" />
                                 <Span
                                     FontAttributes="Bold"
                                     FontSize="16"
@@ -221,7 +221,7 @@
                                     FontAttributes="Bold"
                                     FontSize="16"
                                     Text=" Health: "
-                                    TextColor="Black" />
+                                    TextColor="DarkRed" />
                                 <Span
                                     FontAttributes="Bold"
                                     FontSize="16"
@@ -248,7 +248,7 @@
                                     FontAttributes="Bold"
                                     FontSize="16"
                                     Text=" Meet: "
-                                    TextColor="Black" />
+                                    TextColor="DarkRed" />
                                 <Span
                                     FontAttributes="Bold"
                                     FontSize="16"
