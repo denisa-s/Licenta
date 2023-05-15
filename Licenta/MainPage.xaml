@@ -4,8 +4,8 @@
              x:Class="Licenta.MainPage"
              xmlns:models="clr-namespace:Licenta.Models"
              xmlns:views="clr-namespace:Licenta.Views"
-             Shell.NavBarIsVisible="False"
-             Shell.FlyoutItemIsVisible="False">
+             Shell.TabBarIsVisible="True"
+             Shell.NavBarIsVisible="False">
 
     <Grid BackgroundColor="DarkRed" >
         <Grid.RowDefinitions>

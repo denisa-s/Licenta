@@ -6,6 +6,7 @@
     xmlns:local="clr-namespace:Licenta"
     xmlns:models="clr-namespace:Licenta.Models"
     FlyoutBackgroundColor="DarkRed"
+    Shell.TabBarForegroundColor="Black"
     Shell.TabBarIsVisible="False"
     xmlns:views="clr-namespace:Licenta.Views">
 
@@ -14,8 +15,8 @@
                   Title="Login Page" 
                   ContentTemplate="{DataTemplate local:LoginPage}"  
                   Route="LoginPage" />
-
-    <ShellContent Title="Home Page" 
+    <TabBar >
+        <ShellContent Title="Home Page" 
                   ContentTemplate="{DataTemplate local:MainPage}" 
                   Route="MainPage" 
                   Icon="dashboard.png" />
@@ -27,7 +28,8 @@
    
     <ShellContent Title="Pets" 
                   ContentTemplate="{DataTemplate views:HomePage}" 
-                  Icon="dog.png"/>
+                  Icon="dog.png"
+                  Route="PetsPage"/>
 
     <ShellContent Title="Food Shop" 
                   ContentTemplate="{DataTemplate views:ProductPage}" 
@@ -37,6 +39,7 @@
                   ContentTemplate="{DataTemplate views:CartPage}" 
                   Icon="cart.png"
                   Route="cart"/>
+    </TabBar>
     <ShellContent Title="Cart" 
                   ContentTemplate="{DataTemplate local:MedicalRecordEntryPage}" 
                   Icon="cart.png"

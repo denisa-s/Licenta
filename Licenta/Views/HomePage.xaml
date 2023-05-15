@@ -7,7 +7,8 @@
              Shell.NavBarIsVisible="False"
              FlyoutItem.IsVisible="False"
              x:DataType="viewmodel:HomePageViewModel"
-             BackgroundImageSource="wallpaper.jpg">
+             BackgroundImageSource="wallpaper.jpg"
+             Shell.TabBarIsVisible="True">
     
     <RefreshView Command="{Binding GetPetsCommand}" IsRefreshing="{Binding IsRefreshing}">
         <ScrollView>
@@ -75,7 +76,7 @@
                 </CollectionView>
                 
                 <Button
-                    Grid.Row="3"
+                    Grid.Row="1"
                     Grid.Column="1"
                     BackgroundColor="DarkRed"
                     Clicked="Donate_Clicked"

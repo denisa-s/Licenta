@@ -6,21 +6,23 @@
              xmlns:viewmodel="clr-namespace:Licenta.ViewModels"
              Shell.NavBarIsVisible="False"
              FlyoutItem.IsVisible="False"
+              Shell.TabBarIsVisible="True"
              x:DataType="viewmodel:ProductPageViewModel"
              BackgroundImageSource="wallpaper.jpg">
 
     <RefreshView Command="{Binding GetFoodsCommand}" IsRefreshing="{Binding IsRefreshing}">
         <ScrollView>
-            <Grid ColumnDefinitions="Auto,Auto,0.5*" RowDefinitions="10,50,550,90,Auto,50">
-                <Grid Grid.Row="1" >
+            <Grid ColumnDefinitions="Auto,Auto,0.5*" RowDefinitions="1,50,550,90,Auto,50">
+                
+                <!--<Grid Grid.Row="1" >
                     <Border Grid.Column="0"
                             HorizontalOptions="Center"
                             VerticalOptions="Center"
                             HeightRequest="30"
                             StrokeThickness="0">
-                        <!--<Border.GestureRecognizers >
+                        <Border.GestureRecognizers >
                             <TapGestureRecognizer Command="{Binding CartCommand}"/>
-                        </Border.GestureRecognizers>-->
+                        </Border.GestureRecognizers>
                         <Image Source="cart.png"
                                Margin="0,0,10,0"
                                HeightRequest="25"
@@ -31,7 +33,7 @@
                             </Image.GestureRecognizers>
                         </Image>
                     </Border>
-                </Grid>
+                </Grid>-->
                 <CollectionView
                     x:Name="FoodsList"
                     Grid.Row="2"

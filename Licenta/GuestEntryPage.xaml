@@ -4,6 +4,7 @@
              x:Class="Licenta.GuestEntryPage"
              Title="Profile"
              Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="True"
              Shell.FlyoutItemIsVisible="False">
    
     <ScrollView VerticalScrollBarVisibility="Never" HorizontalScrollBarVisibility="Never">

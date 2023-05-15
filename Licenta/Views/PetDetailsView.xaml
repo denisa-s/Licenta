@@ -18,6 +18,22 @@
                 Aspect="AspectFit"
                 HeightRequest="400"
                 Source="{Binding Pet.Image}" />
+            
+                <Border Grid.Column="0"
+                        HorizontalOptions="Start"
+                        VerticalOptions="Start"
+                        StrokeThickness="0"
+                        HeightRequest="25"
+                        Style="{StaticResource EllipseBorderStyle}">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BackCommand}"/>
+                    </Border.GestureRecognizers>
+                    <Image Source="back_arrow.png"
+                           Margin="0,0,10,0"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                </Border>
+           
             <!--  2. Pet Name  -->
             <Frame
                 Grid.Row="1"
