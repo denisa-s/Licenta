@@ -13,7 +13,8 @@ public partial class LoginPage : ContentPage
     {
         LoginModel globalObject = App.GlobalObject;
         globalObject.UserName = emailEntry.Text;
-        Navigation.PushAsync(new MainPage());
+        if (App.GlobalObject.UserName == "admin") { Navigation.PushAsync(new MedicalRecordEntryPage()); }
+        else { Navigation.PushAsync(new MainPage()); }
     }
     private void OnRegisterButtonClicked(object sender, EventArgs e)
     {

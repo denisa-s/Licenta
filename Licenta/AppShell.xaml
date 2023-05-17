@@ -43,7 +43,8 @@
     <ShellContent Title="Cart" 
                   ContentTemplate="{DataTemplate local:MedicalRecordEntryPage}" 
                   Icon="cart.png"
-                  />
+                 Route="MedicalRecordEntryPage" 
+/>
     <ShellContent Title="Cart" 
                   ContentTemplate="{DataTemplate local:FoodEntryPage}" 
                   Icon="cart.png"
