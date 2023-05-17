@@ -3,35 +3,105 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Licenta.Views.PaymentPage"
              Title="PaymentPage"
-             Shell.NavBarIsVisible="False">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="End">
-            <Label Text="We accept" FontSize="Medium" Grid.Row="0" HorizontalOptions="End" Padding="20"/>
-        <Image Source="mastercard.png" Grid.Column="1" HorizontalOptions="End" HeightRequest="60" WidthRequest="60"/>
-        <Image Source="visa.png" Grid.Column="2" HorizontalOptions="End" HeightRequest="60" WidthRequest="60"/>
-        </StackLayout>
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="True"
+             BackgroundImageSource="wallpaper.jpg">
+    
+    <StackLayout VerticalOptions="Start" HorizontalOptions="FillAndExpand">
+        <Frame BackgroundColor="LightGrey"
+               Margin="40,10,40,30"
+               Padding="20">
+            <Grid RowSpacing="0" ColumnSpacing="30">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
-        <StackLayout Grid.Row="1">
-            <Label Text="Card number" Padding="10"/>
-            <Entry Placeholder="Card number" x:Name="CardNumberEntry"/>
-            <Label Text="Card holder name" Padding="10"/>
-            <Entry Placeholder="Card holder name" x:Name="CardHolderEntry"/>
-            <Label Text="Valid until" Padding="10"/>
-            <Entry Placeholder="Valid until" x:Name="ValidUntilEntry"/>
-            <Label Text="Security code CVC/CVV" Padding="10"/>
-            <Entry Placeholder="Security code CVC/CVV" x:Name="SecurityCodeEntry"/>
-        </StackLayout>
+                <Image Grid.Row="0" Grid.Column="1" HeightRequest="40" HorizontalOptions="EndAndExpand"
+                       Source="card_unknown.png" />
 
-        <Button Text="Finish shopping" Grid.Row="4" Clicked="OnFinishedClicked" Margin="100" TextColor="White" BackgroundColor="DarkRed"/>
+                <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                       Text="Card Number" FontSize="14" LineBreakMode="TailTruncation"
+                       TextColor="Black" />
 
-        <ActivityIndicator IsRunning="{Binding IsBusy}" Grid.Row="5" />
-    </Grid>
+                <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                       Text="XXXX-XXXX-XXXX-XXXX" FontSize="20"
+                       TextColor="Black" />
+
+                <Label Grid.Row="3" Grid.Column="0"
+                       Text="Expiration" FontSize="14"
+                       TextColor="Black" Margin="0,20,0,0" />
+
+                <Label Grid.Row="4" Grid.Column="0"
+                       Text="M/Y" FontSize="20"
+                       TextColor="Black" />
+
+                <Label Grid.Row="3" Grid.Column="1"
+                       Text="CVV" FontSize="14"
+                       TextColor="Black" Margin="0,20,0,0" />
+
+                <Label Grid.Row="4" Grid.Column="1"
+                       Text="XXX" FontSize="20"
+                       TextColor="Black" />
+
+            </Grid>
+        </Frame>
+
+        <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" ColumnSpacing="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+
+
+            <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" HasShadow="False" BorderColor="Black">
+                <StackLayout Orientation="Horizontal" Spacing="20">
+                    <Image HeightRequest="30" Source="icon_chip.png" />
+                    <Entry x:Name="CardNumberEntry" Placeholder="Card number" HorizontalOptions="FillAndExpand" Keyboard="Numeric" MaxLength="16"  Text="{Binding CardNumber}" >
+                    </Entry>
+                </StackLayout>
+            </Frame>
+
+            <Frame Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="1" HasShadow="False" BorderColor="Black" Padding="10" Margin="30,30,30,10">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="icon_date.png" HeightRequest="25" />
+                    <Picker x:Name="DatePicker" HorizontalOptions="FillAndExpand" SelectedIndexChanged="OnDateSelectedIndexChanged"/>
+                    <Label x:Name="DisplayLabel" IsVisible="False"/>
+                </StackLayout>
+            </Frame>
+            <Frame Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1" HasShadow="False" BorderColor="Black" Padding="10" Margin="30,30,30,10">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="card_h.png" HeightRequest="25" />
+                    <Entry x:Name="CardHolderEntry" Placeholder="Holder name" HorizontalOptions="FillAndExpand" Keyboard="Text" Text="{Binding CardHolder}" />
+                </StackLayout>
+            </Frame>
+            <Frame Grid.Row="2" Grid.Column="2" HasShadow="False" BorderColor="Black" Padding="10" Margin="0,30,30,10">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="icon_cvv.png" HeightRequest="25" />
+                    <Entry x:Name="SecurityCodeEntry" Placeholder="CVV" MaxLength="3" HorizontalOptions="FillAndExpand" Keyboard="Numeric" IsPassword="True"  Text="{Binding SecurityCode}" />
+                </StackLayout>
+            </Frame>
+
+            <Button Grid.Row="4" Clicked="OnFinishedClicked" Grid.Column="0" Grid.ColumnSpan="3" Text="Pay" BackgroundColor="DarkRed" BorderColor="Black" TextColor="White" BorderWidth="1" CornerRadius="25" FontSize="18" Padding="18" Margin="30,0" />
+            <ActivityIndicator IsRunning="{Binding IsBusy}" Grid.Row="5" />
+        </Grid>
+    </StackLayout>
 </ContentPage>

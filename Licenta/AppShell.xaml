@@ -16,12 +16,12 @@
                   ContentTemplate="{DataTemplate local:LoginPage}"  
                   Route="LoginPage" />
     <TabBar >
-        <ShellContent Title="Home Page" 
+    <ShellContent Title="Home Page" 
                   ContentTemplate="{DataTemplate local:MainPage}" 
                   Route="MainPage" 
                   Icon="dashboard.png" />
-
-    <ShellContent Title="Profile"
+        
+        <ShellContent Title="Profile"
                   ContentTemplate="{DataTemplate local:GuestEntryPage}" 
                   Route="GuestPage"
                   Icon="guest.png"/>
@@ -35,7 +35,7 @@
                   ContentTemplate="{DataTemplate views:ProductPage}" 
                   Icon="food.png"/>
 
-    <ShellContent Title="Cart" 
+        <ShellContent Title="Cart" 
                   ContentTemplate="{DataTemplate views:CartPage}" 
                   Icon="cart.png"
                   Route="cart"/>
