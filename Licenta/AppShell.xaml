@@ -49,14 +49,10 @@
                   ContentTemplate="{DataTemplate local:AdminOrderDetails}" 
                   Icon="cart.png"
                   Route="AdminOrderDetails"/>
-
-
-
-
-
     <ShellContent Title="Adoption Requests" 
                   ContentTemplate="{DataTemplate local:AdoptionRequest}" 
-                  Icon="cart.png"/>
+                  Icon="cart.png"
+                  Route="AdoptionRequest"/>
     
     <Shell.FlyoutFooter>
         <StackLayout Padding="20">

@@ -3,10 +3,40 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Licenta.AdoptionEntryPage"
              Title="AdoptionEntryPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    <VerticalStackLayout Spacing="1" Margin="5">
+        <StackLayout Margin="10" >
+            <Editor Placeholder="Enter the first name of the guest" Text="{Binding FirstName}"
+                    HeightRequest="20"/>
+            <Editor Placeholder="Enter the last name of the guest" Text="{Binding LastName}"
+                    HeightRequest="20" />
+            <Editor Placeholder="Enter the address of the guest" Text="{Binding Address}"
+                    HeightRequest="20" />
+            <Editor Placeholder="Enter the details of the address" Text="{Binding AddressDetails}"
+                    HeightRequest="20"/>
+            <Editor Placeholder="Enter the phone number of the guest" Text="{Binding PhoneNumber}"
+                    HeightRequest="20" />
+            <Editor Placeholder="Enter the email of the guest" Text="{Binding Email}"
+                    HeightRequest="20"/>
+            <Editor Placeholder="Enter the CNP of the guest" Text="{Binding CNP}"
+                    HeightRequest="20"/>
+            <Editor Placeholder="Enter the type of the animal" Text="{Binding Type}"
+                    HeightRequest="20" />
+            <Editor Placeholder="Enter the breed of the animal" Text="{Binding Breed}"
+                    HeightRequest="20" />
+            <Editor Placeholder="Enter the name of the animal" Text="{Binding Name}"
+                    HeightRequest="20" />
+            <Editor Placeholder="Enter the gender of the animal" Text="{Binding Gender}"
+                    HeightRequest="20" />
+            <Editor Placeholder="Enter the date of the meeting" Text="{Binding Date}"
+                    HeightRequest="20" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Text="Save" Clicked="OnSaveButtonClicked" />
+                <Button Grid.Column="1" Text="Delete" Clicked="OnDeleteButtonClicked"/>
+            </Grid>
+        </StackLayout>
     </VerticalStackLayout>
 </ContentPage>
