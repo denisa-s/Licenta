@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Licenta.FoodEntryPage"
-             Title="FoodEntryPage">
+             x:Class="Licenta.AdminOrderDetails"
+             Title="AdminOrderDetails">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add a food" Clicked="OnFoodAddedClicked" />
+        <ToolbarItem Text="Add an order" Clicked="OnOrderAddedClicked" />
     </ContentPage.ToolbarItems>
     <ListView x:Name="listView" Margin="30" ItemSelected="OnListViewItemSelected" HorizontalScrollBarVisibility="Always">
         <ListView.ItemTemplate>
@@ -14,6 +14,11 @@
                         <StackLayout>
                             <Label Text="{Binding FirstName}"/>
                             <Label Text="{Binding LastName}" />
+                            <Label Text="{Binding ZipCode}"/>
+                            <Label Text="{Binding City}" />
+                            <Label Text="{Binding Address}"/>
+                            <Label Text="{Binding AddressDetails}" />
+                            <Label Text="{Binding PhoneNumber}" />
                             <Label Text="{Binding PaymentMethod}"/>
                             <Label Text="{Binding Total}"/>
                             <Label Text="{Binding Email}"/>

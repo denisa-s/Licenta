@@ -2,9 +2,9 @@ using Licenta.Models;
 
 namespace Licenta;
 
-public partial class FoodEntryPage : ContentPage
+public partial class AdminOrderDetails : ContentPage
 {
-	public FoodEntryPage()
+	public AdminOrderDetails()
 	{
 		InitializeComponent();
 	}
@@ -14,18 +14,18 @@ public partial class FoodEntryPage : ContentPage
         listView.ItemsSource = await App.Database.GetOrdersAsync();
     }
 
-    async void OnFoodAddedClicked(object sender, EventArgs e)
+    async void OnOrderAddedClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new FoodPage
+        await Navigation.PushAsync(new AdminEntryOrderDetails
         {
-            BindingContext = new Food()
+            BindingContext = new Order()
         });
     }
     async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
         if (e.SelectedItem != null)
         {
-            await Navigation.PushAsync(new FoodPage
+            await Navigation.PushAsync(new AdminEntryOrderDetails
             {
                 BindingContext = e.SelectedItem as Order
             });

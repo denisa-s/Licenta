@@ -59,6 +59,10 @@ namespace Licenta.Data
                 return _database.InsertAsync(order);
             }
         }
+        public Task<int> DeleteOrderAsync(Order order)
+        {
+            return _database.DeleteAsync(order);
+        }
         //pt orders
         public Task<List<Order>> GetOrdersAsync()
         {

@@ -45,14 +45,15 @@
                   ContentTemplate="{DataTemplate local:AdminCardDetails}" 
                   Icon="cart.png"
                   Route="AdminCardDetails"/>
-    
-    
-    
+    <ShellContent Title="Order details" 
+                  ContentTemplate="{DataTemplate local:AdminOrderDetails}" 
+                  Icon="cart.png"
+                  Route="AdminOrderDetails"/>
 
-    
-    <ShellContent Title="Cart" 
-                  ContentTemplate="{DataTemplate local:FoodEntryPage}" 
-                  Icon="cart.png"/>
+
+
+
+
     <ShellContent Title="Adoption Requests" 
                   ContentTemplate="{DataTemplate local:AdoptionRequest}" 
                   Icon="cart.png"/>

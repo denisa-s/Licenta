@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Licenta.AdminEntryOrderDetails"
+             Title="AdminEntryOrderDetails">
+    <VerticalStackLayout Spacing="1" Margin="5">
+        <StackLayout Margin="10" >
+            <Editor Placeholder="Enter the first name" Text="{Binding FirstName}"
+                    HeightRequest="20"/>
+            <Editor Placeholder="Enter the last name" Text="{Binding LastName}"
+                    HeightRequest="20" />
+            <Editor Placeholder="Enter the zip code" Text="{Binding ZipCode}"
+                    HeightRequest="20" />
+            <Editor Placeholder="Enter the city" Text="{Binding City}"
+                    HeightRequest="20" />
+            <Editor Placeholder="Enter the address" Text="{Binding Address}"
+                    HeightRequest="20" />
+            <Editor Placeholder="Enter the details of the address" Text="{Binding AddressDetails}"
+                    HeightRequest="20"/>
+            <Editor Placeholder="Enter the phone number" Text="{Binding PhoneNumber}"
+                    HeightRequest="20" />
+            <Editor Placeholder="Enter the payment method" Text="{Binding PaymentMethod}"
+                    HeightRequest="20" />
+            <Editor Placeholder="Enter the total of the order" Text="{Binding Total}"
+                    HeightRequest="20" />
+            <Editor Placeholder="Enter the email of the buyer" Text="{Binding Email}"
+                    HeightRequest="20"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Text="Save" Clicked="OnSaveButtonClicked" />
+                <Button Grid.Column="1" Text="Delete" Clicked="OnDeleteButtonClicked"/>
+            </Grid>
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>
