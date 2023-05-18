@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Licenta.AdminEntryCardDetails"
              Title="Admin Entry Card Details">
-    <VerticalStackLayout Spacing="1" Margin="5">
-        <StackLayout Margin="10" >
+    <VerticalStackLayout Spacing="10" Margin="5">
+        <StackLayout Margin="10" Spacing="10">
             <Editor Placeholder="Enter the card number" Text="{Binding CardNumber}"
                     HeightRequest="20"/>
             <Editor Placeholder="Enter the name of the card holder" Text="{Binding CardHolder }"
@@ -20,8 +20,8 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Text="Save" Clicked="OnSaveButtonClicked" />
-                <Button Grid.Column="1" Text="Delete" Clicked="OnDeleteButtonClicked"/>
+                <Button CornerRadius="15" Text="Save" Clicked="OnSaveButtonClicked" BackgroundColor="Black"/>
+                <Button CornerRadius="15" Grid.Column="1" Text="Delete" Clicked="OnDeleteButtonClicked" BackgroundColor="Black"/>
             </Grid>
         </StackLayout>
     </VerticalStackLayout>

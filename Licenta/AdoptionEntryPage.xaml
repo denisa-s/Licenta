@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Licenta.AdoptionEntryPage"
              Title="Adoption Entry Page">
-    <VerticalStackLayout Spacing="1" Margin="5">
-        <StackLayout Margin="10" >
+    <VerticalStackLayout Spacing="10" Margin="5">
+        <StackLayout Margin="10" Spacing="10">
             <Editor Placeholder="Enter the first name of the guest" Text="{Binding FirstName}"
                     HeightRequest="20"/>
             <Editor Placeholder="Enter the last name of the guest" Text="{Binding LastName}"
@@ -34,8 +34,8 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Text="Save" Clicked="OnSaveButtonClicked" />
-                <Button Grid.Column="1" Text="Delete" Clicked="OnDeleteButtonClicked"/>
+                <Button CornerRadius="15" BackgroundColor="Black" Text="Save" Clicked="OnSaveButtonClicked" />
+                <Button CornerRadius="15" BackgroundColor="Black" Grid.Column="1" Text="Delete" Clicked="OnDeleteButtonClicked"/>
             </Grid>
         </StackLayout>
     </VerticalStackLayout>

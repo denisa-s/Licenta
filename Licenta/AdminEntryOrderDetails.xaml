@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Licenta.AdminEntryOrderDetails"
              Title="Admin Entry Order Details">
-    <VerticalStackLayout Spacing="1" Margin="5">
-        <StackLayout Margin="10" >
+    <VerticalStackLayout Spacing="10" Margin="5">
+        <StackLayout Margin="10" Spacing="10" >
             <Editor Placeholder="Enter the first name" Text="{Binding FirstName}"
                     HeightRequest="20"/>
             <Editor Placeholder="Enter the last name" Text="{Binding LastName}"
@@ -30,8 +30,8 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Text="Save" Clicked="OnSaveButtonClicked" />
-                <Button Grid.Column="1" Text="Delete" Clicked="OnDeleteButtonClicked"/>
+                <Button CornerRadius="15" Text="Save" Clicked="OnSaveButtonClicked"  BackgroundColor="Black"/>
+                <Button CornerRadius="15" Grid.Column="1" Text="Delete" Clicked="OnDeleteButtonClicked"  BackgroundColor="Black"/>
             </Grid>
         </StackLayout>
     </VerticalStackLayout>

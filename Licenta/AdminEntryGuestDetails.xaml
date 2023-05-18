@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Licenta.AdminEntryGuestDetails"
              Title="Admin Entry Guest Details">
-    <VerticalStackLayout Spacing="1" Margin="5">
-        <StackLayout Margin="10" >
+    <VerticalStackLayout Spacing="10" Margin="5">
+        <StackLayout Margin="10" Spacing="10" >
             <Editor Placeholder="Enter the email of the guest" Text="{Binding UserName}"
                     HeightRequest="20"/>
             <Editor Placeholder="Enter the password of the guest" Text="{Binding Password}"
@@ -30,8 +30,8 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Text="Save" Clicked="OnSaveButtonClicked" />
-                <Button Grid.Column="1" Text="Delete" Clicked="OnDeleteButtonClicked"/>
+                <Button CornerRadius="15" Text="Save" Clicked="OnSaveButtonClicked"  BackgroundColor="Black"/>
+                <Button CornerRadius="15" Grid.Column="1" Text="Delete" Clicked="OnDeleteButtonClicked"  BackgroundColor="Black"/>
             </Grid>
         </StackLayout>
     </VerticalStackLayout>

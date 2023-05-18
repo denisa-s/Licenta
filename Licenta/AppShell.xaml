@@ -43,19 +43,19 @@
 
     <ShellContent Title="Card details" 
                   ContentTemplate="{DataTemplate local:AdminCardDetails}" 
-                  Icon="cart.png"
+                  Icon="card.png"
                   Route="AdminCardDetails"/>
     <ShellContent Title="Order details" 
                   ContentTemplate="{DataTemplate local:AdminOrderDetails}" 
-                  Icon="cart.png"
+                  Icon="order.png"
                   Route="AdminOrderDetails"/>
     <ShellContent Title="Adoption Requests" 
                   ContentTemplate="{DataTemplate local:AdoptionRequest}" 
-                  Icon="cart.png"
+                  Icon="doc.png"
                   Route="AdoptionRequest"/>
     <ShellContent Title="Guest Details" 
                   ContentTemplate="{DataTemplate local:AdminGuestDetails}" 
-                  Icon="cart.png"
+                  Icon="employee.png"
                   Route="AdminGuestDetails"/>
     <Shell.FlyoutFooter>
         <StackLayout Padding="20">
