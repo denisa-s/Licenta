@@ -135,6 +135,16 @@
                     />
                 </Grid>
             </Border>
+
+            <Button 
+                Grid.Row="5"
+                Grid.Column="1"
+                CornerRadius="15"
+                FontSize="Small"
+                Margin="70"
+                HorizontalOptions="CenterAndExpand"
+                HeightRequest="50" WidthRequest="100" Text="Sign out" 
+                TextColor="White" BackgroundColor="DarkRed" Command="{Binding SignOutCommand}"/>
         </Grid>
     </ScrollView>
 

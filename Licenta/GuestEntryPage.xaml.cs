@@ -1,4 +1,5 @@
 using Licenta.Models;
+using Microsoft.Toolkit.Mvvm.Input;
 using System.Security.Cryptography;
 
 namespace Licenta;
@@ -15,7 +16,11 @@ public partial class GuestEntryPage : ContentPage
         emailLabel.Text = result.UserName;
         passwordEntry.Text = result.Password;
     }
-
+    [ICommand]
+    async void SignOut()
+    {
+        await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
+    }
     async void OnGuestAddedClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new GuestPage
