@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Licenta"
     xmlns:models="clr-namespace:Licenta.Models"
-    FlyoutBackgroundColor="DarkRed"
+    FlyoutBackgroundColor="Red"
     Shell.TabBarForegroundColor="Black"
     Shell.TabBarIsVisible="False"
     xmlns:views="clr-namespace:Licenta.Views">
@@ -40,11 +40,16 @@
                   Icon="cart.png"
                   Route="cart"/>
     </TabBar>
-    
-    <ShellContent Title="Cart" 
-                  ContentTemplate="{DataTemplate local:MedicalRecordEntryPage}" 
+
+    <ShellContent Title="Card details" 
+                  ContentTemplate="{DataTemplate local:AdminCardDetails}" 
                   Icon="cart.png"
-                  Route="MedicalRecordEntryPage" />
+                  Route="AdminCardDetails"/>
+    
+    
+    
+
+    
     <ShellContent Title="Cart" 
                   ContentTemplate="{DataTemplate local:FoodEntryPage}" 
                   Icon="cart.png"/>

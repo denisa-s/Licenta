@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Licenta.MedicalRecordPage"
-             Title="MedicalRecordPage">
+             x:Class="Licenta.AdminEntryCardDetails"
+             Title="AdminEntryCardDetails">
     <VerticalStackLayout Spacing="1" Margin="5">
         <StackLayout Margin="10" >
-            <Editor Placeholder="Enter the inspection date of the dog" Text="{Binding InspectionDate}"
+            <Editor Placeholder="Enter the card number" Text="{Binding CardNumber}"
                     HeightRequest="20"/>
-            <Editor Placeholder="Enter the disease of the dog" Text="{Binding Disease}"
+            <Editor Placeholder="Enter the name of the card holder" Text="{Binding CardHolder }"
                     HeightRequest="20" />
-            <Editor Placeholder="Enter the details of the disease" Text="{Binding Details}"
+            <Editor Placeholder="Enter the expiration date" Text="{Binding ValidUntil }"
                     HeightRequest="20" />
-            <Editor Placeholder="Enter the id of the dog" Text="{Binding ID_dog}"
+            <Editor Placeholder="Enter the security code (CVV)" Text="{Binding SecurityCode }"
+                    HeightRequest="20" />
+            <Editor Placeholder="Enter the email of the card holder" Text="{Binding Email  }"
                     HeightRequest="20" />
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -23,4 +25,5 @@
             </Grid>
         </StackLayout>
     </VerticalStackLayout>
+
 </ContentPage>

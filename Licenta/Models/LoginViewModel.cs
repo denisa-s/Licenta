@@ -55,7 +55,7 @@ namespace Licenta.Models
                     //await Navigation.PushModalAsync(new AppShell());
                     await App.Current.MainPage.DisplayAlert("Success", "You are logged in", "Ok");
                     if (App.GlobalObject.UserName == "admin")
-                    { await Shell.Current.GoToAsync($"//{nameof(MedicalRecordEntryPage)}"); }
+                    { await Shell.Current.GoToAsync($"//{nameof(AdminCardDetails)}"); }
                     else { await Shell.Current.GoToAsync($"//{nameof(MainPage)}"); }
                 }
                 else

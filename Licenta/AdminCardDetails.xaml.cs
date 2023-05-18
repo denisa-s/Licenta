@@ -2,9 +2,9 @@ using Licenta.Models;
 
 namespace Licenta;
 
-public partial class MedicalRecordEntryPage : ContentPage
+public partial class AdminCardDetails : ContentPage
 {
-	public MedicalRecordEntryPage()
+	public AdminCardDetails()
 	{
 		InitializeComponent();
 	}
@@ -13,18 +13,18 @@ public partial class MedicalRecordEntryPage : ContentPage
         base.OnAppearing();
         listView.ItemsSource = await App.Database.GetCardDetailsAsync();
     }
-    async void OnMedicalRecordAddedClicked(object sender, EventArgs e)
+    async void OnCardAddedClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new MedicalRecordPage
+        await Navigation.PushAsync(new AdminEntryCardDetails
         {
-            BindingContext = new MedicalRecord()
+            BindingContext = new CardDetail()
         });
     }
     async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
         if (e.SelectedItem != null)
         {
-            await Navigation.PushAsync(new MedicalRecordPage
+            await Navigation.PushAsync(new AdminEntryCardDetails
             {
                 BindingContext = e.SelectedItem as CardDetail
             });

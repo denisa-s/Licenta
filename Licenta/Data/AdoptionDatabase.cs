@@ -38,6 +38,10 @@ namespace Licenta.Data
         {
             return _database.Table<CardDetail>().ToListAsync();
         }
+        public Task<int> DeleteCardAsync(CardDetail card)
+        {
+            return _database.DeleteAsync(card);
+        }
         public Task<CardDetail> GetCardDetailAsync(int id)
         {
             return _database.Table<CardDetail>()

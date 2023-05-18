@@ -2,22 +2,22 @@ using Licenta.Models;
 
 namespace Licenta;
 
-public partial class MedicalRecordPage : ContentPage
+public partial class AdminEntryCardDetails : ContentPage
 {
-	public MedicalRecordPage()
+	public AdminEntryCardDetails()
 	{
 		InitializeComponent();
 	}
     async void OnSaveButtonClicked(object sender, EventArgs e)
     {
-        var slist = (MedicalRecord)BindingContext;
-        await App.Database.SaveMedicalRecordAsync(slist);
+        var slist = (CardDetail)BindingContext;
+        await App.Database.SaveCardDetail(slist);
         await Navigation.PopAsync();
     }
     async void OnDeleteButtonClicked(object sender, EventArgs e)
     {
-        var slist = (MedicalRecord)BindingContext;
-        await App.Database.DeleteMedicalRecordAsync(slist);
+        var slist = (CardDetail)BindingContext;
+        await App.Database.DeleteCardAsync(slist);
         await Navigation.PopAsync();
     }
 }
