@@ -17,7 +17,7 @@ namespace Licenta.Data
             _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<LoginModel>().Wait();
             _database.CreateTableAsync<Employee>().Wait();
-            _database.CreateTableAsync<AdoptionRequest>().Wait();
+            _database.CreateTableAsync<AdoptRequest>().Wait();
             _database.CreateTableAsync<Appointment>().Wait();
             _database.CreateTableAsync<Dog>().Wait();
             _database.CreateTableAsync<Food>().Wait();
@@ -130,17 +130,17 @@ namespace Licenta.Data
         }
 
         //Pt cereri adoptie
-        public Task<List<AdoptionRequest>> GetAdoptionRequestsAsync()
+        public Task<List<AdoptRequest>> GetAdoptionRequestsAsync()
         {
-            return _database.Table<AdoptionRequest>().ToListAsync();
+            return _database.Table<AdoptRequest>().ToListAsync();
         }
-        public Task<AdoptionRequest> GetAdoptionRequestAsync(int id)
+        public Task<AdoptRequest> GetAdoptionRequestAsync(int id)
         {
-            return _database.Table<AdoptionRequest>()
+            return _database.Table<AdoptRequest>()
             .Where(i => i.ID == id)
             .FirstOrDefaultAsync();
         }
-        public Task<int> SaveAdoptionRequestAsync(AdoptionRequest adoption)
+        public Task<int> SaveAdoptionRequestAsync(AdoptRequest adoption)
         {
             if (adoption.ID != 0)
             {
@@ -151,7 +151,7 @@ namespace Licenta.Data
                 return _database.InsertAsync(adoption);
             }
         }
-        public Task<int> DeleteAdoptionRequestAsync(AdoptionRequest adoption)
+        public Task<int> DeleteAdoptionRequestAsync(AdoptRequest adoption)
         {
             return _database.DeleteAsync(adoption);
         }

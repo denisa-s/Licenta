@@ -56,6 +56,7 @@
                         FontFamily="Bold"
                         TextColor="Black"
                         FontSize="30"
+                        x:Name="nameLabel"
                         HorizontalOptions="CenterAndExpand"
                         Text="{Binding Pet.Name}"
                         VerticalOptions="CenterAndExpand" />
@@ -147,6 +148,7 @@
                     Grid.Column="0"
                     FontSize="Large"
                     LineBreakMode="NoWrap"
+                    x:Name="typeLabel"
                     Text="{Binding Pet.Type}"
                     TextColor="Black"
                     TranslationX="10" />
@@ -169,6 +171,7 @@
                     Grid.Column="1"
                     FontSize="Large"
                     LineBreakMode="WordWrap"
+                    x:Name="breedLabel"
                     Text="{Binding Pet.Breed}"
                     TextColor="Black"
                     TranslationX="20" />
@@ -191,6 +194,7 @@
                     Grid.Column="2"
                     FontSize="Large"
                     LineBreakMode="WordWrap"
+                    x:Name="genderLabel"
                     Text="{Binding Pet.Gender}"
                     TextColor="Black"
                     TranslationX="20" />
@@ -277,8 +281,15 @@
 
 
                 </Label>
-            </Grid>
+                <Button 
+                Grid.Row="5"
+                Grid.Column="1"
+                CornerRadius="15"
+                FontSize="Small"
+                HeightRequest="45" Text="I want to meet with the pet!" 
+                TextColor="White" BackgroundColor="DarkRed" Clicked="OnMeetClicked"/>
 
+            </Grid>
         </Grid>
     </ScrollView>
 </ContentPage>

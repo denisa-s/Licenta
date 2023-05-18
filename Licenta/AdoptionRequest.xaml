@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Licenta.AdoptionRequest"
+             Title="AdoptionRequest">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add a request" Clicked="OnRequestAddedClicked" />
+    </ContentPage.ToolbarItems>
+    <ListView x:Name="listView" Margin="30" ItemSelected="OnListViewItemSelected" HorizontalScrollBarVisibility="Always">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout>
+                        <StackLayout>
+                            <Label Text="{Binding FirstName}"/>
+                            <Label Text="{Binding LastName}"/>
+                            <Label Text="{Binding Address}" />
+                            <Label Text="{Binding AddressDetails}" />
+                            <Label Text="{Binding PhoneNumber}"/>
+                            <Label Text="{Binding Email}" />
+                            <Label Text="{Binding CNP}"/>
+                            <Label Text="{Binding Type}" />
+                            <Label Text="{Binding Breed}" />
+                            <Label Text="{Binding Name}"/>
+                            <Label Text="{Binding Gender}" />
+                            <Label Text="{Binding Date}" />
+                        </StackLayout>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+    </ListView>
+
+</ContentPage>

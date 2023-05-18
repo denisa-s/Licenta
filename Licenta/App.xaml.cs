@@ -8,6 +8,7 @@ using Licenta.Services;
 public partial class App : Application
 {
     public static LoginModel GlobalObject { get; set; }
+    public static Pet GlobalPet { get; set; }
     static AdoptionDatabase database;
     public static AdoptionDatabase Database
     {
@@ -36,5 +37,9 @@ public partial class App : Application
 
         // Store the global object in the static property
         GlobalObject = globalObject;
+        Pet globalpet = new Pet();
+
+        // Store the global object in the static property
+        GlobalPet = globalpet;
     }
 }

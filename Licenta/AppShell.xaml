@@ -21,7 +21,7 @@
                   Route="MainPage" 
                   Icon="dashboard.png" />
         
-        <ShellContent Title="Profile"
+    <ShellContent Title="Profile"
                   ContentTemplate="{DataTemplate local:GuestEntryPage}" 
                   Route="GuestPage"
                   Icon="guest.png"/>
@@ -35,21 +35,23 @@
                   ContentTemplate="{DataTemplate views:ProductPage}" 
                   Icon="food.png"/>
 
-        <ShellContent Title="Cart" 
+    <ShellContent Title="Cart" 
                   ContentTemplate="{DataTemplate views:CartPage}" 
                   Icon="cart.png"
                   Route="cart"/>
     </TabBar>
+    
     <ShellContent Title="Cart" 
                   ContentTemplate="{DataTemplate local:MedicalRecordEntryPage}" 
                   Icon="cart.png"
-                 Route="MedicalRecordEntryPage" 
-/>
+                  Route="MedicalRecordEntryPage" />
     <ShellContent Title="Cart" 
                   ContentTemplate="{DataTemplate local:FoodEntryPage}" 
-                  Icon="cart.png"
-                  />
-
+                  Icon="cart.png"/>
+    <ShellContent Title="Adoption Requests" 
+                  ContentTemplate="{DataTemplate local:AdoptionRequest}" 
+                  Icon="cart.png"/>
+    
     <Shell.FlyoutFooter>
         <StackLayout Padding="20">
             <Button Text="Sign Out" Command="{Binding SignOutCommand}" BackgroundColor="Black" />

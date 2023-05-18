@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Licenta.Models
 {
-    public class AdoptionRequest
+    public class AdoptRequest
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
@@ -20,7 +20,7 @@ namespace Licenta.Models
         public string CNP { get; set; }
         public string Type { get; set; }
         public string Breed { get; set; }
-        public string  Name { get; set; }
+        public string Name { get; set; }
         public string Gender { get; set; }
         public string Date { get; set; }
     }
