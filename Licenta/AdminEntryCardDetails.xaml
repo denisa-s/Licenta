@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Licenta.AdminEntryCardDetails"
-             Title="AdminEntryCardDetails">
+             Title="Admin Entry Card Details">
     <VerticalStackLayout Spacing="1" Margin="5">
         <StackLayout Margin="10" >
             <Editor Placeholder="Enter the card number" Text="{Binding CardNumber}"
