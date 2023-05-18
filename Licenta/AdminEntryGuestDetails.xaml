@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Licenta.AdminEntryGuestDetails"
+             Title="AdminEntryGuestDetails">
+    <VerticalStackLayout Spacing="1" Margin="5">
+        <StackLayout Margin="10" >
+            <Editor Placeholder="Enter the email of the guest" Text="{Binding UserName}"
+                    HeightRequest="20"/>
+            <Editor Placeholder="Enter the password of the guest" Text="{Binding Password}"
+                    HeightRequest="20"/>
+            <Editor Placeholder="Enter the first name of the guest" Text="{Binding FirstName}"
+                    HeightRequest="20" />
+            <Editor Placeholder="Enter the last name of the guest" Text="{Binding LastName}"
+                    HeightRequest="20" />
+            <Editor Placeholder="Enter the phone number of the guest" Text="{Binding PhoneNumber}"
+                    HeightRequest="20"/>
+            <Editor Placeholder="Enter the birthday of the guest" Text="{Binding BirthDate }"
+                    HeightRequest="20" />
+            <Editor Placeholder="Enter the address of the guest" Text="{Binding Address }"
+                    HeightRequest="20"/>
+            <Editor Placeholder="Enter the details of the address" Text="{Binding AddressDetails }"
+                    HeightRequest="20" />
+            <Editor Placeholder="Enter the marital status of the guest" Text="{Binding MaritalStatus }"
+                    HeightRequest="20" />
+            <Editor Placeholder="Enter the housing type of the guest" Text="{Binding HousingType }"
+                    HeightRequest="20" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Text="Save" Clicked="OnSaveButtonClicked" />
+                <Button Grid.Column="1" Text="Delete" Clicked="OnDeleteButtonClicked"/>
+            </Grid>
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>

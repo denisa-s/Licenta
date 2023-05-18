@@ -131,9 +131,9 @@ namespace Licenta.Data
         }
 
         //Pt vizitatori
-        public Task<List<Guest>> GetGuestsAsync()
+        public Task<List<LoginModel>> GetGuestsAsync()
         {
-            return _database.Table<Guest>().ToListAsync();
+            return _database.Table<LoginModel>().ToListAsync();
         }
         public Task<Guest> GetGuestAsync(int id)
         {
@@ -152,7 +152,7 @@ namespace Licenta.Data
                 return _database.InsertAsync(guest);
             }
         }
-        public Task<int> DeleteGuestAsync(Guest guest)
+        public Task<int> DeleteGuestAsync(LoginModel guest)
         {
             return _database.DeleteAsync(guest);
         }

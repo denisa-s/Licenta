@@ -53,7 +53,10 @@
                   ContentTemplate="{DataTemplate local:AdoptionRequest}" 
                   Icon="cart.png"
                   Route="AdoptionRequest"/>
-    
+    <ShellContent Title="Guest Details" 
+                  ContentTemplate="{DataTemplate local:AdminGuestDetails}" 
+                  Icon="cart.png"
+                  Route="AdminGuestDetails"/>
     <Shell.FlyoutFooter>
         <StackLayout Padding="20">
             <Button Text="Sign Out" Command="{Binding SignOutCommand}" BackgroundColor="Black" />

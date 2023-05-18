@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Licenta.AdminGuestDetails"
+             Title="AdminGuestDetails">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add a guest" Clicked="OnGuestAddedClicked" />
+    </ContentPage.ToolbarItems>
+    <ListView x:Name="listView" Margin="30" ItemSelected="OnListViewItemSelected" HorizontalScrollBarVisibility="Always">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout>
+                        <StackLayout>
+                            <Label Text="{Binding UserName }"/>
+                            <Label Text="{Binding Password }" />
+                            <Label Text="{Binding FirstName }"/>
+                            <Label Text="{Binding LastName }" />
+                            <Label Text="{Binding PhoneNumber }"/>
+                            <Label Text="{Binding BirthDate }" />
+                            <Label Text="{Binding Address }" />
+                            <Label Text="{Binding AddressDetails }"/>
+                            <Label Text="{Binding MaritalStatus }"/>
+                            <Label Text="{Binding HousingType }"/>
+                        </StackLayout>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

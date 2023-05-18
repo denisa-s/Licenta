@@ -10,14 +10,14 @@ public partial class GuestPage : ContentPage
 	}
     async void OnSaveButtonClicked(object sender, EventArgs e)
     {
-        var slist = (Guest)BindingContext;
-        await App.Database.SaveGuestAsync(slist);
-        await Navigation.PopAsync();
+        //var slist = (LoginModel)BindingContext;
+        //await App.Database.SaveGuestAsync(slist);
+        //await Navigation.PopAsync();
     }
     async void OnDeleteButtonClicked(object sender, EventArgs e)
     {
-        var slist = (Guest)BindingContext;
-        await App.Database.DeleteGuestAsync(slist);
-        await Navigation.PopAsync();
+        //var slist = (LoginModel)BindingContext;
+        //await App.Database.DeleteGuestAsync(slist);
+        //await Navigation.PopAsync();
     }
 }
