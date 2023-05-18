@@ -48,21 +48,12 @@
                         />
 
                         <Button 
-                            Grid.Column="1" Clicked="OnLoginnSecurityClicked" Text="Login and Security" FontSize="13" TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"
+                            Grid.Column="2" Clicked="OnLoginnSecurityClicked" Text="Login and Security" FontSize="13" TextColor="Black" HorizontalOptions="End" VerticalOptions="End"
                             Opacity="0.85"
                             Background="Transparent"
                             BorderWidth="0"
                             Padding="0,0"
                         />
-
-                        <Button 
-                            Grid.Column="2" Clicked="OnPetProfileClicked" Text="Pet profile Info" FontSize="13" TextColor="Black" HorizontalOptions="End" VerticalOptions="Center"
-                            Opacity="0.85"
-                            Background="Transparent"
-                            BorderWidth="0"
-                            Padding="0,0"
-                        />
-
                     </Grid>
 
                     <Line 

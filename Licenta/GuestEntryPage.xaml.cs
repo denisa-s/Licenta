@@ -33,13 +33,7 @@ public partial class GuestEntryPage : ContentPage
             });
         }
     }
-    async void OnPetProfileClicked(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new PetProfile
-        {
-            BindingContext = new Dog()
-        });
-    }
+    
     async void OnPersonalInfoClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new PersonalInfo

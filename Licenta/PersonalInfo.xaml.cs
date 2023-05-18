@@ -50,11 +50,5 @@ public partial class PersonalInfo : ContentPage
             BindingContext = new Guest()
         });
     }
-    async void OnPetProfileClicked(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new PetProfile
-        {
-            BindingContext = new Dog()
-        });
-    }
+    
 }

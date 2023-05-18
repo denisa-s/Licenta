@@ -43,13 +43,7 @@ public partial class EditProfilePage : ContentPage
             BindingContext = new Guest()
         });
     }
-    async void OnPetProfileClicked(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new PetProfile
-        {
-            BindingContext = new Dog()
-        });
-    }
+   
     async void OnPersonalInfoClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new PersonalInfo
