@@ -22,7 +22,7 @@ public partial class HomePage : ContentPage
     }
 
 
-    private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+    /*private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
     {
         var pet = ((VisualElement)sender).BindingContext as Pet;
 
@@ -32,5 +32,5 @@ public partial class HomePage : ContentPage
         {
             {"Pet", pet }
         });
-    }
+    }*/
 }

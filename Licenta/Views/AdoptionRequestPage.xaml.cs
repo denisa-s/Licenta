@@ -66,7 +66,8 @@ public partial class AdoptionRequestPage : ContentPage
         };
             await App.Database.SaveAdoptionRequestAsync(request);
             await DisplayAlert("Confirmation", $"Request submitted!", "OK"); ;
-            await Navigation.PushAsync(new GuestEntryPage());
-            await Navigation.PopToRootAsync();
+        //await Navigation.PushAsync(new GuestEntryPage());
+        //await Navigation.PopToRootAsync();
+        Navigation.PopAsync();
     }
 }

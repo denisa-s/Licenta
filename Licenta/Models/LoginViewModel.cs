@@ -10,10 +10,10 @@ namespace Licenta.Models
 {
     public class LoginViewModel
     {
-        private string _userName, _password;
+        private string userName, password;
       
-        public string UserName { get => _userName; set => _userName = value; }
-        public string Password { get => _password; set => _password = value; }
+        public string UserName { get => userName; set => userName = value; }
+        public string Password { get => password; set => password = value; }
 
         public ICommand RegisterCommand { private set; get; }
         
@@ -103,12 +103,20 @@ namespace Licenta.Models
             return Convert.ToBase64String(combinedSaltAndHash);
         }
 
-        private static byte[] HashPasswordWithSalt(string password, byte[] salt)
+        /*private static byte[] HashPasswordWithSalt(string password, byte[] salt)
         {
             const int iterations = 10000;
             using (var pbkdf2 = new Rfc2898DeriveBytes(password, salt, iterations))
             {
                 return pbkdf2.GetBytes(20); // 20 bytes for SHA1
+            }
+        }*/
+        private static byte[] HashPasswordWithSalt(string password, byte[] salt)
+        {
+            const int iterations = 10000;
+            using (var x = new Rfc2898DeriveBytes(password, salt, iterations))
+            {
+                return x.GetBytes(20); // 20 bytes for SHA1
             }
         }
         private void OnRegisterCommand(object obj)

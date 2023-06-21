@@ -83,7 +83,7 @@
                     CornerRadius="15"
                     FontSize="Small"
                     HeightRequest="45"
-                    Text="Nu stii ce tip de animal ti se potriveste? Fa acest test!"
+                    Text="Personality test"
                     TranslationY="5" />
                 
             </Grid>

@@ -38,7 +38,7 @@ namespace Licenta.ViewModels
             try
             {
                 IsBusy = true;
-                Console.WriteLine("Cauta animale");
+                //Console.WriteLine("Cauta animale");
 
                 var pets = await petService.GetPets();
 
@@ -51,8 +51,8 @@ namespace Licenta.ViewModels
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"Unable to get Pets: {ex.Message}");
-                Console.WriteLine("Nu s au gasit animale");
+                //Debug.WriteLine($"Unable to get Pets: {ex.Message}");
+                //Console.WriteLine("Nu s au gasit animale");
                 await Shell.Current.DisplayAlert("Error!", ex.Message, "OK");
             }
             finally
