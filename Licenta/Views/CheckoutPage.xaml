@@ -45,7 +45,7 @@
                 </StackLayout>
                 <Button Text="Continue" Grid.Row="4" Clicked="OnSubmit" TextColor="White" BackgroundColor="DarkRed"/>
             </StackLayout>
-            <ActivityIndicator IsRunning="{Binding IsBusy}" Grid.Row="5" />
+            <ActivityIndicator IsRunning="{Binding IsLoading}" Grid.Row="5" />
     </Grid>
     </ScrollView>
 </ContentPage>

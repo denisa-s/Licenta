@@ -101,7 +101,7 @@
             </Frame>
 
             <Button Grid.Row="4" Clicked="OnFinishedClicked" Grid.Column="0" Grid.ColumnSpan="3" Text="Pay" BackgroundColor="DarkRed" BorderColor="Black" TextColor="White" BorderWidth="1" CornerRadius="25" FontSize="18" Padding="18" Margin="30,0" />
-            <ActivityIndicator IsRunning="{Binding IsBusy}" Grid.Row="5" />
+            <ActivityIndicator IsRunning="{Binding IsLoading}" Grid.Row="5" />
         </Grid>
     </StackLayout>
 </ContentPage>

@@ -7,59 +7,59 @@
              Shell.NavBarIsVisible="False">
     <ScrollView>
         <StackLayout>
-    <CollectionView Margin="0,12" x:Name="cartListView">
-        <CollectionView.ItemTemplate>
-        <DataTemplate>
-                <Frame BorderColor="Gray" CornerRadius="10" HasShadow="True" Margin="20" Padding="30">
-                    <StackLayout Orientation="Horizontal"
+            <CollectionView Margin="0,12" x:Name="cartListView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="Gray" CornerRadius="10" HasShadow="True" Margin="20" Padding="30">
+                            <StackLayout Orientation="Horizontal"
                                  Spacing="16">
-                        <Image      
+                                <Image      
                             Aspect="AspectFit"
                             HeightRequest="120"
                             Source="{Binding Image}"
                             WidthRequest="120" />
 
-                        <StackLayout Spacing="6">
-                                    
-                            <Label 
+                                <StackLayout Spacing="6">
+
+                                    <Label 
                                 FontSize="23"
                                 HorizontalOptions="StartAndExpand"
                                 Text="{Binding Name}"
                                 TextColor="Black">
-                            </Label>
-                            <StackLayout Orientation="Horizontal" Spacing="0">
-                                <Label  x:Name="priceLabel"
+                                    </Label>
+                                    <StackLayout Orientation="Horizontal" Spacing="0">
+                                        <Label  x:Name="priceLabel"
                                         FontSize="16"
                                         HorizontalOptions="Start"
                                         Text="{Binding Price}"
                                         TextColor="Black">
-                                </Label>
-                                <Label Text=" RON" FontSize="16"></Label>
-                            </StackLayout>
-                            <Label 
+                                        </Label>
+                                        <Label Text=" RON" FontSize="16"></Label>
+                                    </StackLayout>
+                                    <Label 
                                 x:Name="cantitateLabel"
                                 FontSize="13"
                                 HorizontalOptions="StartAndExpand"
                                 Text="{Binding Quantity, StringFormat='Quantity: {0}'}"                                     
                                 TextColor="Black"
                                 FontAttributes="Bold" />
-                            <Stepper Maximum="10"
+                                    <Stepper Maximum="10"
                                      x:Name="_stepper"
                                      Value="{Binding Quantity}"                                 
                                      Increment="1"
                                      Minimum="{Binding Qty}"
                                      HorizontalOptions="Start"
                                      ValueChanged="Stepper_ValueChanged">
-                            </Stepper>
+                                    </Stepper>
 
-                        </StackLayout>
-                       
-                        <Label 
+                                </StackLayout>
+
+                                <Label 
                                 FontSize="23"
                                 HorizontalOptions="StartAndExpand"
                                 Text="                                                                         "
                                 TextColor="Black"/>
-                        <Image      
+                                <Image      
                              Aspect="AspectFit"
                              HeightRequest="23"
                              Source="bin.png"
@@ -67,44 +67,31 @@
                              HorizontalOptions="End"
                             VerticalOptions="Start"
                             BindingContext="{Binding .}">
-                            <Image.GestureRecognizers>
-                                <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="OnDeleteItemTapped" />
-                            </Image.GestureRecognizers>
-                        </Image>
-                        <Label 
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="OnDeleteItemTapped" />
+                                    </Image.GestureRecognizers>
+                                </Image>
+                                <Label 
                                 FontSize="23"
                                 HorizontalOptions="End"
                                 VerticalOptions="End"
                                 Text="{Binding TotalPrice, StringFormat='{0} RON'}" 
                                 TextColor="Black"/>
-                        <Label x:Name="albl"/>
-                    </StackLayout>
-                    
-                </Frame>
-            
-            </DataTemplate>
-            
-    </CollectionView.ItemTemplate>
-        
-    </CollectionView>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
-            <Label Text="Grand Total:" FontSize="16" TextColor="Black" Padding="18" />
-            <Label Text="{Binding GrandTotal, StringFormat='{0} RON'}" FontSize="16" TextColor="Black" Padding="20"/>
+                                <Label x:Name="albl"/>
+                            </StackLayout>
+
+                        </Frame>
+
+                    </DataTemplate>
+
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
+                <Label Text="Grand Total:" FontSize="16" TextColor="Black" Padding="18" />
+                <Label Text="{Binding GrandTotal, StringFormat='{0} RON'}" FontSize="16" TextColor="Black" Padding="20"/>
                 <Button Text="Checkout" TextColor="White" BackgroundColor="DarkRed" Clicked="OnCheckoutClicked" />
             </StackLayout>
-    </StackLayout>
+        </StackLayout>
     </ScrollView>
-    <!--<ListView x:Name="cartListView">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <StackLayout Orientation="Vertical">
-                        <Label Text="{Binding Name}" VerticalOptions="Center" />
-                        <Label Text="{Binding Price}" VerticalOptions="Center" />
-                        <Label Text="{Binding Quantity}" VerticalOptions="Center" />
-                    </StackLayout>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>-->
 </ContentPage>

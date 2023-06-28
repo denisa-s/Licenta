@@ -14,7 +14,7 @@ public partial class AnimalPage : ContentPage
         BindingContext = vm;
     }
 
-    private async void Donate_Clicked(object sender, EventArgs e)
+    private async void TestClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new TestPage());
     }

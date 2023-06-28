@@ -16,20 +16,4 @@ public partial class ProductPage : ContentPage
         InitializeComponent();
         BindingContext = vm;
     }
-    private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
-    {
-        var food = ((VisualElement)sender).BindingContext as Food;
-
-        if (food == null)
-            return;
-        await Shell.Current.GoToAsync(nameof(FoodDetailsView), true, new Dictionary<string, object>
-        {
-            {"Food", food }
-        });
-    }
-    private async void OnImageTapped(object sender, EventArgs e)
-    {
-        // Navigate to the desired page
-        await Navigation.PushAsync(new CartPage());
-    }
 }

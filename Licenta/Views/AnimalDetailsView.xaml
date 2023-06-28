@@ -11,7 +11,7 @@
 
     <ScrollView>
         <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto,Auto,Auto">
-            <!--  1. Image  -->
+            
             <Image
                 Grid.Row="0"
                 Grid.Column="0"
@@ -35,7 +35,7 @@
                            VerticalOptions="Center"/>
             </Border>
 
-            <!--  2. Pet Name  -->
+      
             <Frame
                 Grid.Row="1"
                 Grid.Column="0"
@@ -85,35 +85,7 @@
                     </Label>
                 </Grid>
             </Frame>
-            <!--  3. General information  -->
-            <!--<Frame
-                Grid.Row="2"
-                Grid.Column="0"
-                Grid.ColumnSpan="3"
-                BackgroundColor="Red"
-                TranslationX="0"
-                TranslationY="0" />
-            <Frame
-                Grid.Row="2"
-                Grid.Column="0"
-                Grid.ColumnSpan="3"
-                BackgroundColor="MediumVioletRed"
-                TranslationX="4"
-                TranslationY="4" />
-            <Frame
-                Grid.Row="2"
-                Grid.Column="0"
-                Grid.ColumnSpan="3"
-                BackgroundColor="MediumVioletRed"
-                TranslationX="8"
-                TranslationY="8" />
-            <Frame
-                Grid.Row="2"
-                Grid.Column="0"
-                Grid.ColumnSpan="3"
-                BackgroundColor="DarkRed"
-                TranslationX="12"
-                TranslationY="12" />-->
+            
             <Frame
                 Grid.Row="2"
                 Grid.Column="0"

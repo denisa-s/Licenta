@@ -12,8 +12,6 @@ public partial class PaymentPage : ContentPage
         {
             dates.Add(DateTime.Today.AddMonths(i));
         }
-
-        // Add the dates to the picker
         foreach (DateTime date in dates)
         {
             DatePicker.Items.Add(date.ToString("MM/yyyy"));
@@ -21,14 +19,10 @@ public partial class PaymentPage : ContentPage
     }
     private void OnDateSelectedIndexChanged(object sender, EventArgs e)
     {
-        // Retrieve the selected date from the picker
         string selectedDate = DatePicker.SelectedItem as string;
         if (selectedDate != null)
         {
             DateTime dateValue = DateTime.ParseExact(selectedDate, "MM/yyyy", null);
-
-            // Use the selected date as needed
-            // For example, display it in a label
             DisplayLabel.Text = dateValue.ToString("MM/yyyy");
         }
     }

@@ -13,27 +13,6 @@
     <RefreshView Command="{Binding GetFoodsCommand}" IsRefreshing="{Binding IsRefreshing}">
         <ScrollView>
             <Grid ColumnDefinitions="Auto,Auto,0.5*" RowDefinitions="1,50,550,90,Auto,50">
-                
-                <!--<Grid Grid.Row="1" >
-                    <Border Grid.Column="0"
-                            HorizontalOptions="Center"
-                            VerticalOptions="Center"
-                            HeightRequest="30"
-                            StrokeThickness="0">
-                        <Border.GestureRecognizers >
-                            <TapGestureRecognizer Command="{Binding CartCommand}"/>
-                        </Border.GestureRecognizers>
-                        <Image Source="cart.png"
-                               Margin="0,0,10,0"
-                               HeightRequest="25"
-                               HorizontalOptions="Center"
-                               VerticalOptions="Center">
-                            <Image.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="OnImageTapped" />
-                            </Image.GestureRecognizers>
-                        </Image>
-                    </Border>
-                </Grid>-->
                 <CollectionView
                     x:Name="FoodsList"
                     Grid.Row="2"

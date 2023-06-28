@@ -12,8 +12,6 @@ public partial class AdoptionRequestPage : ContentPage
         {
             dates.Add(DateTime.Today.AddDays(i));
         }
-
-        // Add the dates to the picker
         foreach (DateTime date in dates)
         {
             DatePicker.Items.Add(date.ToString("dd/MM/yyyy"));
@@ -21,14 +19,10 @@ public partial class AdoptionRequestPage : ContentPage
     }
     private void OnDateSelectedIndexChanged(object sender, EventArgs e)
     {
-        // Retrieve the selected date from the picker
         string selectedDate = DatePicker.SelectedItem as string;
         if (selectedDate != null)
         {
             DateTime dateValue = DateTime.ParseExact(selectedDate, "dd/MM/yyyy", null);
-
-            // Use the selected date as needed
-            // For example, display it in a label
             DisplayLabel.Text = dateValue.ToString("dd/MM/yyyy");
         }
     }
@@ -64,10 +58,8 @@ public partial class AdoptionRequestPage : ContentPage
             Gender = App.GlobalAnimal.Gender,
             Date = DisplayLabel.Text
         };
-            await App.Database.SaveAdoptionRequestAsync(request);
-            await DisplayAlert("Confirmation", $"Request submitted!", "OK"); ;
-        //await Navigation.PushAsync(new GuestEntryPage());
-        //await Navigation.PopToRootAsync();
+        await App.Database.SaveAdoptionRequestAsync(request);
+        await DisplayAlert("Confirmation", $"Request submitted!", "OK"); ;
         Navigation.PopAsync();
     }
 }
