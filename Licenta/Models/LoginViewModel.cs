@@ -52,7 +52,6 @@ namespace Licenta.Models
             {
                 if (VerifyPassword(Password, loginData.Password))
                 {
-                    //await Navigation.PushModalAsync(new AppShell());
                     await App.Current.MainPage.DisplayAlert("Success", "You are logged in", "Ok");
                     if (App.GlobalObject.UserName == "admin")
                     { await Shell.Current.GoToAsync($"//{nameof(AdminCardDetails)}"); }
@@ -60,7 +59,6 @@ namespace Licenta.Models
                 }
                 else
                 {
-                    //await Navigation.PushModalAsync(new LoginPage());
                     bool answer = await App.Current.MainPage.DisplayAlert("Failure", "Wrong password. Try again", "Try again", "Forgot Password");
                     if (answer)
                     {
@@ -70,7 +68,6 @@ namespace Licenta.Models
                     {
                         await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
                     }
-                   // await App.Current.MainPage.DisplayAlert("Failure", "Parola gresita. Incearca din nou", "Ok");
                 }
             }
             else
@@ -102,21 +99,12 @@ namespace Licenta.Models
 
             return Convert.ToBase64String(combinedSaltAndHash);
         }
-
-        /*private static byte[] HashPasswordWithSalt(string password, byte[] salt)
-        {
-            const int iterations = 10000;
-            using (var pbkdf2 = new Rfc2898DeriveBytes(password, salt, iterations))
-            {
-                return pbkdf2.GetBytes(20); // 20 bytes for SHA1
-            }
-        }*/
         private static byte[] HashPasswordWithSalt(string password, byte[] salt)
         {
             const int iterations = 10000;
             using (var x = new Rfc2898DeriveBytes(password, salt, iterations))
             {
-                return x.GetBytes(20); // 20 bytes for SHA1
+                return x.GetBytes(20);
             }
         }
         private void OnRegisterCommand(object obj)

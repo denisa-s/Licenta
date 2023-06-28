@@ -10,13 +10,13 @@ namespace Licenta.Models
 {
     public class RegisterViewModel
     {
-        private string _userName, _password, _firstName, _lastName, _phoneNumber;
+        private string userName, password, firstName, lastName, phoneNumber;
 
-        public string UserName { get => _userName; set => _userName = value; }
-        public string Password { get => _password; set => _password = value; }
-        public string FirstName { get => _firstName; set => _firstName = value; }
-        public string LastName { get => _lastName; set => _lastName = value; }
-        public string PhoneNumber { get => _phoneNumber; set => _phoneNumber = value; }
+        public string UserName { get => userName; set => userName = value; }
+        public string Password { get => password; set => password = value; }
+        public string FirstName { get => firstName; set => firstName = value; }
+        public string LastName { get => lastName; set => lastName = value; }
+        public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
 
         public ICommand RegisterCommand { private set; get; }
 
@@ -66,9 +66,9 @@ namespace Licenta.Models
         private static byte[] HashPasswordWithSalt(string password, byte[] salt)
         {
             const int iterations = 10000;
-            using (var pbkdf2 = new Rfc2898DeriveBytes(password, salt, iterations))
+            using (var x = new Rfc2898DeriveBytes(password, salt, iterations))
             {
-                return pbkdf2.GetBytes(20); // 20 bytes for SHA1
+                return x.GetBytes(20); 
             }
         }
         private void OnRegisterCommand(object obj)

@@ -17,8 +17,6 @@ namespace Licenta.Data
             _database.CreateTableAsync<LoginModel>().Wait();
             _database.CreateTableAsync<AdoptRequest>().Wait();
             _database.CreateTableAsync<Guest>().Wait();
-            _database.CreateTableAsync<MedicalRecord>().Wait();
-            _database.CreateTableAsync<Medicine>().Wait();
             _database.CreateTableAsync<Order>().Wait();
             _database.CreateTableAsync<CardDetail>().Wait();
         }
@@ -48,6 +46,7 @@ namespace Licenta.Data
             .Where(i => i.ID == id)
             .FirstOrDefaultAsync();
         }
+        //pt order 
         public Task<int> SaveOrder(Order order)
         {
             if (order.ID != 0)
@@ -63,7 +62,6 @@ namespace Licenta.Data
         {
             return _database.DeleteAsync(order);
         }
-        //pt orders
         public Task<List<Order>> GetOrdersAsync()
         {
             return _database.Table<Order>().ToListAsync();
@@ -74,12 +72,11 @@ namespace Licenta.Data
             .Where(i => i.ID == id)
             .FirstOrDefaultAsync();
         }
+        // pt pagina de profil
         public Task<int> SaveUserDataAsync(LoginModel loginData)
         {
             return _database.UpdateAsync(loginData);
         }
-
-        // pt pagina de profil
         public Task<LoginModel> RetrieveDataFromDatabase(string identifier)
         {
             var result = _database.Table<LoginModel>().Where(x => x.UserName == identifier).FirstOrDefaultAsync();
@@ -89,7 +86,6 @@ namespace Licenta.Data
             }
             return null;
         }
-    
         //Pt logare
         public Task<LoginModel> GetLoginDataAsync(string userName)
         {
@@ -97,13 +93,12 @@ namespace Licenta.Data
                             .Where(i => i.UserName == userName)
                             .FirstOrDefaultAsync();
         }
-
         public Task<int> SaveLoginDataAsync(LoginModel loginData)
         {
             return _database.InsertAsync(loginData);
         }
        
-        //Pt cereri adoptie
+        //Pt cereri vizita
         public Task<List<AdoptRequest>> GetAdoptionRequestsAsync()
         {
             return _database.Table<AdoptRequest>().ToListAsync();
@@ -155,60 +150,6 @@ namespace Licenta.Data
         public Task<int> DeleteGuestAsync(LoginModel guest)
         {
             return _database.DeleteAsync(guest);
-        }
-
-        //Pt fise medicale
-        public Task<List<MedicalRecord>> GetMedicalRecordsAsync()
-        {
-            return _database.Table<MedicalRecord>().ToListAsync();
-        }
-        public Task<MedicalRecord> GetMedicalRecordAsync(int id)
-        {
-            return _database.Table<MedicalRecord>()
-            .Where(i => i.ID == id)
-            .FirstOrDefaultAsync();
-        }
-        public Task<int> SaveMedicalRecordAsync(MedicalRecord medical)
-        {
-            if (medical.ID != 0)
-            {
-                return _database.UpdateAsync(medical);
-            }
-            else
-            {
-                return _database.InsertAsync(medical);
-            }
-        }
-        public Task<int> DeleteMedicalRecordAsync(MedicalRecord medical)
-        {
-            return _database.DeleteAsync(medical);
-        }
-
-        //Pt medicamente
-        public Task<List<Medicine>> GetMedicinesAsync()
-        {
-            return _database.Table<Medicine>().ToListAsync();
-        }
-        public Task<Medicine> GetMedicineAsync(int id)
-        {
-            return _database.Table<Medicine>()
-            .Where(i => i.ID == id)
-            .FirstOrDefaultAsync();
-        }
-        public Task<int> SaveMedicineAsync(Medicine medicine)
-        {
-            if (medicine.ID != 0)
-            {
-                return _database.UpdateAsync(medicine);
-            }
-            else
-            {
-                return _database.InsertAsync(medicine);
-            }
-        }
-        public Task<int> DeleteMedicineAsync(Medicine medicine)
-        {
-            return _database.DeleteAsync(medicine);
         }
     }
 }
