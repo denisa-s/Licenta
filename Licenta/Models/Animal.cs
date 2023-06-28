@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Licenta.Models
 {
-    public class Pet
+    public class Animal
     {
         public string Name { get; set; }
         public string Image { get; set; }

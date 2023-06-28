@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Licenta.ViewModels
 {
-    [QueryProperty(nameof(Pet), "Pet")]
+    [QueryProperty(nameof(Animal), "Animal")]
     public partial class PetDetailsViewModel : BaseViewModel
     {
         public PetDetailsViewModel()
@@ -17,7 +17,7 @@ namespace Licenta.ViewModels
         }
 
         [ObservableProperty]
-        Pet pet;
+        Animal animal;
         [RelayCommand]
         async Task Back()
         {

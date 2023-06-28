@@ -41,10 +41,10 @@ public partial class AdoptionRequestPage : ContentPage
         PhoneNumberEntry.Text = result.PhoneNumber;
         AddressEntry.Text = result.Address;
         AddressDetailsEntry.Text = result.AddressDetails;
-        TypeEntry.Text = App.GlobalPet.Type;
-        BreedEntry.Text = App.GlobalPet.Breed;
-        NameEntry.Text = App.GlobalPet.Name;
-        GenderEntry.Text = App.GlobalPet.Gender;
+        TypeEntry.Text = App.GlobalAnimal.Type;
+        BreedEntry.Text = App.GlobalAnimal.Breed;
+        NameEntry.Text = App.GlobalAnimal.Name;
+        GenderEntry.Text = App.GlobalAnimal.Gender;
         EmailEntry.Text = App.GlobalObject.UserName;
     }
     private async void OnSubmit(object sender, EventArgs e)
@@ -58,10 +58,10 @@ public partial class AdoptionRequestPage : ContentPage
             PhoneNumber = PhoneNumberEntry.Text,
             Email = App.GlobalObject.UserName,
             CNP = CNPEntry.Text,
-            Type = App.GlobalPet.Type,
-            Breed = App.GlobalPet.Breed,
-            Name = App.GlobalPet.Name,
-            Gender = App.GlobalPet.Gender,
+            Type = App.GlobalAnimal.Type,
+            Breed = App.GlobalAnimal.Breed,
+            Name = App.GlobalAnimal.Name,
+            Gender = App.GlobalAnimal.Gender,
             Date = DisplayLabel.Text
         };
             await App.Database.SaveAdoptionRequestAsync(request);

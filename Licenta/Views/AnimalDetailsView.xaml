@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Licenta.Views.PetDetailsView"
+             x:Class="Licenta.Views.AnimalDetailsView"
+             Title="AnimalDetailsView"
              xmlns:viewmodels="clr-namespace:Licenta.ViewModels"
              Shell.NavBarIsVisible="False"
              x:DataType="viewmodels:PetDetailsViewModel"
              Shell.TabBarIsVisible="False"
              BackgroundImageSource="wallpaper.jpg">
-    
+
     <ScrollView>
         <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto,Auto,Auto">
             <!--  1. Image  -->
@@ -17,23 +18,23 @@
                 Grid.ColumnSpan="3"
                 Aspect="AspectFit"
                 HeightRequest="400"
-                Source="{Binding Pet.Image}" />
-            
-                <Border Grid.Column="0"
+                Source="{Binding Animal.Image}" />
+
+            <Border Grid.Column="0"
                         HorizontalOptions="Start"
                         VerticalOptions="Start"
                         StrokeThickness="0"
                         HeightRequest="25"
                         Style="{StaticResource EllipseBorderStyle}">
-                    <Border.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding BackCommand}"/>
-                    </Border.GestureRecognizers>
-                    <Image Source="back_arrow.png"
+                <Border.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding BackCommand}"/>
+                </Border.GestureRecognizers>
+                <Image Source="back_arrow.png"
                            Margin="0,0,10,0"
                            HorizontalOptions="Center"
                            VerticalOptions="Center"/>
-                </Border>
-           
+            </Border>
+
             <!--  2. Pet Name  -->
             <Frame
                 Grid.Row="1"
@@ -58,7 +59,7 @@
                         FontSize="30"
                         x:Name="nameLabel"
                         HorizontalOptions="CenterAndExpand"
-                        Text="{Binding Pet.Name}"
+                        Text="{Binding Animal.Name}"
                         VerticalOptions="CenterAndExpand" />
                     <Label
                         Grid.Row="1"
@@ -68,7 +69,7 @@
                         <Label.FormattedText>
                             <FormattedString>
                                 <FormattedString.Spans>
-                                    
+
                                     <Span
                                         FontAttributes="Bold"
                                         FontSize="20"
@@ -76,7 +77,7 @@
                                         TextColor="Black" />
                                     <Span
                                         FontSize="Small"
-                                        Text="{Binding Pet.Location}"
+                                        Text="{Binding Animal.Location}"
                                         TextColor="Black" />
                                 </FormattedString.Spans>
                             </FormattedString>
@@ -133,7 +134,7 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
-                                
+
                                 <Span
                                     FontAttributes="Bold"
                                     FontSize="16"
@@ -149,14 +150,14 @@
                     FontSize="Large"
                     LineBreakMode="NoWrap"
                     x:Name="typeLabel"
-                    Text="{Binding Pet.Type}"
+                    Text="{Binding Animal.Type}"
                     TextColor="Black"
                     TranslationX="10" />
                 <Label Grid.Row="0" Grid.Column="1">
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
-                               
+
                                 <Span
                                     FontAttributes="Bold"
                                     FontSize="16"
@@ -172,14 +173,14 @@
                     FontSize="Large"
                     LineBreakMode="WordWrap"
                     x:Name="breedLabel"
-                    Text="{Binding Pet.Breed}"
+                    Text="{Binding Animal.Breed}"
                     TextColor="Black"
                     TranslationX="20" />
                 <Label Grid.Row="0" Grid.Column="2">
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
-                                
+
                                 <Span
                                     FontAttributes="Bold"
                                     FontSize="16"
@@ -195,7 +196,7 @@
                     FontSize="Large"
                     LineBreakMode="WordWrap"
                     x:Name="genderLabel"
-                    Text="{Binding Pet.Gender}"
+                    Text="{Binding Animal.Gender}"
                     TextColor="Black"
                     TranslationX="20" />
                 <Label
@@ -209,7 +210,7 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
-                                
+
                                 <Span
                                     FontAttributes="Bold"
                                     FontSize="16"
@@ -218,7 +219,7 @@
                                 <Span
                                     FontAttributes="Bold"
                                     FontSize="16"
-                                    Text="{Binding Pet.Social}"
+                                    Text="{Binding Animal.Social}"
                                     TextColor="Black" />
 
                             </FormattedString.Spans>
@@ -236,7 +237,7 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
-                                
+
                                 <Span
                                     FontAttributes="Bold"
                                     FontSize="16"
@@ -245,7 +246,7 @@
                                 <Span
                                     FontAttributes="Bold"
                                     FontSize="16"
-                                    Text="{Binding Pet.Health}"
+                                    Text="{Binding Animal.Health}"
                                     TextColor="Black" />
 
                             </FormattedString.Spans>
@@ -263,7 +264,7 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
-                                
+
                                 <Span
                                     FontAttributes="Bold"
                                     FontSize="16"
@@ -272,7 +273,7 @@
                                 <Span
                                     FontAttributes="Bold"
                                     FontSize="16"
-                                    Text="{Binding Pet.Meet}"
+                                    Text="{Binding Animal.Meet}"
                                     TextColor="Black" />
 
                             </FormattedString.Spans>

@@ -33,12 +33,12 @@ namespace Licenta.ViewModels
         [RelayCommand]
         async Task GetFoodsAsync()
         {
-            if (IsBusy)
+            if (IsLoading)
                 return;
 
             try
             {
-                IsBusy = true;
+                IsLoading = true;
                 Console.WriteLine("Cauta mancare");
 
                 var foods = await foodService.GetFoods();
@@ -58,7 +58,7 @@ namespace Licenta.ViewModels
             }
             finally
             {
-                IsBusy = false;
+                IsLoading = false;
                 IsRefreshing = false;
             }
 

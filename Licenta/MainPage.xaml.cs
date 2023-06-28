@@ -9,7 +9,7 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
-        Routing.RegisterRoute(nameof(PetDetailsView), typeof(PetDetailsView));
+        Routing.RegisterRoute(nameof(AnimalDetailsView), typeof(AnimalDetailsView));
         Routing.RegisterRoute(nameof(FoodDetailsView), typeof(FoodDetailsView));
     }   
 }

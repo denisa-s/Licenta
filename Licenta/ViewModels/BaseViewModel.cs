@@ -10,12 +10,12 @@ namespace Licenta.ViewModels
     public partial class BaseViewModel : ObservableObject
     {
         [ObservableProperty]
-        [NotifyPropertyChangedFor(nameof(IsNotBusy))]
-        bool isBusy;
+        [NotifyPropertyChangedFor(nameof(IsNotLoading))]
+        bool isLoading;
 
         [ObservableProperty]
         string title;
 
-        public bool IsNotBusy => !IsBusy;
+        public bool IsNotLoading => !IsLoading;
     }
 }

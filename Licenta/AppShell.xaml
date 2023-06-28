@@ -27,7 +27,7 @@
                   Icon="guest.png"/>
    
     <ShellContent Title="Pets" 
-                  ContentTemplate="{DataTemplate views:HomePage}" 
+                  ContentTemplate="{DataTemplate views:AnimalPage}" 
                   Icon="dog.png"
                   Route="PetsPage"/>
 

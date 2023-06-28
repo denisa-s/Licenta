@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Licenta.Views.HomePage"
+             x:Class="Licenta.Views.AnimalPage"
+             Title="AnimalPage"
              xmlns:model="clr-namespace:Licenta.Models"
              xmlns:viewmodel="clr-namespace:Licenta.ViewModels"
              Shell.NavBarIsVisible="False"
              FlyoutItem.IsVisible="False"
-             x:DataType="viewmodel:HomePageViewModel"
+             x:DataType="viewmodel:AnimalsPageViewModel"
              BackgroundImageSource="wallpaper.jpg"
              Shell.TabBarIsVisible="True">
     
-    <RefreshView Command="{Binding GetPetsCommand}" IsRefreshing="{Binding IsRefreshing}">
+    <RefreshView Command="{Binding GetAnimalsCommand}" IsRefreshing="{Binding IsRefreshing}">
         <ScrollView>
             <Grid ColumnDefinitions="0.5*,Auto,0.5*" RowDefinitions="10,50,550,90,Auto,50">
-          
+
                 <CollectionView
                     x:Name="PetsList"
                     Grid.Row="2"
                     Grid.Column="0"
                     Grid.ColumnSpan="3"
                     Background="wallpaper.jpg"
-                    ItemsSource="{Binding Pets}"
-                    SelectedItem="{Binding SelectedPet}"
+                    ItemsSource="{Binding Animals}"
+                    SelectedItem="{Binding Selected}"
                     SelectionChangedCommand="{Binding GoToDetailsCommand}"
                     SelectionMode="Single">
                     <CollectionView.ItemsLayout>
@@ -29,7 +30,7 @@
                     </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
 
-                        <DataTemplate x:DataType="model:Pet">
+                        <DataTemplate x:DataType="model:Animal">
                             <StackLayout>
                                 <Frame
                                     Margin="10"
@@ -58,7 +59,7 @@
                                             HorizontalOptions="Center"
                                             Source="{Binding Image}"
                                             WidthRequest="200" />
-                                        
+
                                         <Label
                                             FontAttributes="Italic"
                                             HorizontalOptions="Center"
@@ -74,7 +75,7 @@
                     </CollectionView.ItemTemplate>
 
                 </CollectionView>
-                
+
                 <Button
                     Grid.Row="1"
                     Grid.Column="1"
@@ -85,8 +86,9 @@
                     HeightRequest="45"
                     Text="Personality test"
                     TranslationY="5" />
-                
+
             </Grid>
         </ScrollView>
     </RefreshView>
 </ContentPage>
+    
