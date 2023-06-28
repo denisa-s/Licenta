@@ -32,14 +32,9 @@ public partial class App : Application
     }
     protected override void OnStart()
     {
-        // Initialize the global object
         LoginModel globalObject = new LoginModel();
-
-        // Store the global object in the static property
         GlobalObject = globalObject;
         Animal globalanimal = new Animal();
-
-        // Store the global object in the static property
         GlobalAnimal = globalanimal;
     }
 }

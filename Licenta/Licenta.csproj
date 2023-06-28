@@ -70,9 +70,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="AboutPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="AdminCardDetails.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

@@ -7,7 +7,6 @@ public partial class AppShell : Shell
 	{
 		InitializeComponent();
         this.BindingContext = new AppShellViewModel();
-        //this.BindingContext = new HomePage();
         Routing.RegisterRoute(nameof(AnimalDetailsView), typeof(AnimalDetailsView));
         Routing.RegisterRoute(nameof(FoodDetailsView), typeof(FoodDetailsView));
     }
