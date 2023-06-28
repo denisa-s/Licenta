@@ -23,7 +23,7 @@
         
     <ShellContent Title="Profile"
                   ContentTemplate="{DataTemplate local:GuestEntryPage}" 
-                  Route="GuestPage"
+                  Route="GuestEntryPage"
                   Icon="guest.png"/>
    
     <ShellContent Title="Pets" 

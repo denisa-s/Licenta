@@ -19,7 +19,7 @@ namespace Licenta.Models
         [ICommand]
         async void GetStarted()
         {
-            await Shell.Current.GoToAsync($"//{nameof(GuestPage)}");
+            await Shell.Current.GoToAsync($"//{nameof(GuestEntryPage)}");
         }
     }
 }

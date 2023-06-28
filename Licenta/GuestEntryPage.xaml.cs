@@ -21,24 +21,6 @@ public partial class GuestEntryPage : ContentPage
     {
         await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
     }
-    async void OnGuestAddedClicked(object sender, EventArgs e)
-    {
-        await Navigation.PushAsync(new GuestPage
-        {
-            BindingContext = new Guest()
-        });
-    }
-    async void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
-    {
-        if (e.SelectedItem != null)
-        {
-            await Navigation.PushAsync(new GuestPage
-            {
-                BindingContext = e.SelectedItem as Guest
-            });
-        }
-    }
-    
     async void OnPersonalInfoClicked(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new PersonalInfo
@@ -75,9 +57,9 @@ public partial class GuestEntryPage : ContentPage
     private static byte[] HashPasswordWithSalt(string password, byte[] salt)
     {
         const int iterations = 10000;
-        using (var pbkdf2 = new Rfc2898DeriveBytes(password, salt, iterations))
+        using (var x = new Rfc2898DeriveBytes(password, salt, iterations))
         {
-            return pbkdf2.GetBytes(20); // 20 bytes for SHA1
+            return x.GetBytes(20); 
         }
     }
 }

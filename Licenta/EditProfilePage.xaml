@@ -10,8 +10,6 @@
 
         <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
 
-            <!--Profile Circle-->
-
             <Border 
                 Grid.Row="0" 
                 Stroke="white"
@@ -24,8 +22,6 @@
                     HeightRequest="100"
                     WidthRequest="100"/>
             </Border>
-
-            <!--Navigation Menu-->
 
             <Border 
                 Grid.Row="1"
@@ -78,8 +74,6 @@
                 </Grid>
 
             </Border>
-
-            <!--Personal info form-->
 
             <Border 
                 Grid.Row="2"
