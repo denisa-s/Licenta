@@ -12,10 +12,6 @@ namespace Licenta.ViewModels
         [ObservableProperty]
         [NotifyPropertyChangedFor(nameof(IsNotLoading))]
         bool isLoading;
-
-        [ObservableProperty]
-        string title;
-
         public bool IsNotLoading => !IsLoading;
     }
 }

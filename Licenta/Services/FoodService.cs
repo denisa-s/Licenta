@@ -8,26 +8,23 @@ using Licenta.Models;
 
 namespace Licenta.Services
 {
-    public class FoodService
+    public class FoodService    
     {
-        HttpClient httpClient;
+        static readonly HttpClient client = new HttpClient();
         public FoodService()
         {
-            this.httpClient = new HttpClient();
+            
         }
-
         List<Food> foodList;
         public async Task<List<Food>> GetFoods()
         {
-            if (foodList?.Count > 0)
+            if (foodList?.Any() == true)
                 return foodList;
-
-            var response = await httpClient.GetAsync("https://raw.githubusercontent.com/denisa-s/food/main/food.json");
-            if (response.IsSuccessStatusCode)
+            using HttpResponseMessage resp = await client.GetAsync("https://raw.githubusercontent.com/denisa-s/food/main/food.json");
+            if (resp.IsSuccessStatusCode)
             {
-                foodList = await response.Content.ReadFromJsonAsync<List<Food>>();
+                foodList = await resp.Content.ReadFromJsonAsync<List<Food>>();
             }
-
             return foodList;
         }
     }

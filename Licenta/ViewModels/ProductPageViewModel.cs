@@ -16,11 +16,10 @@ namespace Licenta.ViewModels
 {
     public partial class ProductPageViewModel : BaseViewModel
     {
-        public ObservableCollection<Food> Foods { get; } = new();
+        public ObservableCollection<Food> Foods { get; } = new ObservableCollection<Food>();
         FoodService foodService;
         public ProductPageViewModel(FoodService foodService)
         {
-            Title = "Alege mancarea pt animalul tau";
             this.foodService = foodService;
         }
 
@@ -39,22 +38,15 @@ namespace Licenta.ViewModels
             try
             {
                 IsLoading = true;
-                Console.WriteLine("Cauta mancare");
-
                 var foods = await foodService.GetFoods();
-
                 if (Foods.Count != 0)
                     Foods.Clear();
-
                 foreach (var food in foods)
                     Foods.Add(food);
-
             }
             catch (Exception ex)
             {
-                Debug.WriteLine($"Unable to get Pets: {ex.Message}");
-                Console.WriteLine("Nu s au gasit animale");
-                await Shell.Current.DisplayAlert("Error!", ex.Message, "OK");
+                await Shell.Current.DisplayAlert("Failure!", "There was a failure", "OK");
             }
             finally
             {
@@ -67,15 +59,14 @@ namespace Licenta.ViewModels
         [RelayCommand]
         async Task GoToDetails()
         {
-            if (selectedFood == null)
-                return;
-
-            var data = new Dictionary<string, object>
+            if (selectedFood != null)
             {
-                {"Food", selectedFood }
-            };
-
-            await Shell.Current.GoToAsync(nameof(FoodDetailsView), true, data);
+                var info = new Dictionary<string, object>
+                    {
+                        {"Food", selectedFood }
+                    };
+                await Shell.Current.GoToAsync(nameof(FoodDetailsView), true, info);
+            }
         }
         [RelayCommand]
         async Task CartCommand()
